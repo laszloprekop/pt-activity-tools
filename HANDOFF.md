@@ -133,6 +133,19 @@ For every file and every version the checks are:
 
 Manual checks still worth doing once per version: instructions readable, Reset Activity, do one activity by hand to 100 %.
 
+## 8b. Packet Tracer versions (what each brings)
+
+From Cisco's What's New page, Packet Tracer Network's release summaries and the runs on this Mac ("observed"):
+
+- **8.0.0 (January 2021):** guest login with a session timer and three saves per session (observed). Mac users reported modules that cannot be dragged into slots, CLI keyboard input problems and a library error as standard user. Translates the 4.1 files well except OSPF network items (observed).
+- **8.0.1 / 8.1 (2021):** maintenance fixes; guest login removed (account required); 8.1 added Tutored Activities (`.pksz`), an instructor feedback dialog, Windows 11 support, accessibility and security fixes.
+- **8.2 / 8.2.1 / 8.2.2 (2022 to June 2024):** ASA 5506-X, IoT boards and home gateway, `show ip ospf interface brief`, proxy settings in the login window, CLI auto-focus; 8.2.2 fixed DLL-conflict crashes on Windows plus accessibility, usability and security bugs. No guest mode (observed: closing the login dialog quits the program).
+- **9.0.0 / 9.0.1 (2025):** industrial networking devices and 11 OT protocols, more realistic fibre, accessibility (screen reader, keyboard focus), "streamlined authentication"; 9.0.1 adds security and stability fixes. Guest login works again (observed). Keeps stored expected values of old files instead of recomputing them (observed), which is why the 4.1 originals fail there.
+
+None of the new devices matter for these labs (1841 routers, 2960 switches, PCs, one server). The differences that matter are login, stability fixes and the grading engine.
+
+Sources: https://tutorials.ptnetacad.net/help/default/whatsNew.htm , https://www.packettracernetwork.com/features.html , https://www.packettracernetwork.com/features/packet-tracer-9-new-features.html
+
 ## 9. Open questions
 
 - 8.2.2 behaviour (needs a persisted login).
