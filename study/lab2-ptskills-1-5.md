@@ -4,6 +4,32 @@ Written 2 October 2026 from the Canvas page "9.5 Lab 2 (Submit your report)" (co
 
 The answers are drafts. Rewrite them in the group's own words.
 
+## The assignment, as written on Canvas
+
+From "9.5 Lab 2 (Submit your report)", https://ltuedu.instructure.com/courses/614/assignments/3042 (read 2 October 2026):
+
+> In this lab, you will be working with the network simulation tool Cisco Packet Tracer and PTSkills 1-5. This lab can be completed either individually or in a group of 3 or 4. There are three main learning activities of this lab: 1. Complete the Lab Sheet 2. Submit a lab report on canvas 3. Present lab on Zoom.
+>
+> Goal 1: Learn to use the Packet Tracer Simulation Tool and learn to analyze PDUs in simulation and realtime mode. Goal 2: Learn to configure and connect hosts and servers and examine DNS, HTTP, TCP and UDP traffic. Goal 3: Learn to configure routers and examine IP packet routing.
+>
+> To complete this lab, you must complete the PTSkills and answer the questions on canvas, submit a lab report to canvas and present the lab on zoom.
+>
+> Lab Report. You must submit a lab report. If you are working as a group, you may work together on a single report. Only one member of the group should submit the report on Canvas. The group submission will be registered for all members of the group. You need to submit a document (PDF) with the following: Include a screenshot of the Check Results tab to show the completion of each PTSkills. Answers to the questions from each PTSkills.
+>
+> Lab Presentation. For the group presentation, you will present what you did in the lab (Using your lab report) and active participation from all group members are expected. Divide among yourself with the sections that each members will present. Signup with a time slot on the LAB SIGNUP SHEET. Attend the lab presentation on Zoom.
+
+Rubric: 1 point per PTSkills (Full Marks or No Marks), 5 points in total. Due 2 October 2026, 23:59. File type: PDF.
+
+Questions per activity, as written on Canvas:
+
+- **PTSkills 1 (1 question):** "Explain the difference between a router and a switch"
+- **PTSkills 2 (1 question):** "In Task 2, it says \"The first time you issue this one-shot ping message, it will show as Failed--this is because of the ARP process\". Find out why is this so by doing your own (re)search."
+- **PTSkills 3 (1 question):** "Can you now explain the process that occurs when you type a URL into a browser and a web page returns? What types of client-server interactions are involved? Please feel free to draw a diagram if you would like, you can even draw on your notepad, take a picture, add to the report and explain briefly."
+- **PTSkills 4 (3 questions):** "Can you make a diagram of the sequence of protocol events involved in requesting a web page using a URL?" / "Where might things go wrong? (Think about, what happens if router configuration is wrong? Does the package get stuck at the router, does it disappear?)" / "Compare and contrast DNS and HTTP, and UDP and TCP."
+- **PTSkills 5 (2 questions):** "What data can an IP Packet contain? See if you can find out how to view this information from within the tool when you send a test packet. Hint: Insert a picture of this and explain briefly" / "What is a route? What does it mean a packet is routed?"
+
+Each activity file also ends with a "Reflection" paragraph. Those are quoted in each section below; where a reflection asks something Canvas does not, it is answered under "Questions hidden in the activity".
+
 ## Words you will meet
 
 - **Activity (.pka file)**: a Packet Tracer file that holds a half-built network, the instructions, and a hidden checklist. The Check Results button compares your network with the checklist.
@@ -63,6 +89,11 @@ Steps, in order:
 
 Questions hidden in the activity: none; the text only asks you to explore. The reflection suggests the built-in "My First PT Lab" under Help, Contents, which is worth one evening if Packet Tracer is new to you.
 
+**Questions as written**
+
+- Canvas: "Explain the difference between a router and a switch"
+- Activity reflection: "You have completed your first Packet Tracer Lab. If you have not done so already, you are encouraged to obtain Packet Tracer from your instructor or Academy Connection." (no question)
+
 **Report question: explain the difference between a router and a switch.**
 
 **In brief**
@@ -100,6 +131,11 @@ Questions hidden in the activity and short answers:
 - Task 2: "The first time ... it will show as Failed, this is because of the ARP process." Why? See the report question below.
 - Task 4: "Try creating different combinations of test packets." What changes? A ping between 1A and 1B only crosses the switch, so no router and no change of MAC address. A ping to the server crosses two routers and the MAC addresses change twice. A ping to a wrong address is dropped at the first router that has no route.
 
+**Questions as written**
+
+- Canvas: "In Task 2, it says \"The first time you issue this one-shot ping message, it will show as Failed--this is because of the ARP process\". Find out why is this so by doing your own (re)search."
+- Activity reflection: "If you have not already done so, you are encouraged to obtain Packet Tracer from your instructor and complete My First PT Lab (available by using the HELP Pulldown Menu and choosing CONTENTS)." (no question)
+
 **Report question: why does the first one-shot ping fail (ARP)?**
 
 **In brief**
@@ -135,6 +171,11 @@ Questions hidden in the activity:
 
 - "Note that when you add a simple PDU, it appears in the PDU List Window as part of Scenario 0." What is a scenario? A named set of test packets. New makes another set, Delete removes the packets of the current one. Use it to keep tests apart.
 - The reflection is the report question below.
+
+**Questions as written**
+
+- Canvas: "Can you now explain the process that occurs when you type a URL into a browser and a web page returns? What types of client-server interactions are involved? Please feel free to draw a diagram if you would like, you can even draw on your notepad, take a picture, add to the report and explain briefly."
+- Activity reflection: "Can you now explain the process that occurs when you type a URL into a browser and a web page returns? What types of client-server interactions are involved? If you have not already done so, you are encouraged to obtain Packet Tracer from your instructor and complete My First PT Lab (choose the HELP Pulldown Menu, choose CONTENTS)."
 
 **Report question: what happens when you type a URL into a browser and a page comes back? Which client-server interactions are involved?**
 
@@ -174,6 +215,11 @@ Steps, in order:
 9. On PC 1A: Desktop, Web Browser, `eagle-server.example.com`, Go. Capture / Forward through the whole exchange. Open the envelopes at 1A and at the server and look at the layers: DNS sits on UDP, HTTP sits on TCP. Count the packets: the DNS part is two packets, the HTTP part is many (handshake, request, data, acknowledgements, close).
 
 Questions hidden in the activity: the three reflection questions are the report questions below. One more that the text implies in Task 2: "why must the Event Filter include UDP and TCP?" Because DNS and HTTP are the applications, but what you see on the wire are UDP datagrams and TCP segments carrying them; filtering only DNS and HTTP hides the handshake and the acknowledgements.
+
+**Questions as written**
+
+- Canvas, three questions: "Can you make a diagram of the sequence of protocol events involved in requesting a web page using a URL?" / "Where might things go wrong? (Think about, what happens if router configuration is wrong? Does the package get stuck at the router, does it disappear?)" / "Compare and contrast DNS and HTTP, and UDP and TCP."
+- Activity reflection: "Can you make a diagram of the sequence of protocol events involved in requesting a web page using a URL? Where might things go wrong? Compare and contrast DNS and HTTP, and UDP and TCP."
 
 **Report question 1: a diagram of the sequence of protocol events for a web page.**
 
@@ -256,6 +302,12 @@ Questions hidden in the activity and short answers:
 - Task 3: "This route is configured so that wherever packets from the 172.16.0.0/16 LAN are destined, they will go to the R1-ISP router." Why is a default route enough here? Because R2-Central has only one way out. A default route is the usual choice for a stub network with a single exit.
 - Task 3: "Save ... in case the router is power cycled." What happens without Save? The running configuration is lost at the next reboot and the port and route are gone again.
 - Reflection, "where might things go wrong?" A missing or wrong route (packet dropped at the router), a wrong next hop (packet sent to a router that drops it), a port down (frame dropped), a wrong mask on a route (matches the wrong destinations), or no route back on the other router (the request arrives, the reply cannot return).
+
+**Questions as written**
+
+- Canvas, two questions: "What data can an IP Packet contain? See if you can find out how to view this information from within the tool when you send a test packet. Hint: Insert a picture of this and explain briefly" / "What is a route? What does it mean a packet is routed?"
+- Activity reflection: "What data can an IP Packet contain? What is meant by the phrase \"the IP packet is routed\"? What is a route? Where might things go wrong?" (the last one is answered under "Questions hidden in the activity" above)
+- Activity, Task 1: "Try reaching Eagle Server. The request still fails. What are some possible reasons why?" (answered under "Questions hidden in the activity" above)
 
 **Report question 1: what data can an IP packet contain, and how do you see it in the tool?**
 
