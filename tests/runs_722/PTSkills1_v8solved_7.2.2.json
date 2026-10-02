@@ -1,0 +1,56 @@
+{
+ "version": "7.2.2",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills1_v8solved.pka",
+ "pid": 53045,
+ "main_title": null,
+ "load_dialogs": [
+  {
+   "title": "",
+   "texts": [
+    "StaticText:Packet Tracer has detected a new script module. Do you want to enable this script module?\n\n    Name: PT INTERNAL\n    ID:",
+    "Button:Yes",
+    "Button:No"
+   ],
+   "dismissed_with": "Yes"
+  },
+  {
+   "title": "Cisco Packet Tracer",
+   "texts": [
+    "StaticText:X and Y coordinates of mouse",
+    "StaticText:Current Cluster Name",
+    "Button:Go Back One Level (Alt+Left)",
+    "Button:Create New Cluster (Shift+U)",
+    "Button:Move Object(Shift+M)",
+    "Button:Set Background Image (Shift+I)",
+    "Button:Environment (Shift+E)",
+    "StaticText:Time",
+    "Button:Power Cycle Devices (Alt+S)",
+    "Button:Fast Forward Time (Alt+D)",
+    "StaticText: (Select a Device to Drag and Drop to the Workspace) ",
+    "Button:New",
+    "Button:Open",
+    "Button:Save",
+    "Button:Print",
+    "Button:Network Information",
+    "Button:User Profile",
+    "Button:Activity Wizard",
+    "Button:Copy",
+    "Button:Paste",
+    "Button:Undo",
+    "Button:Redo",
+    "Button:Zoom In",
+    "Button:Zoom Reset",
+    "Button:Zoom Out",
+    "Button:Show Viewport",
+    "Button:Show Workspace List",
+    "Button:View Command Log",
+    "Button:Custom Devices Dialog",
+    "Button:Cluster Associations Dialog",
+    "Button:Contents",
+    "StaticText:Cisco Packet Tracer"
+   ]
+  }
+ ],
+ "activity_window": null,
+ "error": "no PT Activity window"
+}

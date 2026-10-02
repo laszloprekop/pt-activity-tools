@@ -20,11 +20,12 @@ import Quartz
 from AppKit import NSWorkspace, NSRunningApplication, NSApplicationActivateIgnoringOtherApps
 
 APPS = {
+    '7.2.2': '/Applications/Cisco Packet Tracer 7.7.2/Cisco Packet Tracer.app',   # folder name is a typo; installer says 7.2.2
     '8.0.0': '/Applications/Cisco Packet Tracer 8.0.0/Cisco Packet Tracer 8.0.app',
     '8.2.2': '/Applications/Cisco Packet Tracer 8.2.2/Cisco Packet Tracer 8.2.2.app',
     '9.0.1': '/Applications/Cisco Packet Tracer 9.0.1/Cisco Packet Tracer 9.0.1.app',
 }
-BUNDLE = {'8.0.0': 'com.netacad.PacketTracer8.0.0', '8.2.2': 'com.netacad.PacketTracer8.2.2',
+BUNDLE = {'7.2.2': 'com.netacad.PacketTracer7', '8.0.0': 'com.netacad.PacketTracer8.0.0', '8.2.2': 'com.netacad.PacketTracer8.2.2',
           '9.0.1': 'com.netacad.PacketTracer9.0.1'}
 
 # ---------------------------------------------------------------- AX helpers
@@ -131,7 +132,8 @@ def activate(pid):
 
 def pid_of(version):
     """NSWorkspace's process list does not refresh without a run loop, so ask pgrep."""
-    r = subprocess.run(['pgrep', '-f', APPS[version] + '/Contents/MacOS/PacketTracer$'], capture_output=True, text=True)
+    exe = 'Cisco Packet Tracer' if version.startswith('7.') else 'PacketTracer'
+    r = subprocess.run(['pgrep', '-f', APPS[version] + '/Contents/MacOS/' + exe + '$'], capture_output=True, text=True)
     pids = [int(x) for x in r.stdout.split()]
     return max(pids) if pids else None
 

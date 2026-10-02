@@ -192,3 +192,61 @@ PTSkills13_fixsolved.pka     8.2.2   89   0   89   89
 PTSkills14_fix.pka           8.2.2    2  53   55   55   incorrect: Host Name, (deprecated) Route0, (deprecated) Route1, (deprecated) Route2, FastEthernet0/0, IP Address...
 PTSkills14_fixsolved.pka     8.2.2   55   0   55   55  
 ```
+
+## Packet Tracer 7.2.2 audit (2026-10-02, no fixes applied)
+
+Installed in `/Applications/Cisco Packet Tracer 7.7.2/`; the folder name is a typo, the installer log and component list say 7.2.2 (2019, Intel build, runs under Rosetta). Guest login available. On every start it asks once whether to enable the "PT INTERNAL" script module (answered Yes).
+
+- **Originals (`_orig`, `_solved`):** grade correctly, like 8.0.0. Solved copies reach their full count, fresh copies start at 0. The empty expected values of the 2007 files are recomputed, so Error 1 does not occur in 7.2.2.
+- **OSPF items:** already lost in 7.2.2 (PTSkills13 80 of 89, PTSkills14 46 of 55), so Error 2 predates 7.2.2.
+- **`pka-fix` output (`_fixsolved`):** all 13 reach their full count, including the OSPF items. These files keep the 4.1 container, so 7.2.2 reads them.
+- **Converted `_v8` files:** do not open at all. 7.2.2 shows its startup prompt and an empty workspace, with no error message. Packet Tracer cannot open files saved by a newer version (the `_v8` files are saved by 8.0.0). These runs are listed below as "no PT Activity window".
+
+```
+file                         PT      ok bad  exp  tot  note
+PTSkills1_fixsolved.pka      7.2.2    2   0    2    2   dialogs: (untitled)
+PTSkills1_orig.pka           7.2.2    0   2    2    2   incorrect: Connects to FastEthernet0/1, Connects to FastEthernet0/0 dialogs: (untitled)
+PTSkills1_solved.pka         7.2.2    2   0    2    2   dialogs: (untitled)
+PTSkills1_v8solved.pka       7.2.2    -   -    2    -  no PT Activity window dialogs: (untitled); Cisco Packet Tracer
+PTSkills2_fixsolved.pka      7.2.2    6   0    6    6   dialogs: (untitled)
+PTSkills2_orig.pka           7.2.2    0   6    6    6   incorrect: Default Gateway, DNS Server IP, IP Address, Connects to FastEthernet0/2, Type, Subnet Mask dialogs: (untitled)
+PTSkills2_solved.pka         7.2.2    6   0    6    6   dialogs: (untitled)
+PTSkills2_v8solved.pka       7.2.2    -   -    6    -  no PT Activity window dialogs: (untitled); Cisco Packet Tracer
+PTSkills3_fixsolved.pka      7.2.2   11   0   11   11   dialogs: (untitled)
+PTSkills3_orig.pka           7.2.2    0  11   11   11   incorrect: Default Gateway, DNS Server IP, IP Address, Connects to FastEthernet0/2, Type, Subnet Mask... dialogs: (untitled)
+PTSkills3_solved.pka         7.2.2   11   0   11   11   dialogs: (untitled)
+PTSkills3_v8solved.pka       7.2.2    -   -   11    -  no PT Activity window dialogs: (untitled); Cisco Packet Tracer
+PTSkills4_fixsolved.pka      7.2.2   15   0   15   15   completed
+PTSkills4_orig.pka           7.2.2    0  15   15   15   incorrect: Default Gateway, DNS Server IP, IP Address, Connects to FastEthernet0/1, Type, Subnet Mask... dialogs: (untitled)
+PTSkills4_solved.pka         7.2.2   15   0   15   15   dialogs: (untitled)
+PTSkills4_v8solved.pka       7.2.2    -   -   15    -  no PT Activity window dialogs: Cisco Packet Tracer
+PTSkills5_orig.pka           7.2.2    0   4    4    4   incorrect: IP Address, Port Status, Subnet Mask, Route0
+PTSkills5_solved.pka         7.2.2    4   0    4    4  
+PTSkills6_fixsolved.pka      7.2.2   49   0   49   49  
+PTSkills6_orig.pka           7.2.2    0  49   49   49   incorrect: Default Gateway, DNS Server IP, IP Address, Connects to FastEthernet0/1, Type, Port Status...
+PTSkills6_solved.pka         7.2.2   49   0   49   49  
+PTSkills7_fixsolved.pka      7.2.2   33   0   33   33   completed
+PTSkills7_orig.pka           7.2.2    0  33   33   33   incorrect: Default Gateway, DNS Server IP, IP Address, Port Status, Subnet Mask, Default Gateway...
+PTSkills7_solved.pka         7.2.2   33   0   33   33  
+PTSkills8_fixsolved.pka      7.2.2   20   0   20   20  
+PTSkills8_orig.pka           7.2.2    0  20   20   20   incorrect: Connects to FastEthernet0/1, Type, Connects to FastEthernet0/2, Type, Connects to FastEthernet0/0, Type...
+PTSkills8_solved.pka         7.2.2   20   0   20   20  
+PTSkills9_fixsolved.pka      7.2.2   40   0   40   40  
+PTSkills9_orig.pka           7.2.2    0  40   40   40   incorrect: Default Gateway, DNS Server IP, Duplex, IP Address, Connects to FastEthernet0/1, Type...
+PTSkills9_solved.pka         7.2.2   40   0   40   40  
+PTSkills10_fixsolved.pka     7.2.2   89   0   89   89  
+PTSkills10_orig.pka          7.2.2    0  89   89   89   incorrect: Default Gateway, IP Address, Connects to FastEthernet0/2, Type, Subnet Mask, Default Gateway...
+PTSkills10_solved.pka        7.2.2   89   0   89   89  
+PTSkills11_fixsolved.pka     7.2.2   57   0   57   57  
+PTSkills11_orig.pka          7.2.2    0  57   57   57   incorrect: Default Gateway, IP Address, Subnet Mask, Default Gateway, IP Address, Subnet Mask...
+PTSkills11_solved.pka        7.2.2   57   0   57   57  
+PTSkills12_fixsolved.pka     7.2.2   22   0   22   22  
+PTSkills12_orig.pka          7.2.2    0  22   22   22   incorrect: Type, Type, Type, Type, Type, Type...
+PTSkills12_solved.pka        7.2.2   22   0   22   22  
+PTSkills13_fixsolved.pka     7.2.2   89   0   89   89  
+PTSkills13_orig.pka          7.2.2    9  71   89   80   ITEMS 80!=89 incorrect: Default Gateway, Default Gateway, Password, Host Name, IP Address, Port Status...
+PTSkills13_solved.pka        7.2.2   80   0   89   80   ITEMS 80!=89
+PTSkills14_fixsolved.pka     7.2.2   55   0   55   55  
+PTSkills14_orig.pka          7.2.2    0  46   55   46   ITEMS 46!=55 incorrect: Host Name, FastEthernet0/0, IP Address, Port Status, Subnet Mask, Clock Rate...
+PTSkills14_solved.pka        7.2.2   46   0   55   46   ITEMS 46!=55
+```
