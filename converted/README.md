@@ -1,6 +1,6 @@
 # Converted activities (Packet Tracer 8.0 format)
 
-One file per Canvas original, same name plus `_v8`. Produced by letting Packet Tracer 8.0.0 open and re-save the PT 4.1 original (device and grading-tree conversion), then `tools/convert.py` (restores graded items the conversion dropped, resets the timer, re-encodes). Instruction text is exactly what Packet Tracer carried over from the original. Tested in 8.0.0 and 9.0.1: see `tests/results.md`. Not tested in 8.2.2.
+One file per Canvas original, same name plus `_v8`. Produced by letting Packet Tracer 8.0.0 open and re-save the PT 4.1 original (device and grading-tree conversion), then `tools/convert.py` (restores graded items the conversion dropped, resets the timer, re-encodes). Instruction text is exactly what Packet Tracer carried over from the original. Tested in 8.0.0, 8.2.2 and 9.0.1: see `tests/results.md`.
 
 Course material of Cisco NetAcad / LTU Z0025E: for course use only, do not publish.
 
