@@ -17,7 +17,7 @@ Established with real Packet Tracer runs (sections 7 and 8), not by inspection a
 - **PT 8.2.2 behaves exactly like 9.0.1** on every file (tested 2026-10-02 after the user logged in once with "Keep me logged in"; 8.2.2 has no guest mode, closing its login dialog quits the program). Same failing items on the originals, same OSPF loss, all converted files pass.
 - **The fix that works, and the recommended one:** `pka-fix/pka_fix.py` corrects the 4.1 file directly (fills empty expected values from the answer network, rewrites old value formats, rewrites OSPF network IDs with wildcard masks) and keeps the 4.1 format, so the result opens and grades fully in 7.2.2, 8.0.0, 8.2.2 and 9.0.1. Output: `fixed/`. The earlier route (PT 8.0.0 re-save plus `tools/convert.py`, output `converted/`) also grades in 8.x and 9.x but produces 8.0-format files that 7.x cannot open.
 
-**Deliverables:** `fixed/<canvas name>_fixed.pka` (14 files, README inside) is the recommended set: produced by `pka-fix/pka_fix.py`, still in the 4.1 format, tested to grade fully in 7.2.2, 8.2.2 and 9.0.1 (8.0.0 spot-checked). `converted/<canvas name>_v8.pka` is the alternative set produced through a PT 8.0.0 re-save; it grades in 8.0.0, 8.2.2 and 9.0.1 but does not open in 7.x. Test results: `tests/results.md`, raw records in `tests/runs*/`, conversion mapping report `tests/convert.log`.
+**Deliverables:** `fixed/<canvas name>_fixed.pka` (14 files, README inside) is the recommended set: produced by `pka-fix/pka_fix.py`, still in the 4.1 format, tested to grade fully in 7.2.2, 8.0.0, 8.2.2 and 9.0.1. `converted/<canvas name>_v8.pka` is the superseded set produced through a PT 8.0.0 re-save; it grades in 8.0.0, 8.2.2 and 9.0.1 but does not open in 7.x, so it is kept only as an independent cross-check. Test results: `tests/results.md`, raw records in `tests/runs*/`, conversion mapping report `tests/convert.log`.
 
 ## 3. Package layout and quick start
 
@@ -43,7 +43,7 @@ samples/originals/canvas/   the 14 Canvas originals (never modify) + SOURCE.md
 samples/originals/          the five files from the first chat session (1.7.1 is a PT 8.0 re-save)
 samples/rebuilt/            the five template rebuilds from the first chat session
 fixed/                      the 14 recommended deliverables, <canvas name>_fixed.pka (+ README), made by pka-fix
-converted/                  the alternative set in 8.0 format, <canvas name>_v8.pka (+ README)
+converted/                  superseded set in 8.0 format, <canvas name>_v8.pka; kept as a cross-check of fixed/, not for students
 pka-fix/                    pka_fix.py: fixes 4.1 files directly, no Packet Tracer needed (+ Windows .bat)
 build/canvas/               scratch output of tools/pipeline.sh (ignored); identical to converted/
 tests/results.md            results table of every pttest run; tests/runs/ holds the JSON records
@@ -125,6 +125,8 @@ For each original `O`:
 1. `pttest.py 8.0.0 O out.json --saveas O_pt800.pka`: PT 8.0.0 opens the 4.1 file, converts the networks and the tree, saves the modern file (and the run records what Check Results shows).
 2. `convert.py O O_pt800.pka converted/<name>_v8.pka` (or `tools/pipeline.sh <workdir>` for all): verifies every original graded item has a modern counterpart, restores the ones 8.0.0 dropped when their node exists in the regenerated tree, prints the mapping and anything that cannot be graded any more, sets `ELAPSED=0`, makes network [0] equal network [1], re-encodes. Instructions are left exactly as PT carried them over.
 3. Test (section 8).
+
+**GUI tests and focus.** `tools/ptgui.py` opens Packet Tracer in the background (`open -g`), moves its windows to the built-in Retina display (`PT_DISPLAY=builtin`, default; `external` for the other screen) and brings it to the front only for the guest login and the Check Results click, then hands focus back to the user's app (measured: about 2.5 s of focus per 55 s test). Screenshots on the Retina panel are 2x, which the OCR of the item counter needs; at 1x it misread 15/15 as 116/15. `tools/ptreport.py` rejects impossible counts and falls back to the Incorrect list.
 
 **Compatibility of the two outputs with 7.x.** The `_v8` files (8.0 format) do not open in 7.2.2: Packet Tracer cannot read files saved by a newer version, and 7.2.2 fails silently with an empty workspace. The `pka-fix` output keeps the 4.1 container and grades fully in 7.2.2, 8.0.0, 8.2.2 and 9.0.1, so it is the more portable deliverable.
 

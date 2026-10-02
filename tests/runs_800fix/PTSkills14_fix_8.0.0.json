@@ -1,0 +1,1032 @@
+{
+ "version": "8.0.0",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/fixvar/PTSkills14_fix.pka",
+ "pid": 82462,
+ "main_title": "Cisco Packet Tracer - /private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/fixvar/PTSkills14_fix.pka",
+ "load_dialogs": [],
+ "activity_window": "PT Activity: 00:00:14",
+ "slash_texts": [],
+ "totals": [],
+ "rows_visible": [
+  [
+   "Network",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Branch1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Host Name",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "OSPF",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Process ID 1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Networks",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route1",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route2",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Passive Interface",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Clock Rate",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Branch2",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "OSPF",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Process ID 1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Networks",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route1",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route2",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Passive Interface",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Clock Rate",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "HQ",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Host Name",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "OSPF",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Process ID 1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Default Information",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Networks",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route1",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route2",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ]
+ ],
+ "incorrect_rows": [
+  [
+   "Network",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Branch1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Host Name",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "OSPF",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Process ID 1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Networks",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route1",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route2",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Passive Interface",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Clock Rate",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Branch2",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "OSPF",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Process ID 1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Networks",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route1",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route2",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Passive Interface",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Clock Rate",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "HQ",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Host Name",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "OSPF",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Process ID 1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Default Information",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Networks",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route1",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route2",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ]
+ ],
+ "incorrect_items": [
+  "Host Name",
+  "Route0",
+  "Route1",
+  "Route2",
+  "FastEthernet0/0",
+  "IP Address",
+  "Port Status",
+  "Subnet Mask",
+  "Clock Rate",
+  "IP Address",
+  "Port Status",
+  "Subnet Mask",
+  "IP Address",
+  "Port Status",
+  "Subnet Mask",
+  "Route0",
+  "Route1",
+  "Route2",
+  "FastEthernet0/0",
+  "IP Address",
+  "Port Status",
+  "Subnet Mask",
+  "Clock Rate",
+  "IP Address",
+  "Port Status",
+  "Subnet Mask",
+  "IP Address",
+  "Port Status",
+  "Subnet Mask",
+  "Host Name",
+  "Default Information",
+  "Route0",
+  "Route1",
+  "Route2"
+ ],
+ "leaves": [
+  [
+   "Host Name",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Route1",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Route2",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "FastEthernet0/0",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Clock Rate",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Route1",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Route2",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "FastEthernet0/0",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Clock Rate",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Host Name",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Default Information",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Route1",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Route2",
+   "Incorrect",
+   "0"
+  ]
+ ],
+ "correct": 0,
+ "incorrect": 55,
+ "screenshot": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/runs800fix/PTSkills14_fix_8.0.0.png",
+ "items_correct": 0,
+ "items_total": 55,
+ "completed": false,
+ "ocr": {
+  "items": "0/0",
+  "score": "0/0",
+  "completed": false
+ },
+ "manual_check": "Item Count 0/55 on screen; OCR read 0/0"
+}

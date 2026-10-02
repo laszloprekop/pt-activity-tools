@@ -123,12 +123,86 @@ def shot(pid, out, sub=''):
     subprocess.run(['screencapture', '-x', '-o', '-l', str(wid), out], check=True)
     return ids[0][1]
 
+
+# ---------------------------------------------------------------- display placement
+def target_bounds():
+    """(x, y, w, h) of the display PT should use, in global top-left coordinates (AX space).
+    PT_DISPLAY=builtin (default) puts PT on the laptop panel so the external screen stays free for the
+    user; PT_DISPLAY=external picks the external screen. Falls back to the main display."""
+    want = os.environ.get('PT_DISPLAY', 'builtin')
+    err, ids, n = Quartz.CGGetActiveDisplayList(16, None, None)
+    ids = list(ids[:n])
+    if want == 'builtin': pick = next((d for d in ids if Quartz.CGDisplayIsBuiltin(d)), None)
+    else: pick = next((d for d in ids if not Quartz.CGDisplayIsBuiltin(d)), None)
+    b = Quartz.CGDisplayBounds(pick or Quartz.CGMainDisplayID())
+    return b.origin.x, b.origin.y, b.size.width, b.size.height
+
+builtin_bounds = target_bounds   # old name
+
+def _set(el, name, kind, value):
+    v = AS.AXValueCreate(kind, value)
+    return AS.AXUIElementSetAttributeValue(el, name, v) == 0
+
+def place_windows(pid, menubar=32):
+    """Move every window of this PT instance onto the target display (see target_bounds), then hand
+    focus back. The main window fills the display; other windows keep their size if they fit."""
+    activate(pid)                      # Qt tool windows (PT Activity) are hidden while PT is inactive
+    x, y, w, h = target_bounds()
+    top, avail_h = y + menubar, h - menubar
+    for i, win in enumerate(windows(pid)):
+        size = attr(win, 'AXSize')
+        try:
+            cw, ch = size.width, size.height
+        except Exception:
+            cw, ch = w, avail_h
+        if title(win).startswith('Cisco Packet Tracer'):
+            cw, ch = w, avail_h
+        cw, ch = min(cw, w), min(ch, avail_h)
+        _set(win, 'AXPosition', AS.kAXValueCGPointType, Quartz.CGPoint(x + 20 * i if cw < w else x, top))
+        _set(win, 'AXSize', AS.kAXValueCGSizeType, Quartz.CGSize(cw, ch))
+    time.sleep(0.3)
+    restore_focus()
+
+to_builtin = place_windows       # old name
+
 # ---------------------------------------------------------------- high level
+_user_pid = None    # the app the user was in before we brought PT forward
+
+def focused_pid():
+    """pid of the frontmost app, read live through the Accessibility API (NSWorkspace is stale
+    in a script without a run loop)."""
+    sysw = AS.AXUIElementCreateSystemWide()
+    app_el = attr(sysw, 'AXFocusedApplication')
+    if app_el is not None:
+        err, pid = AS.AXUIElementGetPid(app_el, None)
+        if err == 0: return pid
+    # fallback: owner of the frontmost normal window (window list is ordered front to back)
+    for w in Quartz.CGWindowListCopyWindowInfo(Quartz.kCGWindowListOptionOnScreenOnly | Quartz.kCGWindowListExcludeDesktopElements, Quartz.kCGNullWindowID):
+        if w.get('kCGWindowLayer') == 0 and w.get('kCGWindowAlpha', 1) > 0:
+            return w.get('kCGWindowOwnerPID')
+    return None
+
+def _is_pt(pid):
+    a = NSRunningApplication.runningApplicationWithProcessIdentifier_(pid) if pid else None
+    return a is not None and (a.bundleIdentifier() or '').startswith('com.netacad.PacketTracer')
+
 def activate(pid):
-    """Qt tool windows (PT Activity, dialogs) are hidden while the app is inactive, so activate first."""
+    """Qt tool windows (PT Activity, dialogs) are hidden while the app is inactive, so activate first.
+    Remembers the user's app so restore_focus() can hand focus straight back."""
+    global _user_pid
+    cur = focused_pid()
+    if cur and not _is_pt(cur): _user_pid = cur
     a = NSRunningApplication.runningApplicationWithProcessIdentifier_(pid)
     if a is not None: a.activateWithOptions_(NSApplicationActivateIgnoringOtherApps)
-    time.sleep(1)
+    time.sleep(0.6)
+
+def restore_focus():
+    """Give focus back to the app the user was in (no-op if unknown or if PT is not in front)."""
+    if not _user_pid: return
+    cur = focused_pid()
+    if cur and not _is_pt(cur): return          # the user already moved on
+    a = NSRunningApplication.runningApplicationWithProcessIdentifier_(_user_pid)
+    if a is not None: a.activateWithOptions_(NSApplicationActivateIgnoringOtherApps)
 
 def pid_of(version):
     """NSWorkspace's process list does not refresh without a run loop, so ask pgrep."""
@@ -151,24 +225,27 @@ def launch(version, path):
             time.sleep(1)
         pid = None
         for attempt in range(6):             # `open` right after a quit is sometimes swallowed: retry
-            subprocess.run(['open', '-a', APPS[version], os.path.abspath(path)], check=True)
+            subprocess.run(['open', '-g', '-a', APPS[version], os.path.abspath(path)], check=True)
             for _ in range(40):
                 time.sleep(1); pid = pid_of(version)
                 if pid and (window(pid, 'Login') or window(pid, 'Cisco Packet Tracer -')): break
             if pid: break
             time.sleep(5)
         if not pid: raise SystemExit('PT did not start')
-    activate(pid)
     for _ in range(90):                      # guest login: the web view exposes a "Guest Login" button
         w = window(pid, 'Login')
         if w is None: break
         b = find(w, lambda e: role(e) == 'AXButton' and 'guest' in title(e).lower(), depth=25)
-        if b is not None and press(b): time.sleep(4)
-        else: time.sleep(1)
+        if b is None:                        # not exposed while PT is in the background: bring it forward briefly
+            activate(pid); b = find(window(pid, 'Login') or w, lambda e: role(e) == 'AXButton' and 'guest' in title(e).lower(), depth=25)
+        ok = b is not None and press(b)
+        restore_focus()
+        time.sleep(4 if ok else 1)
     for _ in range(120):
         if window(pid, 'Cisco Packet Tracer -') and not window(pid, 'Login'): break
         time.sleep(1)
     time.sleep(4)
+    place_windows(pid)
     return pid
 
 def saveas(pid, out):
@@ -225,6 +302,7 @@ if __name__ == '__main__':
         activate(int(a[0]))
         for w in windows(int(a[0])): print(repr(title(w)), role(w), attr(w, 'AXSubrole'))
     elif cmd == 'activate': activate(int(a[0]))
+    elif cmd in ('builtin', 'place'): place_windows(int(a[0]))
     elif cmd == 'dump':
         pid = int(a[0]); el = window(pid, a[1]) if len(a) > 1 else app(pid)
         print('\n'.join(dump(el, int(a[2]) if len(a) > 2 else 6)))

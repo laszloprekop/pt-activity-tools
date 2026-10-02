@@ -19,8 +19,11 @@ for r in runs:
     if 'items_total' not in j and ocr and shot and os.path.exists(shot):
         t = ocr.totals(shot)
         if 'items' in t:
-            a, b = t['items'].split('/'); j['items_correct'], j['items_total'] = int(a), int(b)
-            j['correct'], j['incorrect'] = int(a), int(b) - int(a)
+            a, b = (int(x) for x in t['items'].split('/'))
+            if a > b and 'incorrect_items' in j:      # impossible reading: trust the Incorrect list instead
+                a = b - len(j['incorrect_items']); j['ocr_corrected'] = t['items']
+            j['items_correct'], j['items_total'] = a, b
+            j['correct'], j['incorrect'] = a, b - a
         if 'completed' in t: j['completed'] = t['completed']
         j['ocr'] = t
         json.dump(j, open(r, 'w'), indent=1)

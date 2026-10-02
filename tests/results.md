@@ -1,5 +1,7 @@
 # Test results (2026-10-01 and 2026-10-02)
 
+**Recommended files: `fixed/` (`_fixed`, made by pka-fix).** The `_v8` rows below belong to the earlier, now superseded `converted/` set and are kept as history and as a cross-check.
+
 Every row is one run of `tools/pttest.py`: Packet Tracer of that version opened the file as guest, pressed Check Results, and the Assessment Items table and PT's own "Item Count" (read from the screenshot with `tools/ocr.py`) were recorded. The JSON of every run is in `tests/runs/`.
 
 File name suffixes: `_orig` = the Canvas original as is; `_solved` = the original with the opening state replaced by its answer network (every item must pass); `_v8` = the converted file from `converted/` as is (every item must fail at start, except items the original already satisfies); `_v8solved` = the converted file with the answer network as opening state.
@@ -249,4 +251,40 @@ PTSkills13_solved.pka        7.2.2   80   0   89   80   ITEMS 80!=89
 PTSkills14_fixsolved.pka     7.2.2   55   0   55   55  
 PTSkills14_orig.pka          7.2.2    0  46   55   46   ITEMS 46!=55 incorrect: Host Name, FastEthernet0/0, IP Address, Port Status, Subnet Mask, Clock Rate...
 PTSkills14_solved.pka        7.2.2   46   0   55   46   ITEMS 46!=55
+```
+
+## Fixed files (`fixed/`) in Packet Tracer 8.0.0 (2026-10-03)
+
+All 14 fixed files, as delivered (`_fix`) and with the answer network loaded (`_fixsolved`). Every solved copy reports "completed" with its full item count, including the 9 OSPF items of PTSkills 13 and 14; every fresh copy starts at 0, except the items the original start network already meets (PTSkills13: 9). Runs on the built-in Retina display. One counter misread by OCR (PTSkills14 fresh, 0/55 read as 0/0) was checked on the screenshot and corrected (`manual_check` in its record). Records in `tests/runs_800fix/`.
+
+```
+file                         PT      ok bad  exp  tot  note
+PTSkills1_fix.pka            8.0.0    0   2    2    2   incorrect: Connects to FastEthernet0/1, Connects to FastEthernet0/0
+PTSkills1_fixsolved.pka      8.0.0    2   0    2    2   completed
+PTSkills2_fix.pka            8.0.0    0   6    6    6   NOT-completed incorrect: Default Gateway, DNS Server IP, IP Address, Connects to FastEthernet0/2, Type, Subnet Mask
+PTSkills2_fixsolved.pka      8.0.0    6   0    6    6   completed
+PTSkills3_fix.pka            8.0.0    0  11   11   11   NOT-completed incorrect: Default Gateway, DNS Server IP, IP Address, Connects to FastEthernet0/2, Type, Subnet Mask...
+PTSkills3_fixsolved.pka      8.0.0   11   0   11   11   completed
+PTSkills4_fix.pka            8.0.0    0  15   15   15   NOT-completed incorrect: Default Gateway, DNS Server IP, IP Address, Connects to FastEthernet0/1, Type, Subnet Mask... dialogs: netacad.com Login
+PTSkills4_fixsolved.pka      8.0.0   15   0   15   15   completed
+PTSkills5_fix.pka            8.0.0    0   4    4    4   NOT-completed incorrect: IP Address, Port Status, Subnet Mask, Route0
+PTSkills5_fixsolved.pka      8.0.0    4   0    4    4   completed
+PTSkills6_fix.pka            8.0.0    0  49   49   49   NOT-completed incorrect: Default Gateway, DNS Server IP, IP Address, Connects to FastEthernet0/1, Type, Port Status...
+PTSkills6_fixsolved.pka      8.0.0   49   0   49   49   completed
+PTSkills7_fix.pka            8.0.0    0  33   33   33   NOT-completed incorrect: Default Gateway, DNS Server IP, IP Address, Port Status, Subnet Mask, Default Gateway...
+PTSkills7_fixsolved.pka      8.0.0   33   0   33   33   completed
+PTSkills8_fix.pka            8.0.0    0  20   20   20   NOT-completed incorrect: Connects to FastEthernet0/1, Type, Connects to FastEthernet0/2, Type, Connects to FastEthernet0/0, Type...
+PTSkills8_fixsolved.pka      8.0.0   20   0   20   20   completed
+PTSkills9_fix.pka            8.0.0    0  40   40   40   NOT-completed incorrect: Default Gateway, DNS Server IP, Duplex, IP Address, Connects to FastEthernet0/1, Type...
+PTSkills9_fixsolved.pka      8.0.0   40   0   40   40   completed
+PTSkills10_fix.pka           8.0.0    0  89   89   89   NOT-completed incorrect: Default Gateway, IP Address, Connects to FastEthernet0/2, Type, Subnet Mask, Default Gateway... dialogs: netacad.com Login
+PTSkills10_fixsolved.pka     8.0.0   89   0   89   89   completed dialogs: netacad.com Login
+PTSkills11_fix.pka           8.0.0    0  57   57   57   NOT-completed incorrect: Default Gateway, IP Address, Subnet Mask, Default Gateway, IP Address, Subnet Mask...
+PTSkills11_fixsolved.pka     8.0.0   57   0   57   57   completed
+PTSkills12_fix.pka           8.0.0    0  22   22   22   NOT-completed incorrect: Type, Type, Type, Type, Type, Type...
+PTSkills12_fixsolved.pka     8.0.0   22   0   22   22   completed dialogs: netacad.com Login
+PTSkills13_fix.pka           8.0.0    9  80   89   89   NOT-completed incorrect: Default Gateway, Default Gateway, Password, Host Name, Route0, Route1...
+PTSkills13_fixsolved.pka     8.0.0   89   0   89   89   completed
+PTSkills14_fix.pka           8.0.0    0  55   55   55   NOT-completed incorrect: Host Name, Route0, Route1, Route2, FastEthernet0/0, IP Address...
+PTSkills14_fixsolved.pka     8.0.0   55   0   55   55   completed
 ```

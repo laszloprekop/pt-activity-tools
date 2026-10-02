@@ -60,17 +60,22 @@ def run(version, path, out_json, saveas=None):
     time.sleep(1)
     if saveas:
         rec['saved'] = saveas_(pid, os.path.join(os.path.dirname(path), saveas))
-    # Check Results
+    # Check Results. The PT Activity window is only visible while PT is in front, so activate just for
+    # the button press and hand focus back; the results live in the main window, readable in the background.
+    place_windows(pid)
     activate(pid)
     act = window(pid, 'PT Activity')
     rec['activity_window'] = title(act) if act else None
     if act is None:
+        restore_focus()
         rec['error'] = 'no PT Activity window'
     else:
         b = find(act, lambda e: role(e) == 'AXButton' and title(e) == 'Check Results', depth=10)
-        press(b); time.sleep(4)
+        press(b); restore_focus(); time.sleep(4)
         w = window(pid, 'Cisco Packet Tracer -')
         tab = find(w, lambda e: role(e) == 'AXRadioButton' and title(e) == 'Assessment Items', depth=14)
+        if tab is None:                          # fall back: briefly in front
+            activate(pid); tab = find(w, lambda e: role(e) == 'AXRadioButton' and title(e) == 'Assessment Items', depth=14); restore_focus()
         if tab is None: rec['error'] = 'no Assessment Items tab'
         else:
             press(tab); time.sleep(3)
@@ -104,6 +109,7 @@ def run(version, path, out_json, saveas=None):
             shotfile = out_json[:-5] + '.png'
             ids = window_ids(pid, 'Cisco Packet Tracer -')
             if ids: subprocess.run(['screencapture', '-x', '-o', '-l', str(ids[0][0]), shotfile]); rec['screenshot'] = shotfile
+    restore_focus()
     subprocess.run(['kill', str(pid)]); time.sleep(2)
     json.dump(rec, open(out_json, 'w'), indent=1)
     return rec
