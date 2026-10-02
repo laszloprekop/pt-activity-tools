@@ -142,6 +142,8 @@ From Cisco's What's New page, Packet Tracer Network's release summaries and the 
 - **8.2 / 8.2.1 / 8.2.2 (2022 to June 2024):** ASA 5506-X, IoT boards and home gateway, `show ip ospf interface brief`, proxy settings in the login window, CLI auto-focus; 8.2.2 fixed DLL-conflict crashes on Windows plus accessibility, usability and security bugs. No guest mode (observed: closing the login dialog quits the program).
 - **9.0.0 / 9.0.1 (2025):** industrial networking devices and 11 OT protocols, more realistic fibre, accessibility (screen reader, keyboard focus), "streamlined authentication"; 9.0.1 adds security and stability fixes. Guest login works again (observed). Keeps stored expected values of old files instead of recomputing them (observed), which is why the 4.1 originals fail there.
 
+**Since which version are the 4.1 files broken?** Known good: 8.0.0 (recomputes expected values on load). Known broken: 8.2.2 and 9.0.1 (compare against the stored empty value; 8.2.2 fails the same items as 9.0.1). Not testable here: 8.0.1, 8.1.0, 8.2.0, 8.2.1 (not installed, no longer offered by Cisco). Most likely 8.1.0, which introduced the Tutored Activities engine and reworked assessment feedback; that is a guess. Versions before 8.0 were not tested. The OSPF network item loss is already present in 8.0.0.
+
 None of the new devices matter for these labs (1841 routers, 2960 switches, PCs, one server). The differences that matter are login, stability fixes and the grading engine.
 
 Sources: https://tutorials.ptnetacad.net/help/default/whatsNew.htm , https://www.packettracernetwork.com/features.html , https://www.packettracernetwork.com/features/packet-tracer-9-new-features.html
