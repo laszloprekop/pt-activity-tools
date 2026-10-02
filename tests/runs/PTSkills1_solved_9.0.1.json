@@ -1,0 +1,193 @@
+{
+ "version": "9.0.1",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills1_solved.pka",
+ "pid": 65114,
+ "main_title": "Cisco Packet Tracer - /private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills1_solved.pka - Guest - 2026-10-01 20:37:30",
+ "load_dialogs": [],
+ "activity_window": "PT Activity: 00:00:09",
+ "slash_texts": [
+  "Button:Expand/Collapse All"
+ ],
+ "totals": [],
+ "rows_visible": [
+  [
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "1A",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/1",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Eagle_Server",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to R1-ISP",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ]
+ ],
+ "incorrect_rows": [
+  [
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "1A",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/1",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Eagle_Server",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to R1-ISP",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ]
+ ],
+ "incorrect_items": [
+  "Connects to FastEthernet0/1",
+  "Connects to FastEthernet0/0"
+ ],
+ "leaves": [
+  [
+   "Connects to FastEthernet0/1",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0"
+  ]
+ ],
+ "correct": 0,
+ "incorrect": 2,
+ "screenshot": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/runs/PTSkills1_solved_9.0.1.png",
+ "ocr": {
+  "score": "0/0"
+ },
+ "items_correct": 0,
+ "items_total": 2,
+ "manual_check": "both link items Incorrect in the solved original (Error 1)"
+}

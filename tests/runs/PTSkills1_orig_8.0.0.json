@@ -1,0 +1,117 @@
+{
+ "version": "8.0.0",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills1_orig.pka",
+ "pid": 60074,
+ "main_title": "Cisco Packet Tracer - /private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills1_orig.pka",
+ "load_dialogs": [],
+ "saved": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills1_pt800.pka",
+ "activity_window": "PT Activity: 00:00:19",
+ "result_texts": [
+  "StaticText: (Select a Device to Drag and Drop to the Workspace) ",
+  "StaticText:Time Elapsed: 00:00:26",
+  "StaticText:You did not complete the activity. Please close this window and try again.",
+  "StaticText:: 0",
+  "StaticText:: 0",
+  "StaticText:Score",
+  "StaticText:Item Count"
+ ],
+ "rows": [
+  [
+   "Network",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "1A",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/1",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Eagle_Server",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to R1-ISP",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ]
+ ],
+ "leaves": [
+  [
+   "Connects to FastEthernet0/1",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0"
+  ]
+ ],
+ "correct": 0,
+ "incorrect": 2,
+ "screenshot": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/runs/PTSkills1_orig_8.0.0.png",
+ "items_correct": 0,
+ "items_total": 2,
+ "ocr": {
+  "items": "0/2"
+ }
+}

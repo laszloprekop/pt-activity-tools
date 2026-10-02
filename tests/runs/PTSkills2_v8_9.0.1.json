@@ -1,0 +1,119 @@
+{
+ "version": "9.0.1",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills2_v8.pka",
+ "pid": 81946,
+ "main_title": "Cisco Packet Tracer - /private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills2_v8.pka - Guest - 2026-10-01 21:08:29",
+ "load_dialogs": [],
+ "activity_window": "PT Activity: 00:00:09",
+ "slash_texts": [],
+ "totals": [],
+ "rows_visible": [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+ ],
+ "incorrect_rows": [
+  [
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "1B",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/2",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server IP",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ]
+ ],
+ "incorrect_items": [
+  "Type",
+  "Connects to FastEthernet0/2",
+  "IP Address",
+  "Subnet Mask",
+  "Default Gateway",
+  "DNS Server IP"
+ ],
+ "leaves": [],
+ "correct": 0,
+ "incorrect": 6,
+ "screenshot": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/runs/PTSkills2_v8_9.0.1.png",
+ "items_correct": 0,
+ "items_total": 6,
+ "ocr": {
+  "items": "0/6",
+  "score": "0/0"
+ }
+}

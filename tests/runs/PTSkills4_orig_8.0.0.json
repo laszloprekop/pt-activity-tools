@@ -1,0 +1,309 @@
+{
+ "version": "8.0.0",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills4_orig.pka",
+ "pid": 61307,
+ "main_title": "Cisco Packet Tracer - /private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills4_orig.pka",
+ "load_dialogs": [],
+ "saved": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills4_pt800.pka",
+ "activity_window": "PT Activity: 00:00:19",
+ "result_texts": [
+  "StaticText: (Select a Device to Drag and Drop to the Workspace) ",
+  "StaticText:Time Elapsed: 00:00:26",
+  "StaticText:You did not complete the activity. Please close this window and try again.",
+  "StaticText:: 0",
+  "StaticText:: 0",
+  "StaticText:Score",
+  "StaticText:Item Count"
+ ],
+ "rows": [
+  [
+   "Network",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "1A",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server IP",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/1",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Eagle_Server",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "DNS Enable",
+   "Incorrect",
+   "0",
+   "Ip",
+   ""
+  ],
+  [
+   "Resource Records",
+   "",
+   "0",
+   "Ip",
+   ""
+  ],
+  [
+   "eagle-server.example.com",
+   "",
+   "1",
+   "Ip",
+   ""
+  ],
+  [
+   "A Records",
+   "",
+   "0",
+   "Ip",
+   ""
+  ],
+  [
+   "Address",
+   "Incorrect",
+   "1",
+   "Ip",
+   ""
+  ],
+  [
+   "HTTP Server",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "HTTP Enable",
+   "Incorrect",
+   "0",
+   "Ip",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to R1-ISP",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Power",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ]
+ ],
+ "leaves": [
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "DNS Server IP",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0/1",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "DNS Enable",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Address",
+   "Incorrect",
+   "1"
+  ],
+  [
+   "HTTP Enable",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Power",
+   "Incorrect",
+   "0"
+  ]
+ ],
+ "correct": 0,
+ "incorrect": 15,
+ "screenshot": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/runs/PTSkills4_orig_8.0.0.png",
+ "items_correct": 0,
+ "items_total": 15,
+ "ocr": {
+  "items": "0/15",
+  "score": "0/1"
+ }
+}

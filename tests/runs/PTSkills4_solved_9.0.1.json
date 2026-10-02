@@ -1,0 +1,157 @@
+{
+ "version": "9.0.1",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills4_solved.pka",
+ "pid": 67056,
+ "main_title": "Cisco Packet Tracer - /private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills4_solved.pka - Guest - 2026-10-01 20:41:12",
+ "load_dialogs": [],
+ "activity_window": "PT Activity: 00:00:09",
+ "slash_texts": [],
+ "totals": [],
+ "rows_visible": [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+ ],
+ "incorrect_rows": [
+  [
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "1A",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/1",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server IP",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Eagle_Server",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to R1-ISP",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ]
+ ],
+ "incorrect_items": [
+  "Type",
+  "Connects to FastEthernet0/1",
+  "DNS Server IP",
+  "Type",
+  "Connects to FastEthernet0/0"
+ ],
+ "leaves": [],
+ "correct": 10,
+ "incorrect": 5,
+ "screenshot": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/runs/PTSkills4_solved_9.0.1.png",
+ "items_correct": 10,
+ "items_total": 15,
+ "ocr": {
+  "items": "10/15",
+  "score": "1/1"
+ }
+}

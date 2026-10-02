@@ -1,0 +1,6 @@
+{
+  "name": "pt-activity-tools",
+  "private": true,
+  "description": "Decode, inspect and rebuild Cisco Packet Tracer .pka/.pkt files",
+  "dependencies": { "twofish": "^1.0.1" }
+}

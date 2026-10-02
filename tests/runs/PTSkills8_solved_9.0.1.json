@@ -1,0 +1,469 @@
+{
+ "version": "9.0.1",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills8_solved.pka",
+ "pid": 68662,
+ "main_title": "Cisco Packet Tracer - /private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills8_solved.pka - Guest - 2026-10-01 20:46:33",
+ "load_dialogs": [],
+ "activity_window": "PT Activity: 00:00:09",
+ "slash_texts": [],
+ "totals": [],
+ "rows_visible": [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+ ],
+ "incorrect_rows": [
+  [
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "R1-ISP",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to Eagle_Server",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to Serial0/0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/24",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to R1-ISP",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to Serial0/0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to 1A",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "FastEthernet0/2",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to 1B",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "FastEthernet0/24",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "1A",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/1",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "1B",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/2",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Eagle_Server",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Link to R1-ISP",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ]
+ ],
+ "incorrect_items": [
+  "Type",
+  "Connects to FastEthernet0",
+  "Type",
+  "Connects to Serial0/0/0",
+  "Type",
+  "Connects to FastEthernet0/24",
+  "Type",
+  "Connects to Serial0/0/0",
+  "Type",
+  "Connects to FastEthernet0",
+  "Type",
+  "Connects to FastEthernet0",
+  "Type",
+  "Connects to FastEthernet0/0",
+  "Type",
+  "Connects to FastEthernet0/1",
+  "Type",
+  "Connects to FastEthernet0/2",
+  "Type",
+  "Connects to FastEthernet0/0"
+ ],
+ "leaves": [],
+ "correct": 0,
+ "incorrect": 20,
+ "screenshot": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/runs/PTSkills8_solved_9.0.1.png",
+ "items_correct": 0,
+ "items_total": 20,
+ "ocr": {
+  "items": "0/20",
+  "score": "0/0"
+ }
+}

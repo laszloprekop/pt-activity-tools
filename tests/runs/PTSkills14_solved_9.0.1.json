@@ -1,0 +1,292 @@
+{
+ "version": "9.0.1",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills14_solved.pka",
+ "pid": 70524,
+ "main_title": "Cisco Packet Tracer - /private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills14_solved.pka - Guest - 2026-10-01 20:54:39",
+ "load_dialogs": [],
+ "activity_window": "PT Activity: 00:00:09",
+ "slash_texts": [],
+ "totals": [],
+ "rows_visible": [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+ ],
+ "incorrect_rows": [
+  [
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "HQ",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Routes",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "OSPF",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Process ID 1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Passive Interface",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Branch1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "OSPF",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Process ID 1",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Passive Interface",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Branch2",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "OSPF",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Process ID 1",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Passive Interface",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "PC1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "PC2",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "PC3",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ]
+ ],
+ "incorrect_items": [
+  "FastEthernet0/0",
+  "FastEthernet0/0",
+  "FastEthernet0/0"
+ ],
+ "leaves": [],
+ "correct": 45,
+ "incorrect": 1,
+ "screenshot": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/runs/PTSkills14_solved_9.0.1.png",
+ "items_correct": 45,
+ "items_total": 46,
+ "ocr": {
+  "score": "0/0",
+  "items": "45/46"
+ }
+}

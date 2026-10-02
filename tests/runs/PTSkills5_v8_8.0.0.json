@@ -1,0 +1,193 @@
+{
+ "version": "8.0.0",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills5_v8.pka",
+ "pid": 77039,
+ "main_title": "Cisco Packet Tracer - /private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills5_v8.pka",
+ "load_dialogs": [],
+ "activity_window": "PT Activity: 00:00:12",
+ "slash_texts": [],
+ "totals": [],
+ "rows_visible": [
+  [
+   "Network",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Routes",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Static Routes",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "1",
+   "Routing",
+   ""
+  ]
+ ],
+ "incorrect_rows": [
+  [
+   "Network",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Routes",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Static Routes",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "1",
+   "Routing",
+   ""
+  ]
+ ],
+ "incorrect_items": [
+  "IP Address",
+  "Port Status",
+  "Subnet Mask",
+  "Route0"
+ ],
+ "leaves": [
+  [
+   "IP Address",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "1"
+  ]
+ ],
+ "correct": 0,
+ "incorrect": 4,
+ "screenshot": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/runs/PTSkills5_v8_8.0.0.png",
+ "items_correct": 0,
+ "items_total": 4,
+ "completed": false,
+ "ocr": {
+  "items": "0/4",
+  "score": "0/1",
+  "completed": false
+ }
+}

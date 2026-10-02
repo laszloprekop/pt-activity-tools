@@ -1,0 +1,549 @@
+{
+ "version": "9.0.1",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills7_v8.pka",
+ "pid": 83305,
+ "main_title": "Cisco Packet Tracer - /private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/variants/PTSkills7_v8.pka - Guest - 2026-10-01 21:08:44",
+ "load_dialogs": [],
+ "activity_window": "PT Activity: 00:00:09",
+ "slash_texts": [],
+ "totals": [],
+ "rows_visible": [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
+ ],
+ "incorrect_rows": [
+  [
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "R1-ISP",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to Serial0/0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Routes",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Static Routes",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "1",
+   "Routing",
+   ""
+  ],
+  [
+   "R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to R1-ISP",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Connects to Serial0/0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Routes",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Static Routes",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "Route0",
+   "Incorrect",
+   "1",
+   "Routing",
+   ""
+  ],
+  [
+   "1A",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "0"
+  ],
+  [
+   "1B",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server IP",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Eagle_Server",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "DNS Enable",
+   "Incorrect",
+   "0",
+   "Ip",
+   ""
+  ],
+  [
+   "Resource Records",
+   "",
+   "0",
+   "Ip",
+   ""
+  ],
+  [
+   "eagle-server.example.com",
+   "",
+   "1",
+   "Ip",
+   ""
+  ],
+  [
+   "A Records",
+   "",
+   "0",
+   "Ip",
+   ""
+  ],
+  [
+   "Address",
+   "Incorrect",
+   "1",
+   "Ip",
+   ""
+  ],
+  [
+   "HTTP Server",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "HTTP Enable",
+   "Incorrect",
+   "0",
+   "Ip",
+   ""
+  ]
+ ],
+ "incorrect_items": [
+  "IP Address",
+  "Subnet Mask",
+  "Port Status",
+  "Type",
+  "Connects to Serial0/0/0",
+  "IP Address",
+  "Subnet Mask",
+  "Route0",
+  "Port Status",
+  "IP Address",
+  "Subnet Mask",
+  "Port Status",
+  "Type",
+  "Connects to Serial0/0/0",
+  "IP Address",
+  "Subnet Mask",
+  "Route0",
+  "Port Status",
+  "IP Address",
+  "Subnet Mask",
+  "Default Gateway",
+  "IP Address",
+  "Subnet Mask",
+  "Default Gateway",
+  "DNS Server IP",
+  "Port Status",
+  "IP Address",
+  "Subnet Mask",
+  "Default Gateway",
+  "DNS Enable",
+  "Address",
+  "HTTP Enable"
+ ],
+ "leaves": [],
+ "correct": 0,
+ "incorrect": 33,
+ "screenshot": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/runs/PTSkills7_v8_9.0.1.png",
+ "items_correct": 0,
+ "items_total": 33,
+ "ocr": {
+  "items": "0/33",
+  "score": "0/3"
+ }
+}
