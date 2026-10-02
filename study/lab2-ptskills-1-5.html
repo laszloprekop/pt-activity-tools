@@ -1,0 +1,821 @@
+<title>Lab 2 Study Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Condensed:wght@500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: sticky contents rail + one reading column; colour only marks recurring roles (why, unlocks, hidden question, Canvas, drop). */
+:root {
+  --bg: #f6f8f7; --surface: #ffffff; --surface-2: #edf1f1; --fg: #1f2a30; --muted: #5a6870; --line: #d6dee0;
+  --accent: #1f6f78; --accent-soft: #e0eff0;
+  --why: #3b5f9e; --why-soft: #e7edf8;
+  --unlock: #2f7a4f; --unlock-soft: #e1f1e6;
+  --hidden: #8f621a; --hidden-soft: #f6eedb;
+  --canvas: #6b4fa0; --canvas-soft: #efe9f8;
+  --drop: #ad463d; --drop-soft: #f7e4e1;
+  --udp: #a8731a; --tcp: #3b5f9e; --http: #2f7a4f;
+  --body: "Atkinson Hyperlegible", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --head: "IBM Plex Sans Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161b1e; --surface: #1e2428; --surface-2: #262e33; --fg: #e2e8ea; --muted: #9eabb2; --line: #354047;
+    --accent: #7cc3c9; --accent-soft: #1f3538; --why: #94b2e6; --why-soft: #222d40; --unlock: #8fd0a6; --unlock-soft: #1f3327;
+    --hidden: #e0b46a; --hidden-soft: #382e1d; --canvas: #bba3e6; --canvas-soft: #2d2540; --drop: #ea9b92; --drop-soft: #3d2623;
+    --udp: #e0b46a; --tcp: #94b2e6; --http: #8fd0a6; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161b1e; --surface: #1e2428; --surface-2: #262e33; --fg: #e2e8ea; --muted: #9eabb2; --line: #354047;
+  --accent: #7cc3c9; --accent-soft: #1f3538; --why: #94b2e6; --why-soft: #222d40; --unlock: #8fd0a6; --unlock-soft: #1f3327;
+  --hidden: #e0b46a; --hidden-soft: #382e1d; --canvas: #bba3e6; --canvas-soft: #2d2540; --drop: #ea9b92; --drop-soft: #3d2623;
+  --udp: #e0b46a; --tcp: #94b2e6; --http: #8fd0a6; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+.layout { max-width: 76rem; margin: 0 auto; padding-inline: 16px; display: grid; gap: 2rem; }
+@media (min-width: 1000px) { .layout { grid-template-columns: 14rem minmax(0, 1fr); } }
+nav.toc { padding-block: 1.5rem; font-family: var(--head); font-size: 0.95rem; }
+@media (min-width: 1000px) { nav.toc { position: sticky; top: env(safe-area-inset-top, 0px); align-self: start; max-height: 100vh; overflow-y: auto; } }
+nav.toc .lbl { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+nav.toc ol { list-style: none; padding: 0; margin: 0.5rem 0 0; display: grid; gap: 0.15rem; }
+nav.toc a { color: var(--fg); text-decoration: none; display: block; padding: 0.2rem 0.5rem; border-radius: 4px; }
+nav.toc a:hover, nav.toc a:focus-visible { background: var(--surface-2); outline: none; }
+nav.toc .sub { padding-left: 1rem; color: var(--muted); }
+main { min-width: 0; max-width: 48rem; padding-block: 1.5rem 4rem; }
+h1, h2, h3, h4 { font-family: var(--head); font-weight: 600; line-height: 1.2; text-wrap: balance; margin: 0; }
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.6rem; margin-top: 3.5rem; padding-top: 1rem; border-top: 2px solid var(--line); scroll-margin-top: 1rem; }
+h3 { font-size: 1.2rem; margin-top: 2rem; scroll-margin-top: 1rem; }
+h4 { font-size: 1rem; margin-top: 1.3rem; }
+p { margin: 0.75rem 0 0; }
+ul, ol { margin: 0.6rem 0 0; padding-left: 1.3rem; }
+li { margin-top: 0.3rem; }
+li::marker { color: var(--accent); }
+a { color: var(--accent); }
+a:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+code, .mono { font-family: var(--mono); font-size: 0.86em; background: var(--surface-2); padding: 0.05em 0.35em; border-radius: 3px; white-space: nowrap; }
+.term { font-weight: 700; }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 40rem; }
+.meta { font-family: var(--head); font-size: 0.85rem; color: var(--muted); letter-spacing: 0.03em; margin-top: 0.6rem; }
+/* chips: the recurring visual anchors */
+.chip { display: inline-flex; align-items: center; gap: 0.35em; font: 600 0.72rem/1 var(--head); letter-spacing: 0.07em; text-transform: uppercase; padding: 0.35em 0.6em; border-radius: 4px; white-space: nowrap; }
+.chip svg { width: 14px; height: 14px; flex: none; }
+.chip.why { color: var(--why); background: var(--why-soft); }
+.chip.unlock { color: var(--unlock); background: var(--unlock-soft); }
+.chip.watch { color: var(--accent); background: var(--accent-soft); }
+.chip.fix { color: var(--drop); background: var(--drop-soft); }
+.chip.hidden { color: var(--hidden); background: var(--hidden-soft); }
+.chip.canvas { color: var(--canvas); background: var(--canvas-soft); }
+.chip.shot { color: var(--muted); background: var(--surface-2); }
+svg.ic { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+/* steps */
+ol.steps { list-style: none; counter-reset: step; padding: 0; margin-top: 1rem; }
+ol.steps > li { counter-increment: step; display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); column-gap: 0.9rem; padding: 0.9rem 0; margin: 0; border-top: 1px solid var(--line); }
+ol.steps > li::before { content: counter(step); grid-row: 1 / span 20; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font: 600 0.95rem var(--head); }
+.do { margin: 0; }
+.note { display: grid; grid-template-columns: 7.2rem minmax(0, 1fr); gap: 0.7rem; align-items: start; margin-top: 0.5rem; font-size: 0.95rem; }
+.note > .chip { justify-self: start; margin-top: 0.15rem; }
+.note p { margin: 0; }
+@media (max-width: 560px) { .note { grid-template-columns: 1fr; gap: 0.25rem; } }
+/* callouts */
+.callout { --c: var(--accent); --cs: var(--accent-soft); border: 1px solid var(--line); border-left: 4px solid var(--c); background: var(--surface); border-radius: 0 6px 6px 0; padding: 0.9rem 1.1rem; margin-top: 1.2rem; }
+.callout > .chip { margin-bottom: 0.4rem; }
+.callout.hidden { --c: var(--hidden); --cs: var(--hidden-soft); }
+.callout.canvas { --c: var(--canvas); --cs: var(--canvas-soft); }
+.callout.brief { --c: var(--unlock); background: var(--unlock-soft); }
+.callout.warn { --c: var(--drop); background: var(--drop-soft); }
+.callout blockquote { margin: 0.4rem 0 0; font-style: italic; }
+.callout blockquote + blockquote { margin-top: 0.6rem; }
+.callout .src { font: 600 0.75rem var(--head); letter-spacing: 0.05em; text-transform: uppercase; color: var(--c); display: block; font-style: normal; }
+dl.qa { margin: 0.5rem 0 0; }
+dl.qa dt { font-weight: 700; margin-top: 0.8rem; }
+dl.qa dt:first-child { margin-top: 0.2rem; }
+dl.qa dd { margin: 0.2rem 0 0; }
+.brief ul { margin-top: 0.3rem; }
+/* activity header */
+.act-head { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.2rem; margin-top: 1rem; display: grid; gap: 0.8rem; }
+.act-head .row { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; align-items: center; font-size: 0.92rem; }
+.act-head .k { font: 600 0.75rem var(--head); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.meter { display: flex; flex-wrap: wrap; gap: 4px; }
+.meter span { width: 18px; height: 18px; border-radius: 3px; background: var(--unlock); border: 1px solid var(--unlock); animation: fillin 0.35s ease both; animation-delay: calc(var(--i) * 0.12s + 0.3s); }
+@keyframes fillin { from { background: transparent; } to { background: var(--unlock); } }
+.state { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.92rem; flex-wrap: wrap; }
+.state .from { color: var(--drop); }
+.state .to { color: var(--unlock); }
+/* answers */
+.answer { margin-top: 1.6rem; padding: 1.1rem 1.2rem; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+.answer > h4 { margin-top: 0; display: flex; gap: 0.6rem; align-items: baseline; flex-wrap: wrap; }
+/* glossary, tables */
+dl.gloss { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.55rem 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.2rem; margin-top: 1rem; }
+dl.gloss dt { font-weight: 700; color: var(--accent); }
+dl.gloss dd { margin: 0; }
+@media (max-width: 560px) { dl.gloss { grid-template-columns: 1fr; gap: 0.1rem; } dl.gloss dd { margin-bottom: 0.6rem; } }
+.tbl { overflow-x: auto; margin-top: 1rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 600 0.75rem var(--head); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
+tr:last-child td { border-bottom: 0; }
+td.m { font-family: var(--mono); font-size: 0.85rem; white-space: nowrap; }
+/* figures */
+figure { margin: 1.3rem 0 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1rem; overflow-x: auto; }
+figure svg.fig { display: block; width: 100%; height: auto; min-width: 540px; }
+figcaption { font-size: 0.88rem; color: var(--muted); margin-top: 0.6rem; }
+.s-zone { fill: var(--surface-2); stroke: var(--line); }
+.s-node { fill: var(--surface); stroke: var(--fg); stroke-width: 1.5; }
+.s-link { stroke: var(--muted); stroke-width: 2; fill: none; }
+.s-link.serial { stroke: var(--accent); stroke-dasharray: 6 4; }
+.s-link.cross { stroke-dasharray: 3 3; }
+.s-t { fill: var(--fg); font: 600 12px var(--head); }
+.s-tm { fill: var(--muted); font: 10.5px var(--mono); }
+.s-tz { fill: var(--muted); font: 600 11px var(--head); letter-spacing: 0.06em; }
+.s-life { stroke: var(--line); stroke-width: 2; stroke-dasharray: 4 4; }
+.s-head { fill: var(--surface-2); stroke: var(--line); }
+.s-pkt { fill: var(--accent); }
+.s-ok { stroke: var(--unlock); stroke-width: 2.5; fill: none; }
+.s-x { stroke: var(--drop); stroke-width: 3; }
+.s-udp { stroke: var(--udp); } .f-udp { fill: var(--udp); }
+.s-tcp { stroke: var(--tcp); } .f-tcp { fill: var(--tcp); }
+.s-http { stroke: var(--http); } .f-http { fill: var(--http); }
+.f-drop { fill: var(--drop); } .f-ok { fill: var(--unlock); } .f-acc { fill: var(--accent); }
+.s-arrow { stroke-width: 2; fill: none; }
+.s-field { fill: var(--surface); stroke: var(--line); }
+.s-field.hl { fill: var(--accent-soft); stroke: var(--accent); }
+.legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0.5rem; }
+.legend i { display: inline-block; width: 0.9rem; height: 3px; vertical-align: middle; margin-right: 0.35rem; }
+/* checklist */
+ul.check { list-style: none; padding: 0; }
+ul.check li { display: flex; gap: 0.6rem; align-items: flex-start; }
+ul.check input { margin-top: 0.35rem; accent-color: var(--accent); width: 1rem; height: 1rem; flex: none; }
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.88rem; }
+@media (prefers-reduced-motion: reduce) { .anim { display: none; } .meter span { animation: none; } }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-why" viewBox="0 0 16 16"><path d="M8 1.8a4.2 4.2 0 0 0-2.6 7.5c.5.4.8 1 .8 1.6V12h3.6v-1.1c0-.6.3-1.2.8-1.6A4.2 4.2 0 0 0 8 1.8zM6.4 14h3.2"/></symbol>
+  <symbol id="i-unlock" viewBox="0 0 16 16"><rect x="3" y="7" width="10" height="7.5" rx="1.5"/><path d="M5.5 7V4.8a2.5 2.5 0 0 1 4.9-.7"/></symbol>
+  <symbol id="i-watch" viewBox="0 0 16 16"><path d="M1.5 8s2.4-4.5 6.5-4.5S14.5 8 14.5 8s-2.4 4.5-6.5 4.5S1.5 8 1.5 8z"/><circle cx="8" cy="8" r="2"/></symbol>
+  <symbol id="i-fix" viewBox="0 0 16 16"><path d="M10.8 1.8a3.5 3.5 0 0 0-3.3 4.6L2.2 11.7a1.4 1.4 0 0 0 2 2l5.3-5.3a3.5 3.5 0 0 0 4.6-3.3l-2 2-2-.5-.5-2z"/></symbol>
+  <symbol id="i-q" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5"/><path d="M6.2 6.2a1.9 1.9 0 1 1 2.6 1.7c-.5.2-.8.6-.8 1.1v.4M8 11.5v.2"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 16 16"><path d="M4 1.5h5.5l3 3v10H4z"/><path d="M9.5 1.5v3h3M6 8h4.5M6 10.5h4.5"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 16 16"><rect x="1.5" y="4" width="13" height="9.5" rx="1.5"/><circle cx="8" cy="8.7" r="2.6"/><path d="M5.5 4l1-1.5h3l1 1.5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 16 16"><path d="M9 1.5 3.5 9H8l-1 5.5L12.5 7H8z"/></symbol>
+</svg>
+
+<div class="layout">
+<nav class="toc" aria-label="Contents">
+  <div class="lbl">Lab 2 study guide</div>
+  <ol>
+    <li><a href="#assignment">The assignment</a></li>
+    <li><a href="#words">Words you will meet</a></li>
+    <li><a href="#network">The lab network</a></li>
+    <li><a href="#basics">Packet Tracer basics</a></li>
+    <li><a href="#pt1">PTSkills 1: Introduction</a></li>
+    <li><a href="#pt2">PTSkills 2: Examining Packets</a></li>
+    <li><a href="#pt3">PTSkills 3: Hosts and Services</a></li>
+    <li><a href="#pt4">PTSkills 4: Application and Transport</a></li>
+    <li><a href="#pt5">PTSkills 5: Routing IP Packets</a></li>
+    <li><a href="#shots">Screenshots checklist</a></li>
+  </ol>
+  <p class="meta" style="margin-top:1rem">How to read the steps: <span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span> explains the reason, <span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span> names the checked items it completes, <span class="chip watch"><svg class="ic"><use href="#i-watch"/></svg>Watch</span> says what to look at.</p>
+</nav>
+
+<main>
+<h1>Lab 2 Study Guide: PTSkills 1 to 5</h1>
+<p class="lede">The five Packet Tracer activities of Lab 2, rewritten as numbered steps for newcomers, with the reason behind every step, the questions hidden in the activity text, and draft answers to the report questions.</p>
+<p class="meta">Z0025E Computer Networks &middot; written 2 October 2026 &middot; answers are drafts, rewrite them in your own words</p>
+
+<div class="callout warn">
+  <p style="margin:0"><b>Which files to open.</b> In Packet Tracer 8.2.x or 9.x use the repaired <code>_v8</code> files from the <code>converted/</code> folder of the pt-activity-tools repository. The Canvas originals cannot reach 100 % there because some of their checks are broken. In 8.0.0 both work.</p>
+</div>
+
+<!-- ============================================================ ASSIGNMENT -->
+<h2 id="assignment">The assignment, as written on Canvas</h2>
+<p>From <a href="https://ltuedu.instructure.com/courses/614/assignments/3042">9.5 Lab 2 (Submit your report)</a>, read on 2 October 2026.</p>
+<div class="callout canvas">
+  <span class="chip canvas"><svg class="ic"><use href="#i-doc"/></svg>Canvas text</span>
+  <blockquote>In this lab, you will be working with the network simulation tool Cisco Packet Tracer and PTSkills 1-5. This lab can be completed either individually or in a group of 3 or 4. There are three main learning activities of this lab: Complete the Lab Sheet, Submit a lab report on canvas, Present lab on Zoom.</blockquote>
+  <blockquote>Goal 1: Learn to use the Packet Tracer Simulation Tool and learn to analyze PDUs in simulation and realtime mode. Goal 2: Learn to configure and connect hosts and servers and examine DNS, HTTP, TCP and UDP traffic. Goal 3: Learn to configure routers and examine IP packet routing.</blockquote>
+  <blockquote>You must submit a lab report. If you are working as a group, you may work together on a single report. Only one member of the group should submit the report on Canvas. [...] Include a screenshot of the Check Results tab to show the completion of each PTSkills. Answers to the questions from each PTSkills.</blockquote>
+  <blockquote>For the group presentation, you will present what you did in the lab (Using your lab report) and active participation from all group members are expected. [...] Signup with a time slot on the LAB SIGNUP SHEET. Attend the lab presentation on Zoom.</blockquote>
+</div>
+<div class="tbl"><table>
+  <tr><th>What</th><th>Details</th></tr>
+  <tr><td>Hand in</td><td>One PDF per group, submitted by one member</td></tr>
+  <tr><td>Due</td><td>2 October 2026, 23:59</td></tr>
+  <tr><td>Points</td><td>5: one per PTSkills activity, full marks or no marks</td></tr>
+  <tr><td>Per activity</td><td>Screenshot of Check Results with the Assessment Items tab, plus the answers</td></tr>
+</table></div>
+<div class="tbl"><table>
+  <tr><th>Activity</th><th>Questions on Canvas</th></tr>
+  <tr><td>PTSkills 1</td><td>1: "Explain the difference between a router and a switch"</td></tr>
+  <tr><td>PTSkills 2</td><td>1: why the first one-shot ping fails "because of the ARP process"</td></tr>
+  <tr><td>PTSkills 3</td><td>1: what happens when you type a URL; which client-server interactions</td></tr>
+  <tr><td>PTSkills 4</td><td>3: sequence diagram; where things go wrong; DNS vs HTTP and UDP vs TCP</td></tr>
+  <tr><td>PTSkills 5</td><td>2: what an IP packet contains and how to see it; what a route is</td></tr>
+</table></div>
+<p>The exact wording of each question is quoted again in its activity, together with the activity's own <i>Reflection</i> paragraph.</p>
+
+<!-- ============================================================ WORDS -->
+<h2 id="words">Words you will meet</h2>
+<dl class="gloss">
+  <dt>Activity (.pka)</dt><dd>A Packet Tracer file with a half-built network, instructions, and a hidden checklist. <b>Check Results</b> compares your network with the checklist.</dd>
+  <dt>Realtime mode</dt><dd>The network runs at normal speed, like real equipment.</dd>
+  <dt>Simulation mode</dt><dd>The network runs step by step; every packet is an envelope you can open.</dd>
+  <dt>PDU</dt><dd>"Protocol data unit": Packet Tracer's word for one packet or frame. <b>Add Simple PDU</b> sends one test ping.</dd>
+  <dt>Ping</dt><dd>A small test message (ICMP echo request). An answer means the path works.</dd>
+  <dt>Frame, packet, segment</dt><dd>The same data at three layers. A <i>frame</i> carries MAC addresses (layer 2, one LAN), a <i>packet</i> carries IP addresses (layer 3, across networks), a <i>segment</i> or <i>datagram</i> carries port numbers (layer 4, TCP or UDP).</dd>
+  <dt>MAC address</dt><dd>The fixed hardware address of a network card, like <code>0001.4300.E101</code>. Used inside one LAN.</dd>
+  <dt>IP address, mask</dt><dd>The logical address, and the rule for which addresses share a network. <code>172.16.1.1</code> with <code>255.255.0.0</code> means "everything starting with 172.16 is my network".</dd>
+  <dt>Default gateway</dt><dd>The router a PC sends to when the destination is outside its own network.</dd>
+  <dt>DNS</dt><dd>The phone book that turns a name (eagle-server.example.com) into an IP address.</dd>
+  <dt>HTTP</dt><dd>The protocol a browser uses to ask a web server for a page.</dd>
+  <dt>ARP</dt><dd>The question "who has this IP address, tell me your MAC?" asked before sending a frame inside the LAN.</dd>
+  <dt>Route</dt><dd>One line in a router's table: "to reach network X, send to Y".</dd>
+  <dt>Default route</dt><dd>The catch-all route <code>0.0.0.0/0</code>: "send everything else to Y".</dd>
+</dl>
+
+<!-- ============================================================ NETWORK -->
+<h2 id="network">The lab network</h2>
+<p>All five activities use the same six devices. Only the broken parts change from activity to activity.</p>
+<figure>
+<svg class="fig" viewBox="0 0 720 245" role="img" aria-labelledby="topo-t">
+  <title id="topo-t">Lab topology: PC 1A and PC 1B on switch S1-Central, router R2-Central, serial link to router R1-ISP, Eagle Server behind R1-ISP. A packet travels from PC 1B to Eagle Server.</title>
+  <rect class="s-zone" x="14" y="12" width="390" height="226" rx="10"/>
+  <text class="s-tz" x="28" y="32">LAN 172.16.0.0/16</text>
+  <rect class="s-zone" x="502" y="12" width="204" height="226" rx="10"/>
+  <text class="s-tz" x="516" y="32">SERVER NET 192.168.254.0/24</text>
+  <text class="s-tz" x="408" y="96">LINK 10.10.10.4/30</text>
+  <line class="s-link" x1="70" y1="65" x2="220" y2="120"/>
+  <line class="s-link" x1="70" y1="180" x2="220" y2="120"/>
+  <line class="s-link" x1="220" y1="120" x2="370" y2="120"/>
+  <line class="s-link serial" x1="370" y1="120" x2="530" y2="120"/>
+  <line class="s-link cross" x1="530" y1="120" x2="660" y2="120"/>
+  <rect class="s-node" x="47" y="50" width="46" height="30" rx="3"/><text class="s-t" x="70" y="70" text-anchor="middle">PC</text>
+  <text class="s-t" x="105" y="57">PC 1A</text><text class="s-tm" x="105" y="72">172.16.1.1</text>
+  <rect class="s-node" x="47" y="165" width="46" height="30" rx="3"/><text class="s-t" x="70" y="185" text-anchor="middle">PC</text>
+  <text class="s-t" x="105" y="200">PC 1B</text><text class="s-tm" x="105" y="215">172.16.1.2</text>
+  <rect class="s-node" x="192" y="107" width="56" height="26" rx="3"/><text class="s-t" x="220" y="124" text-anchor="middle">SW</text>
+  <text class="s-t" x="220" y="152" text-anchor="middle">S1-Central</text><text class="s-tm" x="220" y="166" text-anchor="middle">VLAN1 .254.1</text>
+  <circle class="s-node" cx="370" cy="120" r="22"/><text class="s-t" x="370" y="124" text-anchor="middle">R</text>
+  <text class="s-t" x="370" y="160" text-anchor="middle">R2-Central</text><text class="s-tm" x="370" y="174" text-anchor="middle">Fa0/0 172.16.255.254</text><text class="s-tm" x="370" y="188" text-anchor="middle">S0/0/0 10.10.10.5</text>
+  <circle class="s-node" cx="530" cy="120" r="22"/><text class="s-t" x="530" y="124" text-anchor="middle">R</text>
+  <text class="s-t" x="530" y="160" text-anchor="middle">R1-ISP</text><text class="s-tm" x="530" y="174" text-anchor="middle">S0/0/0 10.10.10.6</text><text class="s-tm" x="530" y="188" text-anchor="middle">Fa0/0 .254.253</text>
+  <rect class="s-node" x="643" y="97" width="34" height="46" rx="3"/><text class="s-t" x="660" y="124" text-anchor="middle">SRV</text>
+  <text class="s-t" x="660" y="162" text-anchor="middle">Eagle Server</text><text class="s-tm" x="660" y="176" text-anchor="middle">192.168.254.254</text>
+  <circle class="s-pkt anim" r="7">
+    <animateMotion dur="7s" repeatCount="indefinite" path="M70,180 L220,120 L370,120 L530,120 L660,120" keyPoints="0;1;1" keyTimes="0;0.85;1" calcMode="linear"/>
+    <animate attributeName="opacity" dur="7s" repeatCount="indefinite" values="1;1;0" keyTimes="0;0.85;1"/>
+  </circle>
+</svg>
+<figcaption>Two routers join three networks. The moving dot is a ping from PC 1B to Eagle Server: switch, R2-Central, the serial link, R1-ISP, server. Solid lines are straight-through cables, the dashed line on the left of R1-ISP is the serial link, the short-dashed line to the server is a crossover cable.</figcaption>
+</figure>
+<div class="tbl"><table>
+  <tr><th>Device</th><th>Port</th><th>IP address</th><th>Mask</th><th>Default gateway</th></tr>
+  <tr><td>R1-ISP</td><td>Fa0/0</td><td class="m">192.168.254.253</td><td class="m">255.255.255.0</td><td>none</td></tr>
+  <tr><td>R1-ISP</td><td>S0/0/0</td><td class="m">10.10.10.6</td><td class="m">255.255.255.252</td><td>none</td></tr>
+  <tr><td>R2-Central</td><td>Fa0/0</td><td class="m">172.16.255.254</td><td class="m">255.255.0.0</td><td>none</td></tr>
+  <tr><td>R2-Central</td><td>S0/0/0</td><td class="m">10.10.10.5</td><td class="m">255.255.255.252</td><td>none</td></tr>
+  <tr><td>S1-Central</td><td>VLAN 1</td><td class="m">172.16.254.1</td><td class="m">255.255.0.0</td><td class="m">172.16.255.254</td></tr>
+  <tr><td>PC 1A</td><td>NIC</td><td class="m">172.16.1.1</td><td class="m">255.255.0.0</td><td class="m">172.16.255.254</td></tr>
+  <tr><td>PC 1B</td><td>NIC</td><td class="m">172.16.1.2</td><td class="m">255.255.0.0</td><td class="m">172.16.255.254</td></tr>
+  <tr><td>Eagle Server</td><td>NIC</td><td class="m">192.168.254.254</td><td class="m">255.255.255.0</td><td class="m">192.168.254.253</td></tr>
+</table></div>
+<p><b>Cable rule of thumb.</b> PC to switch and switch to router use <i>straight-through</i>. Server to router uses <i>crossover</i>, because both sides "talk on the same wires". Router to router uses <i>serial</i>.</p>
+
+<h3 id="basics">Packet Tracer basics used everywhere</h3>
+<ul>
+  <li><b>Hover</b> over a device to see its addresses and port states.</li>
+  <li><b>Click</b> a device to open it. Routers and switches: Physical, Config, CLI tabs. PCs: Physical, Config, Desktop. Servers: Physical, Config, Services (older versions put services under Config).</li>
+  <li>The device list is at the bottom left; cables are under the <svg class="ic" style="vertical-align:-3px"><use href="#i-bolt"/></svg> lightning bolt. The gold lightning bolt is <b>auto connect</b>: it picks the right cable for you.</li>
+  <li>The <b>Realtime / Simulation</b> switch is at the bottom right. In Simulation mode <b>Capture / Forward</b> moves packets one step, and the <b>Event List</b> records every step.</li>
+  <li><b>Test ping:</b> the closed envelope on the right toolbar (Add Simple PDU), click the sender, click the receiver. The result appears in the PDU List at the bottom right; <b>Fire</b> sends it again.</li>
+</ul>
+
+<!-- ============================================================ PT1 -->
+<h2 id="pt1">PTSkills 1: Introduction to Packet Tracer</h2>
+<div class="act-head">
+  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills1_v8.pka</code></div>
+  <div class="row"><span class="k">Start</span><span class="state"><span class="from">2 cables missing</span> &rarr; <span class="to">network fully cabled</span></span></div>
+  <div class="row"><span class="k">Checked items</span><div class="meter" aria-label="2 checked items"><span style="--i:0" title="PC 1A cable to S1-Central Fa0/1"></span><span style="--i:1" title="Eagle Server cable to R1-ISP Fa0/0"></span></div></div>
+</div>
+<p><b>What you achieve:</b> you learn where things are in Packet Tracer and you finish the cabling. Eagle Server is not connected to R1-ISP, and PC 1A is not connected to S1-Central; those two cables are the two checked items.</p>
+<ol class="steps">
+  <li><p class="do">Look around. The big white area is the <span class="term">Logical Workspace</span>. Bottom left: device groups (routers, switches, end devices, connections). Hover a group to see its name, click it to see the devices in it.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>In the later activities you have to find PCs and cables yourself.</p></div></li>
+  <li><p class="do">Open the connections group and pick the gold lightning bolt, <b>auto connect</b>.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>It chooses straight-through, crossover or serial for you, so you cannot pick the wrong cable while learning.</p></div></li>
+  <li><p class="do">Click <b>Eagle Server</b>, then <b>R1-ISP</b>. A cable appears.</p>
+    <div class="note"><span class="chip fix"><svg class="ic"><use href="#i-fix"/></svg>Fixes</span><p>The server was cut off from the whole network.</p></div>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>1 item: server cable to R1-ISP Fa0/0.</p></div></li>
+  <li><p class="do">With auto connect again, click <b>PC 1A</b>, then <b>S1-Central</b>.</p>
+    <div class="note"><span class="chip fix"><svg class="ic"><use href="#i-fix"/></svg>Fixes</span><p>PC 1A could not talk to anything.</p></div>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>1 item: PC 1A cable to S1-Central Fa0/1.</p></div></li>
+  <li><p class="do">Wait until the link lights at both ends of the new cables turn green.</p>
+    <div class="note"><span class="chip watch"><svg class="ic"><use href="#i-watch"/></svg>Watch</span><p>A link light is the <i>physical layer</i> saying "this cable works". Orange means still starting, red means a wrong cable or a port that is switched off.</p></div></li>
+  <li><p class="do">Hover over each device and read the pop-up.</p>
+    <div class="note"><span class="chip watch"><svg class="ic"><use href="#i-watch"/></svg>Watch</span><p>A router shows an address and state per port, a switch shows VLAN membership per port, a PC or server shows its address, MAC and gateway. This is the quickest way to check an address.</p></div></li>
+  <li><p class="do">Click each device type once and look at its tabs (Physical, Config, CLI for routers and switches; Physical, Config, Desktop for PCs). Close them again.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>The next activities ask you to change settings in exactly these tabs.</p></div></li>
+  <li><p class="do">Press <b>Check Results</b> at the bottom of the instructions window and open the <b>Assessment Items</b> tab: 2 of 2, 100 %.</p>
+    <div class="note"><span class="chip shot"><svg class="ic"><use href="#i-cam"/></svg>Screenshot</span><p>This is the completion screenshot for the report.</p></div></li>
+</ol>
+<div class="callout hidden">
+  <span class="chip hidden"><svg class="ic"><use href="#i-q"/></svg>Hidden in the activity</span>
+  <p style="margin-top:.3rem">None. The text only asks you to explore. It suggests the built-in <b>My First PT Lab</b> under Help, Contents, which is worth an evening if Packet Tracer is new to you.</p>
+</div>
+
+<div class="answer">
+  <h4>Report question</h4>
+  <div class="callout canvas">
+    <span class="chip canvas"><svg class="ic"><use href="#i-doc"/></svg>As written</span>
+    <blockquote><span class="src">Canvas</span>Explain the difference between a router and a switch</blockquote>
+    <blockquote><span class="src">Activity reflection</span>You have completed your first Packet Tracer Lab. If you have not done so already, you are encouraged to obtain Packet Tracer from your instructor or Academy Connection. (no question)</blockquote>
+  </div>
+  <div class="callout brief">
+    <span class="chip unlock">In brief</span>
+    <ul>
+      <li>A switch joins devices inside one network and forwards frames by MAC address.</li>
+      <li>A router joins different networks and forwards packets by IP address, using a routing table.</li>
+      <li>Every router port is in a different network; all switch ports are in the same one.</li>
+      <li>A router rebuilds the frame at every hop and blocks broadcasts; a switch passes frames on unchanged and floods broadcasts.</li>
+      <li>In the lab, S1-Central is the switch inside 172.16.0.0/16 and R2-Central is the router that leads out of it.</li>
+    </ul>
+  </div>
+  <figure>
+  <svg class="fig" viewBox="0 0 560 200" role="img" aria-labelledby="osi-t">
+    <title id="osi-t">A switch works up to layer 2 and reads MAC addresses; a router works up to layer 3 and reads IP addresses.</title>
+    <text class="s-t" x="140" y="20" text-anchor="middle">Switch</text>
+    <text class="s-t" x="420" y="20" text-anchor="middle">Router</text>
+    <rect class="s-field" x="60" y="150" width="160" height="34" rx="4"/><text class="s-t" x="140" y="172" text-anchor="middle">1 Physical: cable, signal</text>
+    <rect class="s-field hl" x="60" y="110" width="160" height="34" rx="4"/><text class="s-t" x="140" y="132" text-anchor="middle">2 Data link: MAC</text>
+    <rect class="s-field" x="60" y="70" width="160" height="34" rx="4" style="opacity:.35"/><text class="s-tm" x="140" y="92" text-anchor="middle">3 Network: not used</text>
+    <rect class="s-field" x="340" y="150" width="160" height="34" rx="4"/><text class="s-t" x="420" y="172" text-anchor="middle">1 Physical: cable, signal</text>
+    <rect class="s-field" x="340" y="110" width="160" height="34" rx="4"/><text class="s-t" x="420" y="132" text-anchor="middle">2 Data link: MAC</text>
+    <rect class="s-field hl" x="340" y="70" width="160" height="34" rx="4"/><text class="s-t" x="420" y="92" text-anchor="middle">3 Network: IP, routes</text>
+    <text class="s-tm" x="140" y="50" text-anchor="middle">decides by MAC address</text>
+    <text class="s-tm" x="420" y="50" text-anchor="middle">decides by IP address</text>
+  </svg>
+  <figcaption>The highlighted layer is where each device makes its forwarding decision.</figcaption>
+  </figure>
+  <p>A <span class="term">switch</span> connects devices inside one network. It forwards frames by MAC address, using a table it builds by watching which address appears on which port. All its ports are in the same network; in the lab, S1-Central's ports are all in VLAN 1 (172.16.0.0/16), and the switch only has an IP address so you can manage it (172.16.254.1). A switch passes frames on unchanged and sends broadcasts out of every port.</p>
+  <p>A <span class="term">router</span> connects different networks. Every port of a router is in a different network, and the router forwards packets by IP address using its routing table. R2-Central joins the LAN 172.16.0.0/16 (Fa0/0, 172.16.255.254) to the serial link 10.10.10.4/30 (S0/0/0, 10.10.10.5); R1-ISP joins that link to the server network 192.168.254.0/24. When a router forwards a packet it throws away the old frame, lowers the TTL by one and builds a new frame for the next hop, so <i>the MAC addresses change at every router while the IP addresses stay the same</i>. A router does not pass broadcasts on. In Packet Tracer the difference shows on hover: a router lists an IP address per port, a switch lists VLAN membership and no port addresses.</p>
+</div>
+
+<!-- ============================================================ PT2 -->
+<h2 id="pt2">PTSkills 2: Examining Packets</h2>
+<div class="act-head">
+  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills2_v8.pka</code></div>
+  <div class="row"><span class="k">Start</span><span class="state"><span class="from">PC 1B does not exist</span> &rarr; <span class="to">1B built, cabled, pinging</span></span></div>
+  <div class="row"><span class="k">Checked items</span><div class="meter" aria-label="6 checked items"><span style="--i:0" title="1B cable type"></span><span style="--i:1" title="1B on S1-Central Fa0/2"></span><span style="--i:2" title="1B IP address"></span><span style="--i:3" title="1B subnet mask"></span><span style="--i:4" title="1B default gateway"></span><span style="--i:5" title="1B DNS server"></span></div></div>
+</div>
+<p><b>What you achieve:</b> you build a PC from scratch, then watch a ping travel through the network step by step. All six checked items are about PC 1B: cable type, switch port, IP address, mask, gateway and DNS server.</p>
+<ol class="steps">
+  <li><p class="do">Drag a PC (End Devices, <code>PC-PT</code>) onto the workspace near the switch.</p>
+    <div class="note"><span class="chip fix"><svg class="ic"><use href="#i-fix"/></svg>Fixes</span><p>PC 1B is missing from the network.</p></div></li>
+  <li><p class="do">Click the new PC, Config tab, Display Name: type <code>1B</code> exactly (capital B, no quotes).</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>Check Results finds devices <i>by name</i>. A PC called "PC0" scores nothing, even with every setting right.</p></div></li>
+  <li><p class="do">Config, Global settings: Gateway <code>172.16.255.254</code>, DNS Server <code>192.168.254.254</code>. Then FastEthernet0: IP <code>172.16.1.2</code>, mask <code>255.255.0.0</code>. (Desktop, IP Configuration does the same.)</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>The IP and mask put the PC into the LAN; the gateway tells it which router leads outside; the DNS server tells it where to ask for names.</p></div>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>4 items: IP address, mask, gateway, DNS server.</p></div></li>
+  <li><p class="do">Connect 1B to S1-Central with a <b>straight-through</b> cable (solid black line), from the PC's FastEthernet0 to the switch's <b>FastEthernet0/2</b>. Auto connect also works if you then check the port.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>The checklist wants exactly port Fa0/2 and exactly a straight-through cable.</p></div>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>2 items: cable type, switch port.</p></div></li>
+  <li><p class="do">Press Check Results: 100 %.</p>
+    <div class="note"><span class="chip shot"><svg class="ic"><use href="#i-cam"/></svg>Screenshot</span><p>Completion screenshot for the report.</p></div></li>
+  <li><p class="do">Wait until the link light on the new cable is green (about half a minute).</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>The switch checks a new port for loops before it lets traffic through.</p></div></li>
+  <li><p class="do">Add Simple PDU: envelope icon, click PC 1B, click Eagle Server. The PDU List shows <b>Failed</b>. Double-click <b>Fire</b>: now <b>Successful</b>.</p>
+    <div class="note"><span class="chip watch"><svg class="ic"><use href="#i-watch"/></svg>Watch</span><p>The first failure is the ARP lookup. This is the report question; see the diagram below.</p></div></li>
+  <li><p class="do">Switch to <b>Simulation</b> mode. Press Capture / Forward repeatedly; open the envelope or the coloured square in the Event List.</p>
+    <div class="note"><span class="chip watch"><svg class="ic"><use href="#i-watch"/></svg>Watch</span><p>The ping is a frame inside a frame: same IP addresses end to end, new MAC addresses after each router.</p></div></li>
+  <li><p class="do">Experiment: ping 1A to 1B, 1B to R2-Central, server to 1A.</p>
+    <div class="note"><span class="chip watch"><svg class="ic"><use href="#i-watch"/></svg>Watch</span><p>A ping inside the LAN never reaches a router; a ping to the server passes two routers.</p></div></li>
+</ol>
+<div class="callout hidden">
+  <span class="chip hidden"><svg class="ic"><use href="#i-q"/></svg>Hidden in the activity</span>
+  <dl class="qa">
+    <dt>Task 2: "The first time ... it will show as Failed, this is because of the ARP process." Why?</dt>
+    <dd>This is the report question; answered below.</dd>
+    <dt>Task 4: "Try creating different combinations of test packets." What changes?</dt>
+    <dd>A ping between 1A and 1B only crosses the switch: no router, no change of MAC address. A ping to the server crosses two routers and the MAC addresses change twice. A ping to an unknown network is dropped at the first router without a route.</dd>
+  </dl>
+</div>
+
+<div class="answer">
+  <h4>Report question</h4>
+  <div class="callout canvas">
+    <span class="chip canvas"><svg class="ic"><use href="#i-doc"/></svg>As written</span>
+    <blockquote><span class="src">Canvas</span>In Task 2, it says "The first time you issue this one-shot ping message, it will show as Failed--this is because of the ARP process". Find out why is this so by doing your own (re)search.</blockquote>
+    <blockquote><span class="src">Activity reflection</span>If you have not already done so, you are encouraged to obtain Packet Tracer from your instructor and complete My First PT Lab (available by using the HELP Pulldown Menu and choosing CONTENTS). (no question)</blockquote>
+  </div>
+  <div class="callout brief">
+    <span class="chip unlock">In brief</span>
+    <ul>
+      <li>A ping must be put into an Ethernet frame, and a frame needs the MAC address of the next device.</li>
+      <li>PC 1B does not yet know the MAC address of its gateway, so it first broadcasts an ARP request.</li>
+      <li>While waiting for the ARP reply, the ping that triggered it is dropped, which shows as Failed.</li>
+      <li>R1-ISP does the same lookup for the server's MAC.</li>
+      <li>The second ping works because the ARP tables are now filled.</li>
+    </ul>
+  </div>
+  <figure>
+  <svg class="fig" viewBox="0 0 600 300" role="img" aria-labelledby="arp-t">
+    <title id="arp-t">ARP sequence: ping 1 is dropped, ARP request is broadcast, R2-Central replies with its MAC address, ping 2 is sent and forwarded.</title>
+    <defs>
+      <marker id="ah-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="f-acc" d="M0,0 L10,5 L0,10z"/></marker>
+      <marker id="ah-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="f-ok" d="M0,0 L10,5 L0,10z"/></marker>
+    </defs>
+    <rect class="s-head" x="60" y="10" width="120" height="30" rx="4"/><text class="s-t" x="120" y="30" text-anchor="middle">PC 1B</text>
+    <rect class="s-head" x="420" y="10" width="120" height="30" rx="4"/><text class="s-t" x="480" y="30" text-anchor="middle">R2-Central (gateway)</text>
+    <line class="s-life" x1="120" y1="40" x2="120" y2="290"/><line class="s-life" x1="480" y1="40" x2="480" y2="290"/>
+    <line class="s-arrow s-tcp" x1="120" y1="80" x2="195" y2="80"/>
+    <line class="s-x" x1="200" y1="72" x2="216" y2="88"/><line class="s-x" x1="216" y1="72" x2="200" y2="88"/>
+    <text class="s-t" x="228" y="78">Ping 1: no MAC for 172.16.255.254 yet</text><text class="s-tm" x="228" y="93">frame cannot be built, ping dropped: "Failed"</text>
+    <line class="s-arrow" style="stroke:var(--accent)" x1="120" y1="140" x2="476" y2="140" marker-end="url(#ah-acc)"/>
+    <text class="s-t" x="300" y="132" text-anchor="middle">ARP request, broadcast FFFF.FFFF.FFFF</text><text class="s-tm" x="300" y="156" text-anchor="middle">"who has 172.16.255.254?"</text>
+    <line class="s-arrow" style="stroke:var(--accent)" x1="480" y1="195" x2="124" y2="195" marker-end="url(#ah-acc)"/>
+    <text class="s-t" x="300" y="187" text-anchor="middle">ARP reply</text><text class="s-tm" x="300" y="211" text-anchor="middle">"172.16.255.254 is at R2's MAC"</text>
+    <line class="s-arrow s-ok" x1="120" y1="255" x2="476" y2="255" marker-end="url(#ah-ok)"/>
+    <text class="s-t" x="300" y="247" text-anchor="middle">Ping 2: frame to R2's MAC, forwarded</text><text class="s-tm" x="300" y="271" text-anchor="middle">"Successful"</text>
+    <g class="anim">
+      <circle class="s-pkt" r="6"><animateMotion dur="10s" repeatCount="indefinite" path="M120,80 L195,80" keyPoints="0;0;1;1" keyTimes="0;0.05;0.2;1" calcMode="linear"/><animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.05;0.055;0.2;0.205;1"/></circle>
+      <circle class="s-pkt" r="6"><animateMotion dur="10s" repeatCount="indefinite" path="M120,140 L476,140" keyPoints="0;0;1;1" keyTimes="0;0.25;0.4;1" calcMode="linear"/><animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.25;0.255;0.4;0.405;1"/></circle>
+      <circle class="s-pkt" r="6"><animateMotion dur="10s" repeatCount="indefinite" path="M480,195 L124,195" keyPoints="0;0;1;1" keyTimes="0;0.45;0.6;1" calcMode="linear"/><animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.45;0.455;0.6;0.605;1"/></circle>
+      <circle class="f-ok" r="6"><animateMotion dur="10s" repeatCount="indefinite" path="M120,255 L476,255" keyPoints="0;0;1;1" keyTimes="0;0.65;0.8;1" calcMode="linear"/><animate attributeName="opacity" dur="10s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.65;0.655;0.8;0.805;1"/></circle>
+    </g>
+  </svg>
+  <figcaption>Read top to bottom. The same lookup happens once more between R1-ISP and Eagle Server.</figcaption>
+  </figure>
+  <p>A ping is an <span class="term">ICMP echo request</span>. It travels inside an IP packet, and the IP packet travels inside an Ethernet frame. To build the frame, PC 1B needs the MAC address of the next device. Eagle Server is in another network, so the frame has to go to the default gateway 172.16.255.254, and the PC does not yet know that router's MAC address. So it first sends an <span class="term">ARP request</span> as a broadcast ("who has 172.16.255.254?"), and R2-Central answers with its MAC. While the PC waits for that answer, <i>the ping that caused the lookup is thrown away</i>, which is what many real operating systems do too. That is the Failed.</p>
+  <p>The same lookup also happens at R1-ISP, which must ask for Eagle Server's MAC before it can deliver. The second ping succeeds because every ARP table along the path is now filled. In Simulation mode you can see it: the first run shows ARP frames (destination <code>FFFF.FFFF.FFFF</code>) before any ICMP, the second run shows only ICMP. ARP entries are forgotten after a few minutes, so a ping can fail again later for the same reason.</p>
+  <div class="note"><span class="chip shot"><svg class="ic"><use href="#i-cam"/></svg>Screenshot</span><p>The Event List of the first ping with ARP lines above the ICMP line.</p></div>
+</div>
+
+<!-- ============================================================ PT3 -->
+<h2 id="pt3">PTSkills 3: Configuring Hosts and Services</h2>
+<div class="act-head">
+  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills3_v8.pka</code></div>
+  <div class="row"><span class="k">Start</span><span class="state"><span class="from">1B missing, server not cabled, DNS and HTTP off</span> &rarr; <span class="to">web page loads by name</span></span></div>
+  <div class="row"><span class="k">Checked items</span><div class="meter" aria-label="11 checked items"><span style="--i:0" title="1B cable type"></span><span style="--i:1" title="1B on S1-Central Fa0/2"></span><span style="--i:2" title="1B IP"></span><span style="--i:3" title="1B mask"></span><span style="--i:4" title="1B gateway"></span><span style="--i:5" title="1B DNS server"></span><span style="--i:6" title="Server cable type (crossover)"></span><span style="--i:7" title="Server on R1-ISP Fa0/0"></span><span style="--i:8" title="DNS service on"></span><span style="--i:9" title="DNS record eagle-server.example.com"></span><span style="--i:10" title="HTTP service on"></span></div></div>
+</div>
+<p><b>What you achieve:</b> you repair the network, then watch how a web address becomes a web page. Eleven checked items: the six 1B items from PTSkills 2, the server's cable type and router port, DNS on, the DNS record, and HTTP on.</p>
+<ol class="steps">
+  <li><p class="do">Add PC 1B exactly as in PTSkills 2: name <code>1B</code>, IP <code>172.16.1.2</code>, mask <code>255.255.0.0</code>, gateway <code>172.16.255.254</code>, DNS <code>192.168.254.254</code>, straight-through cable to S1-Central <b>Fa0/2</b>.</p>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>6 items.</p></div></li>
+  <li><p class="do">Connect Eagle Server to R1-ISP port <b>FastEthernet0/0</b> with a <b>crossover</b> cable (dashed line).</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>Server and router both send on the same pins; a straight cable between them would not link up, and the checklist checks the cable type.</p></div>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>2 items: cable type, router port.</p></div></li>
+  <li><p class="do">Eagle Server, Services tab (older versions: Config), HTTP: set to <b>On</b>.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>Without it the server is not a web server and the browser gets nothing.</p></div>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>1 item.</p></div></li>
+  <li><p class="do">Services, DNS: service <b>On</b>, then add Name <code>eagle-server.example.com</code>, Type <b>A Record</b>, Address <code>192.168.254.254</code>, press Add.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>This is the phone book entry. Without it the name never becomes an address and the browser fails before any web traffic.</p></div>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>2 items: DNS on, DNS record.</p></div></li>
+  <li><p class="do">Check Results: 100 %.</p>
+    <div class="note"><span class="chip shot"><svg class="ic"><use href="#i-cam"/></svg>Screenshot</span><p>Completion screenshot for the report.</p></div></li>
+  <li><p class="do">Realtime test: Add Simple PDU from 1B to Eagle Server. Fails once (ARP), Fire again, success. Then press <b>Delete</b> in the PDU List.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>A leftover test ping gets replayed in the next simulation and clutters it.</p></div></li>
+  <li><p class="do">Switch to Simulation mode. On 1B: Desktop, Web Browser, <code>eagle-server.example.com</code>, Go. Capture / Forward until the page appears. If "Buffer Full" appears, press View Previous Events.</p>
+    <div class="note"><span class="chip watch"><svg class="ic"><use href="#i-watch"/></svg>Watch</span><p>Two conversations in a row: first DNS (name to address), then HTTP (the page).</p></div></li>
+  <li><p class="do">Open the envelopes at 1B and at Eagle Server; read <b>Inbound PDU Details</b> and <b>Outbound PDU Details</b>.</p>
+    <div class="note"><span class="chip watch"><svg class="ic"><use href="#i-watch"/></svg>Watch</span><p>The DNS question and answer, then the TCP handshake, then the HTTP request and the page.</p></div></li>
+</ol>
+<div class="callout hidden">
+  <span class="chip hidden"><svg class="ic"><use href="#i-q"/></svg>Hidden in the activity</span>
+  <dl class="qa">
+    <dt>"When you add a simple PDU, it appears ... as part of Scenario 0." What is a scenario?</dt>
+    <dd>A named set of test packets. New creates another set; Delete removes the packets of the current one. Use them to keep tests apart.</dd>
+  </dl>
+</div>
+
+<div class="answer">
+  <h4>Report question</h4>
+  <div class="callout canvas">
+    <span class="chip canvas"><svg class="ic"><use href="#i-doc"/></svg>As written</span>
+    <blockquote><span class="src">Canvas</span>Can you now explain the process that occurs when you type a URL into a browser and a web page returns? What types of client-server interactions are involved? Please feel free to draw a diagram if you would like, you can even draw on your notepad, take a picture, add to the report and explain briefly.</blockquote>
+    <blockquote><span class="src">Activity reflection</span>Can you now explain the process that occurs when you type a URL into a browser and a web page returns? What types of client-server interactions are involved? If you have not already done so, you are encouraged to obtain Packet Tracer from your instructor and complete My First PT Lab.</blockquote>
+  </div>
+  <div class="callout brief">
+    <span class="chip unlock">In brief</span>
+    <ul>
+      <li>First the PC asks the DNS server for the address behind the name (one UDP question, one UDP answer).</li>
+      <li>Then the browser opens a TCP connection to that address on port 80 with a three-way handshake.</li>
+      <li>It sends HTTP GET and the server answers HTTP 200 OK with the page.</li>
+      <li>The connection is then closed.</li>
+      <li>Two client-server pairs are involved: DNS client to DNS server, and HTTP client to HTTP server, both started by the client.</li>
+    </ul>
+  </div>
+  <p>Typing eagle-server.example.com into the browser on PC 1B starts <b>two separate conversations</b>, both started by the PC.</p>
+  <ol>
+    <li><b>Name lookup (DNS).</b> The browser asks the PC's DNS client for the address of the name. The PC sends a <span class="term">DNS query</span> in a UDP datagram to port 53 of its DNS server, 192.168.254.254, which is Eagle Server. The server looks up its record and answers: 192.168.254.254.</li>
+    <li><b>Page transfer (HTTP).</b> The browser opens a TCP connection to that address on port 80. First the <span class="term">three-way handshake</span>: SYN from the PC, SYN-ACK from the server, ACK from the PC. Then the browser sends <code>HTTP GET /</code> and the server answers <code>HTTP 200 OK</code> with the HTML, which the browser draws. Finally both sides close the connection (FIN, ACK).</li>
+  </ol>
+  <p>So there is a <i>DNS client talking to a DNS server over UDP</i>, and an <i>HTTP client talking to an HTTP server over TCP</i>. Both are request and reply, and the client always asks first. Underneath, every packet travels 1B, S1-Central, R2-Central, R1-ISP, Eagle Server and back, with ARP filling in MAC addresses where needed. The sequence diagram in PTSkills 4 below shows the whole exchange.</p>
+</div>
+
+<!-- ============================================================ PT4 -->
+<h2 id="pt4">PTSkills 4: Analyzing the Application and Transport Layers</h2>
+<div class="act-head">
+  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills4_v8.pka</code></div>
+  <div class="row"><span class="k">Start</span><span class="state"><span class="from">blank server, powered off; PC 1A without addresses</span> &rarr; <span class="to">web page loads on 1A</span></span></div>
+  <div class="row"><span class="k">Checked items</span><div class="meter" aria-label="15 checked items"><span style="--i:0" title="1A cable type"></span><span style="--i:1" title="1A on S1-Central Fa0/1"></span><span style="--i:2" title="1A IP"></span><span style="--i:3" title="1A mask"></span><span style="--i:4" title="1A gateway"></span><span style="--i:5" title="1A DNS server"></span><span style="--i:6" title="Server power"></span><span style="--i:7" title="Server cable type"></span><span style="--i:8" title="Server on R1-ISP Fa0/0"></span><span style="--i:9" title="Server IP"></span><span style="--i:10" title="Server mask"></span><span style="--i:11" title="Server gateway"></span><span style="--i:12" title="DNS on"></span><span style="--i:13" title="DNS record"></span><span style="--i:14" title="HTTP on"></span></div></div>
+</div>
+<p><b>What you achieve:</b> the same kind of repair as PTSkills 3 but on the other side (the server was replaced and is blank, PC 1A lost its addresses), then a closer look at the same web request with the transport layer visible.</p>
+<ol class="steps">
+  <li><p class="do">Eagle Server, Physical tab: click the power switch on the picture of the server to turn it <b>on</b>.</p>
+    <div class="note"><span class="chip fix"><svg class="ic"><use href="#i-fix"/></svg>Fixes</span><p>A powered-off device does nothing.</p></div>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>1 item: power.</p></div></li>
+  <li><p class="do">Server Config (or Desktop, IP Configuration): IP <code>192.168.254.254</code>, mask <code>255.255.255.0</code>, gateway <code>192.168.254.253</code>.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>The server needs its own address, and a gateway (R1-ISP) to answer PCs in the other network.</p></div>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>3 items.</p></div></li>
+  <li><p class="do">Services: HTTP <b>On</b>; DNS <b>On</b> and add the A record <code>eagle-server.example.com</code> to <code>192.168.254.254</code>.</p>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>3 items.</p></div></li>
+  <li><p class="do">Connect the server to R1-ISP <b>Fa0/0</b> with a <b>crossover</b> cable.</p>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>2 items.</p></div></li>
+  <li><p class="do">PC 1A: IP <code>172.16.1.1</code>, mask <code>255.255.0.0</code>, gateway <code>172.16.255.254</code>, DNS <code>192.168.254.254</code>. Straight-through cable to S1-Central <b>Fa0/1</b>.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>1A must be in the LAN, know its router, and know where DNS is.</p></div>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>6 items.</p></div></li>
+  <li><p class="do">Check Results: 100 %.</p>
+    <div class="note"><span class="chip shot"><svg class="ic"><use href="#i-cam"/></svg>Screenshot</span><p>Completion screenshot for the report.</p></div></li>
+  <li><p class="do">Realtime test ping 1A to Eagle Server (fails once because of ARP, Fire again). Then Delete the test packet.</p></li>
+  <li><p class="do">Simulation mode. Edit Filters: tick <b>DNS, UDP, HTTP, TCP and ICMP</b>.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>Without the filter the Event List fills with ARP and other noise.</p></div></li>
+  <li><p class="do">On 1A: Desktop, Web Browser, <code>eagle-server.example.com</code>, Go. Capture / Forward through the whole exchange and open the envelopes at 1A and at the server.</p>
+    <div class="note"><span class="chip watch"><svg class="ic"><use href="#i-watch"/></svg>Watch</span><p>DNS sits on UDP, HTTP sits on TCP. Count the packets: the DNS part is two, the HTTP part is many.</p></div></li>
+</ol>
+<div class="callout hidden">
+  <span class="chip hidden"><svg class="ic"><use href="#i-q"/></svg>Hidden in the activity</span>
+  <dl class="qa">
+    <dt>Task 2 implies: why must the Event Filter include UDP and TCP, not only DNS and HTTP?</dt>
+    <dd>DNS and HTTP are the applications, but on the wire you see UDP datagrams and TCP segments carrying them. Filtering only DNS and HTTP hides the handshake and the acknowledgements.</dd>
+  </dl>
+</div>
+
+<div class="answer">
+  <h4>Report questions</h4>
+  <div class="callout canvas">
+    <span class="chip canvas"><svg class="ic"><use href="#i-doc"/></svg>As written</span>
+    <blockquote><span class="src">Canvas, 3 questions</span>Can you make a diagram of the sequence of protocol events involved in requesting a web page using a URL? / Where might things go wrong? (Think about, what happens if router configuration is wrong? Does the package get stuck at the router, does it disappear?) / Compare and contrast DNS and HTTP, and UDP and TCP.</blockquote>
+    <blockquote><span class="src">Activity reflection</span>Can you make a diagram of the sequence of protocol events involved in requesting a web page using a URL? Where might things go wrong? Compare and contrast DNS and HTTP, and UDP and TCP.</blockquote>
+  </div>
+
+  <h4>1. The sequence of protocol events</h4>
+  <div class="callout brief">
+    <span class="chip unlock">In brief</span>
+    <ul>
+      <li>DNS query and reply over UDP come first.</li>
+      <li>Then TCP SYN, SYN-ACK and ACK open the connection.</li>
+      <li>HTTP GET goes out and HTTP 200 OK with the page comes back, acknowledged by TCP.</li>
+      <li>Finally FIN and ACK close the connection.</li>
+      <li>The filtered Event List in Simulation mode shows exactly this order.</li>
+    </ul>
+  </div>
+  <figure>
+  <svg class="fig" viewBox="0 0 620 380" role="img" aria-labelledby="seq-t">
+    <title id="seq-t">Sequence: DNS query and reply over UDP, TCP three-way handshake, HTTP GET and 200 OK over TCP, TCP ACK, TCP close.</title>
+    <defs>
+      <marker id="ah-udp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="f-udp" d="M0,0 L10,5 L0,10z"/></marker>
+      <marker id="ah-tcp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="f-tcp" d="M0,0 L10,5 L0,10z"/></marker>
+      <marker id="ah-http" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="f-http" d="M0,0 L10,5 L0,10z"/></marker>
+    </defs>
+    <rect class="s-head" x="50" y="10" width="120" height="30" rx="4"/><text class="s-t" x="110" y="30" text-anchor="middle">PC 1A (client)</text>
+    <rect class="s-head" x="450" y="10" width="120" height="30" rx="4"/><text class="s-t" x="510" y="30" text-anchor="middle">Eagle Server</text>
+    <line class="s-life" x1="110" y1="40" x2="110" y2="370"/><line class="s-life" x1="510" y1="40" x2="510" y2="370"/>
+    <line class="s-arrow s-udp" x1="110" y1="70" x2="506" y2="70" marker-end="url(#ah-udp)"/><text class="s-t" x="310" y="63" text-anchor="middle">1 DNS query (UDP 53): eagle-server.example.com?</text>
+    <line class="s-arrow s-udp" x1="510" y1="104" x2="114" y2="104" marker-end="url(#ah-udp)"/><text class="s-t" x="310" y="97" text-anchor="middle">2 DNS reply: 192.168.254.254</text>
+    <line class="s-arrow s-tcp" x1="110" y1="138" x2="506" y2="138" marker-end="url(#ah-tcp)"/><text class="s-t" x="310" y="131" text-anchor="middle">3 TCP SYN (port 80)</text>
+    <line class="s-arrow s-tcp" x1="510" y1="172" x2="114" y2="172" marker-end="url(#ah-tcp)"/><text class="s-t" x="310" y="165" text-anchor="middle">4 TCP SYN-ACK</text>
+    <line class="s-arrow s-tcp" x1="110" y1="206" x2="506" y2="206" marker-end="url(#ah-tcp)"/><text class="s-t" x="310" y="199" text-anchor="middle">5 TCP ACK: connection open</text>
+    <line class="s-arrow s-http" x1="110" y1="240" x2="506" y2="240" marker-end="url(#ah-http)"/><text class="s-t" x="310" y="233" text-anchor="middle">6 HTTP GET / (inside TCP)</text>
+    <line class="s-arrow s-http" x1="510" y1="274" x2="114" y2="274" marker-end="url(#ah-http)"/><text class="s-t" x="310" y="267" text-anchor="middle">7 HTTP 200 OK + page (one or more segments)</text>
+    <line class="s-arrow s-tcp" x1="110" y1="308" x2="506" y2="308" marker-end="url(#ah-tcp)"/><text class="s-t" x="310" y="301" text-anchor="middle">8 TCP ACK for the data</text>
+    <line class="s-arrow s-tcp" x1="110" y1="342" x2="506" y2="342" marker-start="url(#ah-tcp)" marker-end="url(#ah-tcp)"/><text class="s-t" x="310" y="335" text-anchor="middle">9 TCP FIN and ACK, both ways: closed</text>
+    <g class="anim">
+      <circle class="f-udp" r="6"><animateMotion dur="12s" repeatCount="indefinite" path="M110,70 L506,70" keyPoints="0;0;1;1" keyTimes="0;0.05;0.125;1" calcMode="linear"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.05;0.055;0.125;0.13;1"/></circle>
+      <circle class="f-udp" r="6"><animateMotion dur="12s" repeatCount="indefinite" path="M510,104 L114,104" keyPoints="0;0;1;1" keyTimes="0;0.1417;0.2167;1" calcMode="linear"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.1417;0.1467;0.2167;0.2217;1"/></circle>
+      <circle class="f-tcp" r="6"><animateMotion dur="12s" repeatCount="indefinite" path="M110,138 L506,138" keyPoints="0;0;1;1" keyTimes="0;0.2333;0.3083;1" calcMode="linear"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.2333;0.2383;0.3083;0.3133;1"/></circle>
+      <circle class="f-tcp" r="6"><animateMotion dur="12s" repeatCount="indefinite" path="M510,172 L114,172" keyPoints="0;0;1;1" keyTimes="0;0.325;0.4;1" calcMode="linear"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.325;0.33;0.4;0.405;1"/></circle>
+      <circle class="f-tcp" r="6"><animateMotion dur="12s" repeatCount="indefinite" path="M110,206 L506,206" keyPoints="0;0;1;1" keyTimes="0;0.4167;0.4917;1" calcMode="linear"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.4167;0.4217;0.4917;0.4967;1"/></circle>
+      <circle class="f-http" r="6"><animateMotion dur="12s" repeatCount="indefinite" path="M110,240 L506,240" keyPoints="0;0;1;1" keyTimes="0;0.5083;0.5833;1" calcMode="linear"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.5083;0.5133;0.5833;0.5883;1"/></circle>
+      <circle class="f-http" r="6"><animateMotion dur="12s" repeatCount="indefinite" path="M510,274 L114,274" keyPoints="0;0;1;1" keyTimes="0;0.6;0.675;1" calcMode="linear"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.6;0.605;0.675;0.68;1"/></circle>
+      <circle class="f-tcp" r="6"><animateMotion dur="12s" repeatCount="indefinite" path="M110,308 L506,308" keyPoints="0;0;1;1" keyTimes="0;0.6917;0.7667;1" calcMode="linear"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.6917;0.6967;0.7667;0.7717;1"/></circle>
+      <circle class="f-tcp" r="6"><animateMotion dur="12s" repeatCount="indefinite" path="M110,342 L506,342" keyPoints="0;0;1;1" keyTimes="0;0.7833;0.8583;1" calcMode="linear"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.7833;0.7883;0.8583;0.8633;1"/></circle>
+    </g>
+  </svg>
+  <div class="legend"><span><i style="background:var(--udp)"></i>DNS over UDP</span><span><i style="background:var(--tcp)"></i>TCP control and acknowledgements</span><span><i style="background:var(--http)"></i>HTTP inside TCP</span></div>
+  <figcaption>The same order appears in the Event List when the filter shows DNS, UDP, HTTP, TCP and ICMP; a screenshot of that list also works as the diagram.</figcaption>
+  </figure>
+
+  <h4>2. Where things go wrong</h4>
+  <div class="callout brief">
+    <span class="chip unlock">In brief</span>
+    <ul>
+      <li>A wrong DNS setting stops everything before any web traffic.</li>
+      <li>A wrong gateway or mask keeps the packet inside the LAN.</li>
+      <li>A router with a port down, or without a matching route, throws the packet away at once; it is not held or queued.</li>
+      <li>A real router also sends back an ICMP destination unreachable; Packet Tracer shows the packet vanishing at the router and the sender times out.</li>
+      <li>A powered-off or service-less server receives the packets but never answers.</li>
+    </ul>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>Fault</th><th>What happens to the traffic</th></tr>
+    <tr><td>Wrong or missing DNS server on the PC</td><td>The name is never resolved; no HTTP is sent at all; the browser reports that the name cannot be resolved.</td></tr>
+    <tr><td>Wrong gateway or mask on the PC</td><td>The packet goes to the wrong neighbour or never leaves the LAN; nobody answers; it times out.</td></tr>
+    <tr><td>Router port off or without address</td><td>The frame reaches the router and is <b>dropped there</b>; in Simulation mode the envelope gets a red cross.</td></tr>
+    <tr><td>Router without a route</td><td>The packet is <b>discarded immediately</b>, not kept or queued. A real router sends ICMP "destination unreachable" back; Packet Tracer shows the packet disappearing and the sender times out.</td></tr>
+    <tr><td>Server off, or DNS or HTTP off</td><td>Packets arrive but nothing answers; the client waits and gives up.</td></tr>
+    <tr><td>Wrong cable server to router</td><td>The link light stays red; nothing passes at all.</td></tr>
+  </table></div>
+
+  <h4>3. DNS vs HTTP, UDP vs TCP</h4>
+  <div class="callout brief">
+    <span class="chip unlock">In brief</span>
+    <ul>
+      <li>DNS turns a name into an address with one short question and answer over UDP port 53.</li>
+      <li>HTTP fetches the page itself over TCP port 80, with methods and status codes and large answers.</li>
+      <li>UDP sends single datagrams with no handshake, no acknowledgements and no retransmission, so it is fast but unreliable.</li>
+      <li>TCP opens a connection, numbers and acknowledges every byte, resends what is lost, and closes cleanly.</li>
+      <li>That costs extra packets but guarantees the whole page arrives intact and in order.</li>
+    </ul>
+  </div>
+  <div class="tbl"><table>
+    <tr><th></th><th>DNS</th><th>HTTP</th></tr>
+    <tr><td>Job</td><td>Name to address</td><td>Fetch the content</td></tr>
+    <tr><td>Carried by</td><td>UDP, port 53</td><td>TCP, port 80</td></tr>
+    <tr><td>Size of exchange</td><td>One small question, one small answer</td><td>Request plus a response that can span many segments</td></tr>
+    <tr><td>Order</td><td>Must happen first</td><td>Starts after DNS answered</td></tr>
+  </table></div>
+  <div class="tbl"><table>
+    <tr><th></th><th>UDP</th><th>TCP</th></tr>
+    <tr><td>Connection</td><td>None: just send</td><td>Three-way handshake first, orderly close at the end</td></tr>
+    <tr><td>Reliability</td><td>No acknowledgement, no resend</td><td>Sequence numbers, acknowledgements, lost data resent</td></tr>
+    <tr><td>Order</td><td>Not guaranteed</td><td>Guaranteed</td></tr>
+    <tr><td>Cost</td><td>Light and fast</td><td>More packets and more state</td></tr>
+    <tr><td>Fits</td><td>Tiny exchanges like DNS</td><td>Anything that must arrive whole, like a web page</td></tr>
+  </table></div>
+  <p><span class="term">DNS</span> and <span class="term">HTTP</span> are both application protocols where a client asks and a server answers. The difference is the job and the size: DNS is a quick lookup that must finish first, HTTP carries the content and its methods (GET) and status codes (200). <span class="term">UDP</span> and <span class="term">TCP</span> sit underneath. <i>UDP trades reliability for speed</i>, which suits a two-packet DNS exchange; <i>TCP trades extra packets for a guarantee</i> that the whole page arrives complete and in order. You can count the difference yourself in the Event List.</p>
+</div>
+
+<!-- ============================================================ PT5 -->
+<h2 id="pt5">PTSkills 5: Routing IP Packets</h2>
+<div class="act-head">
+  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills5_v8.pka</code></div>
+  <div class="row"><span class="k">Start</span><span class="state"><span class="from">R2-Central Fa0/0 off, no address, no route out</span> &rarr; <span class="to">PCs reach the server</span></span></div>
+  <div class="row"><span class="k">Checked items</span><div class="meter" aria-label="4 checked items"><span style="--i:0" title="Fa0/0 port status on"></span><span style="--i:1" title="Fa0/0 IP address"></span><span style="--i:2" title="Fa0/0 subnet mask"></span><span style="--i:3" title="Default static route"></span></div></div>
+</div>
+<p><b>What you achieve:</b> you repair a router. R2-Central's LAN port is switched off and has no address, and the router has no route to the outside. Four checked items: port status, IP address, mask, and the default route.</p>
+<ol class="steps">
+  <li><p class="do">Realtime: ping from PC 1A to <code>192.168.254.254</code> (Add Simple PDU, or Desktop, Command Prompt, <code>ping 192.168.254.254</code>). It fails. Hover over R2-Central: Fa0/0 is down and has no address.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>Seeing the fault first makes the fix meaningful.</p></div></li>
+  <li><p class="do">R2-Central, Config tab, INTERFACE, FastEthernet0/0: IP <code>172.16.255.254</code>, mask <code>255.255.0.0</code>, Port Status <b>On</b>. Close the window.</p>
+    <div class="note"><span class="chip fix"><svg class="ic"><use href="#i-fix"/></svg>Fixes</span><p>The LAN had no working door to the outside: its gateway must have an address in the LAN and be switched on.</p></div>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>3 items: port status, IP address, mask.</p></div></li>
+  <li><p class="do">Hover again: Fa0/0 is up. Ping the server again: it <b>still fails</b>.</p>
+    <div class="note"><span class="chip watch"><svg class="ic"><use href="#i-watch"/></svg>Watch</span><p>This is a hidden question; see below. The frame now reaches the router, which then has nowhere to send it.</p></div></li>
+  <li><p class="do">Inspect tool (magnifying glass), click R2-Central, Routing Table. Two "C" lines: 172.16.0.0/16 and 10.10.10.4/30. Nothing for 192.168.254.0/24.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>Proof that the router does not know where the server network is.</p></div></li>
+  <li><p class="do">Config, ROUTING, Static: Network <code>0.0.0.0</code>, Mask <code>0.0.0.0</code>, Next Hop <code>10.10.10.6</code>, Add.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p><code>0.0.0.0/0</code> matches every destination: "anything I do not know, hand to R1-ISP at 10.10.10.6".</p></div>
+    <div class="note"><span class="chip unlock"><svg class="ic"><use href="#i-unlock"/></svg>Unlocks</span><p>1 item: the default route.</p></div></li>
+  <li><p class="do">Config, GLOBAL, Settings, <b>Save</b>.</p>
+    <div class="note"><span class="chip why"><svg class="ic"><use href="#i-why"/></svg>Why</span><p>Router settings live in memory; without Save a power cycle forgets the port and the route.</p></div></li>
+  <li><p class="do">Inspect the routing table again: a new <code>S*</code> line, <code>0.0.0.0/0 via 10.10.10.6</code>.</p></li>
+  <li><p class="do">Check Results: 100 %.</p>
+    <div class="note"><span class="chip shot"><svg class="ic"><use href="#i-cam"/></svg>Screenshot</span><p>Completion screenshot, plus the routing table before and after if you like.</p></div></li>
+  <li><p class="do">Realtime: ping 1A to Eagle Server. Fails once (ARP), Fire again, Successful.</p></li>
+  <li><p class="do">Simulation: Capture / Forward the same ping from 1A to the server and back; open the envelope at each hop.</p>
+    <div class="note"><span class="chip watch"><svg class="ic"><use href="#i-watch"/></svg>Watch</span><p>Same source and destination IP all the way; new MAC addresses after every router; TTL one lower after every router.</p></div></li>
+</ol>
+<figure>
+<svg class="fig" viewBox="0 0 600 210" role="img" aria-labelledby="rt-t">
+  <title id="rt-t">Before the default route the ping is dropped at R2-Central; after it, the ping reaches Eagle Server and the TTL falls from 128 to 126.</title>
+  <text class="s-tz" x="10" y="22">BEFORE: NO ROUTE</text>
+  <line class="s-link" x1="40" y1="60" x2="280" y2="60"/><line class="s-link" x1="280" y1="60" x2="560" y2="60" style="opacity:.35"/>
+  <circle class="s-node" cx="40" cy="60" r="12"/><circle class="s-node" cx="160" cy="60" r="12"/><circle class="s-node" cx="280" cy="60" r="16"/><circle class="s-node" cx="420" cy="60" r="16" style="opacity:.4"/><circle class="s-node" cx="560" cy="60" r="12" style="opacity:.4"/>
+  <line class="s-x" x1="270" y1="32" x2="290" y2="52" /><line class="s-x" x1="290" y1="32" x2="270" y2="52"/>
+  <text class="s-tm" x="300" y="40">no line matches 192.168.254.0/24: dropped</text>
+  <circle class="s-pkt anim" r="6"><animateMotion dur="6s" repeatCount="indefinite" path="M40,60 L280,60" keyPoints="0;1;1" keyTimes="0;0.6;1" calcMode="linear"/><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;0.6;0.65;1"/></circle>
+  <text class="s-tz" x="10" y="118">AFTER: DEFAULT ROUTE 0.0.0.0/0 VIA 10.10.10.6</text>
+  <line class="s-link" x1="40" y1="155" x2="560" y2="155"/>
+  <circle class="s-node" cx="40" cy="155" r="12"/><circle class="s-node" cx="160" cy="155" r="12"/><circle class="s-node" cx="280" cy="155" r="16"/><circle class="s-node" cx="420" cy="155" r="16"/><circle class="s-node" cx="560" cy="155" r="12"/>
+  <path class="s-ok" d="M552,155 l6,6 l10,-12"/>
+  <text class="s-tm" x="100" y="145" text-anchor="middle">TTL 128</text><text class="s-tm" x="350" y="145" text-anchor="middle">TTL 127</text><text class="s-tm" x="490" y="145" text-anchor="middle">TTL 126</text>
+  <circle class="f-ok anim" r="6"><animateMotion dur="6s" repeatCount="indefinite" path="M40,155 L560,155" keyPoints="0;1;1" keyTimes="0;0.8;1" calcMode="linear"/><animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="1;1;0" keyTimes="0;0.8;1"/></circle>
+  <text class="s-t" x="40" y="195" text-anchor="middle">PC 1A</text><text class="s-t" x="160" y="195" text-anchor="middle">S1</text><text class="s-t" x="280" y="195" text-anchor="middle">R2-Central</text><text class="s-t" x="420" y="195" text-anchor="middle">R1-ISP</text><text class="s-t" x="560" y="195" text-anchor="middle">Eagle Server</text>
+</svg>
+<figcaption>The switch does not touch the TTL; each router lowers it by one.</figcaption>
+</figure>
+<div class="tbl"><table>
+  <tr><th>R2-Central routing table</th><th>Before</th><th>After</th></tr>
+  <tr><td class="m">C 172.16.0.0/16 Fa0/0</td><td>yes (once the port is up)</td><td>yes</td></tr>
+  <tr><td class="m">C 10.10.10.4/30 S0/0/0</td><td>yes</td><td>yes</td></tr>
+  <tr><td class="m">S* 0.0.0.0/0 via 10.10.10.6</td><td>missing</td><td>yes</td></tr>
+</table></div>
+<div class="callout hidden">
+  <span class="chip hidden"><svg class="ic"><use href="#i-q"/></svg>Hidden in the activity</span>
+  <dl class="qa">
+    <dt>Task 1: "Try reaching Eagle Server. The request still fails. What are some possible reasons why?"</dt>
+    <dd>The port is up now, so the frame reaches R2-Central, but the router has no route to 192.168.254.0/24 and throws the packet away. Other reasons in general: the serial link down, R1-ISP missing its route back to 172.16.0.0/16 (it has one: <code>ip route 172.16.0.0 255.255.0.0 10.10.10.5</code>), the server off, or ARP not yet done.</dd>
+    <dt>Task 2: "You will see the router's directly connected networks." What does directly connected mean?</dt>
+    <dd>Networks the router has a port in. It learns those by itself; every other network must be taught, by a static route as here or by a routing protocol (RIP and OSPF in later labs).</dd>
+    <dt>Task 3: why is one default route enough here?</dt>
+    <dd>R2-Central has only one way out. A default route is the usual choice for a network with a single exit.</dd>
+    <dt>Task 3: "Save ... in case the router is power cycled." What happens without Save?</dt>
+    <dd>The running configuration is lost at the next restart, and the port and route are gone again.</dd>
+    <dt>Reflection: "Where might things go wrong?"</dt>
+    <dd>A missing or wrong route (dropped at the router), a wrong next hop (sent to a router that drops it), a port down (frame dropped), a wrong mask on a route (matches the wrong destinations), or no route back on the other router (the request arrives, the reply cannot return).</dd>
+  </dl>
+</div>
+
+<div class="answer">
+  <h4>Report questions</h4>
+  <div class="callout canvas">
+    <span class="chip canvas"><svg class="ic"><use href="#i-doc"/></svg>As written</span>
+    <blockquote><span class="src">Canvas, 2 questions</span>What data can an IP Packet contain? See if you can find out how to view this information from within the tool when you send a test packet. Hint: Insert a picture of this and explain briefly / What is a route? What does it mean a packet is routed?</blockquote>
+    <blockquote><span class="src">Activity reflection</span>What data can an IP Packet contain? What is meant by the phrase "the IP packet is routed"? What is a route? Where might things go wrong?</blockquote>
+  </div>
+
+  <h4>1. What an IP packet contains, and how to see it</h4>
+  <div class="callout brief">
+    <span class="chip unlock">In brief</span>
+    <ul>
+      <li>An IP packet is a header plus a payload.</li>
+      <li>The header carries version, lengths, identification and fragment fields, TTL, the protocol number of the payload, a checksum, and the source and destination IP addresses.</li>
+      <li>The payload is the transport unit: ICMP for a ping, UDP for DNS, TCP for HTTP.</li>
+      <li>In Simulation mode, click the envelope or the Info square; the Inbound and Outbound PDU Details tabs list every header field.</li>
+      <li>Taken at R2-Central it shows the IP addresses unchanged while the MAC addresses and TTL differ.</li>
+    </ul>
+  </div>
+  <figure>
+  <svg class="fig" viewBox="0 0 680 260" role="img" aria-labelledby="ip-t">
+    <title id="ip-t">IPv4 header layout in 32-bit rows, with TTL, protocol, source and destination highlighted, followed by the payload.</title>
+    <text class="s-tm" x="20" y="24">bit 0</text><text class="s-tm" x="180" y="24" text-anchor="middle">8</text><text class="s-tm" x="340" y="24" text-anchor="middle">16</text><text class="s-tm" x="500" y="24" text-anchor="middle">24</text><text class="s-tm" x="660" y="24" text-anchor="end">31</text>
+    <rect class="s-field" x="20" y="32" width="80" height="34"/><text class="s-t" x="60" y="53" text-anchor="middle">Version 4</text>
+    <rect class="s-field" x="100" y="32" width="80" height="34"/><text class="s-t" x="140" y="53" text-anchor="middle">Hdr length</text>
+    <rect class="s-field" x="180" y="32" width="160" height="34"/><text class="s-t" x="260" y="53" text-anchor="middle">Type of service</text>
+    <rect class="s-field" x="340" y="32" width="320" height="34"/><text class="s-t" x="500" y="53" text-anchor="middle">Total length</text>
+    <rect class="s-field" x="20" y="66" width="320" height="34"/><text class="s-t" x="180" y="87" text-anchor="middle">Identification</text>
+    <rect class="s-field" x="340" y="66" width="60" height="34"/><text class="s-t" x="370" y="87" text-anchor="middle">Flags</text>
+    <rect class="s-field" x="400" y="66" width="260" height="34"/><text class="s-t" x="530" y="87" text-anchor="middle">Fragment offset</text>
+    <rect class="s-field hl" x="20" y="100" width="160" height="34"/><text class="s-t" x="100" y="121" text-anchor="middle">TTL 128</text>
+    <rect class="s-field hl" x="180" y="100" width="160" height="34"/><text class="s-t" x="260" y="121" text-anchor="middle">Protocol 1 = ICMP</text>
+    <rect class="s-field" x="340" y="100" width="320" height="34"/><text class="s-t" x="500" y="121" text-anchor="middle">Header checksum</text>
+    <rect class="s-field hl" x="20" y="134" width="640" height="34"/><text class="s-t" x="340" y="155" text-anchor="middle">Source IP address: 172.16.1.1</text>
+    <rect class="s-field hl" x="20" y="168" width="640" height="34"/><text class="s-t" x="340" y="189" text-anchor="middle">Destination IP address: 192.168.254.254</text>
+    <rect class="s-field" x="20" y="210" width="640" height="38" style="stroke-dasharray:5 4"/><text class="s-t" x="340" y="233" text-anchor="middle">Payload: ICMP echo (ping) / UDP + DNS / TCP + HTTP</text>
+  </svg>
+  <figcaption>The highlighted fields are the ones worth pointing at in the report. Protocol is 6 for TCP and 17 for UDP.</figcaption>
+  </figure>
+  <p>An IP packet is a <span class="term">header</span> followed by a <span class="term">payload</span>. The header holds the version (4), header length, type of service, total length, identification, flags and fragment offset (used to split big packets), <b>time to live</b> (lowered by one at every router, dropped at zero), the <b>protocol number</b> of the payload (1 ICMP, 6 TCP, 17 UDP), a header checksum, and the <b>source and destination IP addresses</b>. The payload is whatever the transport layer hands down: an ICMP echo request for a ping, a UDP datagram with a DNS message, or a TCP segment with part of an HTTP page.</p>
+  <p><b>To see it in Packet Tracer:</b> Simulation mode, send the test ping from 1A to Eagle Server, press Capture / Forward once or twice, then click the envelope or the coloured square in the Info column of the Event List. The <b>PDU Information</b> window opens. The <i>OSI Model</i> tab shows the packet layer by layer; <i>Inbound PDU Details</i> and <i>Outbound PDU Details</i> show the real fields: the Ethernet frame, then the IP header (VER, IHL, TL, ID, FLAGS, TTL, PRO, CHKSUM, SRC IP, DST IP), then the ICMP message.</p>
+  <div class="note"><span class="chip shot"><svg class="ic"><use href="#i-cam"/></svg>Screenshot</span><p>PDU Information window at R2-Central: source 172.16.1.1 and destination 192.168.254.254 are the same on both tabs, the MAC addresses and the TTL are not.</p></div>
+
+  <h4>2. What a route is, and what "routed" means</h4>
+  <div class="callout brief">
+    <span class="chip unlock">In brief</span>
+    <ul>
+      <li>A route is one line in a router's table: to reach network X with mask Y, send to next hop Z.</li>
+      <li>The default route 0.0.0.0/0 means "everything else goes to Z", here R1-ISP at 10.10.10.6.</li>
+      <li>A packet is routed when each router matches its destination address against the table, picks the most specific line, lowers the TTL, and re-wraps the packet in a new frame for the next hop.</li>
+      <li>This repeats until a router has the destination network directly connected and delivers it.</li>
+      <li>Without a matching line the packet is dropped, which is why the ping failed before the fix.</li>
+    </ul>
+  </div>
+  <p>A <span class="term">route</span> is one line in a router's routing table: "to reach destination network X with mask Y, send to next hop Z (or out of port W)". R2-Central's table has its two directly connected networks and, after this activity, the <span class="term">default route</span> <code>0.0.0.0/0</code> via <code>10.10.10.6</code>, meaning "anything I have no better line for goes to R1-ISP".</p>
+  <p><i>"The packet is routed"</i> means that at every router the destination address is compared with the table, the most specific matching line wins, the TTL is lowered by one, and the packet is wrapped in a new frame for that next hop. This repeats hop by hop until a router has the destination network directly connected and delivers it. Before the fix the packet was dropped at R2-Central because no line matched; after the default route exists it goes to R1-ISP, which has 192.168.254.0/24 connected and delivers it. The reply returns the same way because R1-ISP already has a route to 172.16.0.0/16.</p>
+</div>
+
+<!-- ============================================================ SHOTS -->
+<h2 id="shots">Screenshots checklist</h2>
+<p>Ticks are remembered in this browser only.</p>
+<ul class="check">
+  <li><input type="checkbox" id="c1"><label for="c1">PTSkills 1: Check Results, Assessment Items tab, 2/2</label></li>
+  <li><input type="checkbox" id="c2"><label for="c2">PTSkills 2: Check Results, 6/6</label></li>
+  <li><input type="checkbox" id="c3"><label for="c3">PTSkills 2: Event List of the first ping, ARP above ICMP</label></li>
+  <li><input type="checkbox" id="c4"><label for="c4">PTSkills 3: Check Results, 11/11</label></li>
+  <li><input type="checkbox" id="c5"><label for="c5">PTSkills 3: URL-to-page diagram (drawn or the Event List)</label></li>
+  <li><input type="checkbox" id="c6"><label for="c6">PTSkills 4: Check Results, 15/15</label></li>
+  <li><input type="checkbox" id="c7"><label for="c7">PTSkills 4: filtered Event List with DNS, TCP, HTTP order</label></li>
+  <li><input type="checkbox" id="c8"><label for="c8">PTSkills 5: Check Results, 4/4</label></li>
+  <li><input type="checkbox" id="c9"><label for="c9">PTSkills 5: PDU Information window with the IP header, at R2-Central</label></li>
+  <li><input type="checkbox" id="c10"><label for="c10">PTSkills 5: routing table before and after (optional)</label></li>
+</ul>
+
+<footer>Sources: Canvas assignment 9.5 Lab 2 (course 614, assignment 3042) and the instruction text inside the five PTSkills activity files. Part of the pt-activity-tools repository, folder <code>study/</code>; made following <code>study/GUIDELINE.md</code>. Course material of Cisco NetAcad and LTU, for course use only.</footer>
+</main>
+</div>
+
+<script>
+(function () {
+  var key = 'lab2-shots';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(key) || '{}'); } catch (e) { state = {}; }
+  document.querySelectorAll('ul.check input').forEach(function (box) {
+    if (state[box.id]) box.checked = true;
+    box.addEventListener('change', function () {
+      state[box.id] = box.checked;
+      try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {}
+    });
+  });
+})();
+</script>
