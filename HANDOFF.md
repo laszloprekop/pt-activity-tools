@@ -123,6 +123,12 @@ For each original `O`:
 2. `convert.py O O_pt800.pka converted/<name>_v8.pka` (or `tools/pipeline.sh <workdir>` for all): verifies every original graded item has a modern counterpart, restores the ones 8.0.0 dropped when their node exists in the regenerated tree, prints the mapping and anything that cannot be graded any more, sets `ELAPSED=0`, makes network [0] equal network [1], re-encodes. Instructions are left exactly as PT carried them over.
 3. Test (section 8).
 
+## 7b. Second conversion route: pka-fix (no Packet Tracer needed)
+
+`pka-fix/pka_fix.py` (merged from PR #1, standard-library Python 3.8+, with a Windows drag-and-drop `.bat`) applies the same corrections directly to the 4.1 file and keeps the 4.1 container: it fills the empty expected values (link Type, Connects to, PC DNS Server IP) from the answer network, rewrites FastEthernet Duplex/Bandwidth `1` and OSPF Passive Interface values to the modern format, and rewrites OSPF network item IDs with wildcard masks so modern PT matches them to the "(deprecated) Route<n>" twins. Use it when PT 8.0.0 is not available (Windows guest mode refusing to save, or only 9.x installed). `tools/ptwin.py` is the Windows counterpart of `pttest.py` (pywinauto, PT 9.0.1).
+
+Verification: on the 14 originals it reports 0 unknown and 0 warnings, and the number of filled values per file equals the items measured as never-passing in 9.0.1. The PR author reports in-app results for 9.0.1 (all solved copies 0 Incorrect, fresh copies start Incorrect) and 8.0.0 (solved 9, 13, 14 green; 13/14 keep 89 and 55 items). 8.2.2 (tested here 2026-10-02): all 13 solved copies reach their full item count, fresh copies start at 0; see tests/results.md.
+
 ## 8. Test harness and plan
 
 `pttest.py` launches a PT version with a file, does the guest login, dismisses dialogs, presses Check Results, opens Assessment Items, reads every row (name, Correct/Incorrect, points) through the Accessibility API, screenshots the results view, and quits PT. `ptbatch.py` runs a plan file; `ptreport.py` summarises runs against the file's own graded-item count.

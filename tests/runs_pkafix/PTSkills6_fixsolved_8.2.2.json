@@ -1,0 +1,943 @@
+{
+ "version": "8.2.2",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/fixvar/PTSkills6_fixsolved.pka",
+ "pid": 48346,
+ "main_title": "Cisco Packet Tracer - /private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/fixvar/PTSkills6_fixsolved.pka - Guest - 2026-10-02 16:34:32",
+ "load_dialogs": [],
+ "activity_window": "PT Activity: 00:00:10",
+ "slash_texts": [],
+ "totals": [],
+ "rows_visible": [
+  [
+   "Network",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "1A",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server IP",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/1",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Power",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "1B",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server IP",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/2",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Power",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Eagle_Server",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "DNS Enable",
+   "Correct",
+   "0",
+   "Ip",
+   ""
+  ],
+  [
+   "Resource Records",
+   "",
+   "0",
+   "Ip",
+   ""
+  ],
+  [
+   "eagle-server.example.com",
+   "",
+   "1",
+   "Ip",
+   ""
+  ],
+  [
+   "A Records",
+   "",
+   "0",
+   "Ip",
+   ""
+  ],
+  [
+   "Address",
+   "Correct",
+   "1",
+   "Ip",
+   ""
+  ],
+  [
+   "HTTP Server",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "HTTP Enable",
+   "Correct",
+   "0",
+   "Ip",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to R1-ISP",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Power",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "R1-ISP",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to Eagle_Server",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Clock Rate",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to Serial0/0/0",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Routes",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "(deprecated) Static Routes",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "(deprecated) Route0",
+   "Correct",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/24",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Serial0/0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to R1-ISP",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to Serial0/0/0",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Routes",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "(deprecated) Static Routes",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "(deprecated) Route0",
+   "Correct",
+   "0",
+   "Routing",
+   ""
+  ]
+ ],
+ "incorrect_rows": [
+  [
+   "Network",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "1A",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "1B",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Eagle_Server",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "R1-ISP",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Routes",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Routes",
+   "",
+   "0",
+   "Other",
+   ""
+  ]
+ ],
+ "incorrect_items": [],
+ "leaves": [
+  [
+   "Default Gateway",
+   "Correct",
+   "0"
+  ],
+  [
+   "DNS Server IP",
+   "Correct",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0/1",
+   "Correct",
+   "0"
+  ],
+  [
+   "Type",
+   "Correct",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0"
+  ],
+  [
+   "Power",
+   "Correct",
+   "0"
+  ],
+  [
+   "Default Gateway",
+   "Correct",
+   "0"
+  ],
+  [
+   "DNS Server IP",
+   "Correct",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0/2",
+   "Correct",
+   "0"
+  ],
+  [
+   "Type",
+   "Correct",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0"
+  ],
+  [
+   "Power",
+   "Correct",
+   "0"
+  ],
+  [
+   "Default Gateway",
+   "Correct",
+   "0"
+  ],
+  [
+   "DNS Enable",
+   "Correct",
+   "0"
+  ],
+  [
+   "Address",
+   "Correct",
+   "1"
+  ],
+  [
+   "HTTP Enable",
+   "Correct",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Correct",
+   "0"
+  ],
+  [
+   "Type",
+   "Correct",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0"
+  ],
+  [
+   "Power",
+   "Correct",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0",
+   "Correct",
+   "0"
+  ],
+  [
+   "Type",
+   "Correct",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0"
+  ],
+  [
+   "Clock Rate",
+   "Correct",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0"
+  ],
+  [
+   "Connects to Serial0/0/0",
+   "Correct",
+   "0"
+  ],
+  [
+   "Type",
+   "Correct",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0"
+  ],
+  [
+   "(deprecated) Route0",
+   "Correct",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0/24",
+   "Correct",
+   "0"
+  ],
+  [
+   "Type",
+   "Correct",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Correct",
+   "0"
+  ],
+  [
+   "Connects to Serial0/0/0",
+   "Correct",
+   "0"
+  ],
+  [
+   "Type",
+   "Correct",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Correct",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Correct",
+   "0"
+  ],
+  [
+   "(deprecated) Route0",
+   "Correct",
+   "0"
+  ]
+ ],
+ "correct": 49,
+ "incorrect": 0,
+ "screenshot": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/runs_fix/PTSkills6_fixsolved_8.2.2.png",
+ "items_correct": 49,
+ "items_total": 49,
+ "ocr": {
+  "items": "49/49",
+  "score": "1/1"
+ }
+}

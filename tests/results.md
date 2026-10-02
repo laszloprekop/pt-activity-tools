@@ -158,3 +158,37 @@ PTSkills14_v8solved.pka      8.0.0   55   0   55   55   completed
 PTSkills14_v8solved.pka      8.2.2   55   0   55   55   completed
 PTSkills14_v8solved.pka      9.0.1   55   0   55   55  
 ```
+
+## pka-fix output in Packet Tracer 8.2.2 (2026-10-02)
+
+The 13 files written by `pka-fix/pka_fix.py` (PTSkills5 needs no fix), each graded as delivered (`_fix`) and with the answer network loaded (`_fixsolved`). All 13 solved copies reach their full item count, including the 9 OSPF items of PTSkills 13 and 14; all fresh copies start at 0, except the items the original starting network already satisfies (PTSkills13: 9, PTSkills14: 2, the same as the `_v8` files). Records in `tests/runs_pkafix/`.
+
+```
+file                         PT      ok bad  exp  tot  note
+PTSkills1_fix.pka            8.2.2    0   2    2    2   incorrect: Connects to FastEthernet0/1, Connects to FastEthernet0/0
+PTSkills1_fixsolved.pka      8.2.2    2   0    2    2  
+PTSkills2_fix.pka            8.2.2    0   6    6    6   incorrect: Default Gateway, DNS Server IP, IP Address, Connects to FastEthernet0/2, Type, Subnet Mask
+PTSkills2_fixsolved.pka      8.2.2    6   0    6    6  
+PTSkills3_fix.pka            8.2.2    0  11   11   11   incorrect: Default Gateway, DNS Server IP, IP Address, Connects to FastEthernet0/2, Type, Subnet Mask...
+PTSkills3_fixsolved.pka      8.2.2   11   0   11   11  
+PTSkills4_fix.pka            8.2.2    0  15   15   15   incorrect: Default Gateway, DNS Server IP, IP Address, Connects to FastEthernet0/1, Type, Subnet Mask...
+PTSkills4_fixsolved.pka      8.2.2   15   0   15   15  
+PTSkills6_fix.pka            8.2.2    0  49   49   49   incorrect: Default Gateway, DNS Server IP, IP Address, Connects to FastEthernet0/1, Type, Port Status...
+PTSkills6_fixsolved.pka      8.2.2   49   0   49   49  
+PTSkills7_fix.pka            8.2.2    0  33   33   33   incorrect: Default Gateway, DNS Server IP, IP Address, Port Status, Subnet Mask, Default Gateway...
+PTSkills7_fixsolved.pka      8.2.2   33   0   33   33  
+PTSkills8_fix.pka            8.2.2    0  20   20   20   incorrect: Connects to FastEthernet0/1, Type, Connects to FastEthernet0/2, Type, Connects to FastEthernet0/0, Type...
+PTSkills8_fixsolved.pka      8.2.2   20   0   20   20  
+PTSkills9_fix.pka            8.2.2    0  40   40   40   incorrect: Default Gateway, DNS Server IP, Duplex, IP Address, Connects to FastEthernet0/1, Type...
+PTSkills9_fixsolved.pka      8.2.2   40   0   40   40  
+PTSkills10_fix.pka           8.2.2    0  89   89   89   incorrect: Default Gateway, IP Address, Connects to FastEthernet0/2, Type, Subnet Mask, Default Gateway...
+PTSkills10_fixsolved.pka     8.2.2   89   0   89   89  
+PTSkills11_fix.pka           8.2.2    0  57   57   57   incorrect: Default Gateway, IP Address, Subnet Mask, Default Gateway, IP Address, Subnet Mask...
+PTSkills11_fixsolved.pka     8.2.2   57   0   57   57  
+PTSkills12_fix.pka           8.2.2    0  22   22   22   incorrect: Type, Type, Type, Type, Type, Type...
+PTSkills12_fixsolved.pka     8.2.2   22   0   22   22  
+PTSkills13_fix.pka           8.2.2    9  80   89   89   incorrect: Default Gateway, Default Gateway, Password, Host Name, (deprecated) Route0, (deprecated) Route1...
+PTSkills13_fixsolved.pka     8.2.2   89   0   89   89  
+PTSkills14_fix.pka           8.2.2    2  53   55   55   incorrect: Host Name, (deprecated) Route0, (deprecated) Route1, (deprecated) Route2, FastEthernet0/0, IP Address...
+PTSkills14_fixsolved.pka     8.2.2   55   0   55   55  
+```

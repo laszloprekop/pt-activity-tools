@@ -1,0 +1,1148 @@
+{
+ "version": "8.2.2",
+ "file": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/fixvar/PTSkills9_fix.pka",
+ "pid": 49549,
+ "main_title": "Cisco Packet Tracer - /private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/fixvar/PTSkills9_fix.pka - Guest - 2026-10-02 16:44:24",
+ "load_dialogs": [],
+ "activity_window": "PT Activity: 00:00:10",
+ "slash_texts": [],
+ "totals": [],
+ "rows_visible": [
+  [
+   "Network",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "1A",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server IP",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/1",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "1B",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server IP",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/2",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Power",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Bandwidth",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/24",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Routes",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "(deprecated) Static Routes",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "(deprecated) Route0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Bandwidth",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to 1A",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "FastEthernet0/2",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Bandwidth",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to 1B",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "FastEthernet0/24",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Bandwidth",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ]
+ ],
+ "incorrect_rows": [
+  [
+   "Network",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "1A",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server IP",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/1",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "1B",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "DNS Server IP",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/2",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Power",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/0",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Bandwidth",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/24",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Routes",
+   "",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "(deprecated) Static Routes",
+   "",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "(deprecated) Route0",
+   "Incorrect",
+   "0",
+   "Routing",
+   ""
+  ],
+  [
+   "S1-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Ports",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FastEthernet0/1",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Bandwidth",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to 1A",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "FastEthernet0/2",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Bandwidth",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to 1B",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "FastEthernet0/24",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Bandwidth",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Link to R2-Central",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0",
+   "Other",
+   ""
+  ]
+ ],
+ "incorrect_items": [
+  "Default Gateway",
+  "DNS Server IP",
+  "Duplex",
+  "IP Address",
+  "Connects to FastEthernet0/1",
+  "Type",
+  "Port Status",
+  "Subnet Mask",
+  "Default Gateway",
+  "DNS Server IP",
+  "Duplex",
+  "IP Address",
+  "Connects to FastEthernet0/2",
+  "Type",
+  "Port Status",
+  "Subnet Mask",
+  "Power",
+  "Bandwidth",
+  "Duplex",
+  "IP Address",
+  "Connects to FastEthernet0/24",
+  "Type",
+  "Port Status",
+  "Subnet Mask",
+  "(deprecated) Route0",
+  "Bandwidth",
+  "Duplex",
+  "Connects to FastEthernet0",
+  "Type",
+  "Port Status",
+  "Bandwidth",
+  "Duplex",
+  "Connects to FastEthernet0",
+  "Type",
+  "Port Status",
+  "Bandwidth",
+  "Duplex",
+  "Connects to FastEthernet0/0",
+  "Type",
+  "Port Status"
+ ],
+ "leaves": [
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "DNS Server IP",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0/1",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Default Gateway",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "DNS Server IP",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0/2",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Power",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Bandwidth",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "IP Address",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0/24",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Subnet Mask",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "(deprecated) Route0",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Bandwidth",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Bandwidth",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Bandwidth",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Duplex",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Connects to FastEthernet0/0",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Type",
+   "Incorrect",
+   "0"
+  ],
+  [
+   "Port Status",
+   "Incorrect",
+   "0"
+  ]
+ ],
+ "correct": 0,
+ "incorrect": 40,
+ "screenshot": "/private/tmp/claude-501/-Users-laszloprekop-dev-LTU-repos-pt-activity-tools/887ee6c7-5b22-4a11-886a-adb3fe04dab9/scratchpad/pt/runs_fix/PTSkills9_fix_8.2.2.png",
+ "items_correct": 0,
+ "items_total": 40,
+ "ocr": {
+  "items": "0/40"
+ }
+}
