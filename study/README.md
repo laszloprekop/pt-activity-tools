@@ -5,3 +5,4 @@ Notes, newcomer guides and draft answers for the labs of Z0025E Computer Network
 | File | Lab | Content |
 |---|---|---|
 | lab2-ptskills-1-5.md | Lab 2 (PTSkills 1 to 5) | glossary, lab network, five activities step by step, hidden questions, draft answers, screenshots to collect |
+| lab2-report.md | Lab 2 (PTSkills 1 to 5) | the report itself in the format Canvas asks for: per activity a Check Results screenshot slot and the answers; fill in names, version and screenshots, export to PDF |
