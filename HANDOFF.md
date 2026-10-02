@@ -46,6 +46,7 @@ converted/                  the 14 converted deliverables, <canvas name>_v8.pka 
 build/canvas/               scratch output of tools/pipeline.sh (ignored); identical to converted/
 tests/results.md            results table of every pttest run; tests/runs/ holds the JSON records
 docs/packet-tracer-ui-settings.md  how to stop PT rearranging windows and changing font sizes (Mac and Windows)
+study/                      lab group knowledge: draft answers and notes per lab (study/README.md)
 ```
 
 ```bash
