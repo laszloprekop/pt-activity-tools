@@ -65,6 +65,8 @@ Questions hidden in the activity: none; the text only asks you to explore. The r
 
 **Report question: explain the difference between a router and a switch.**
 
+*In brief:* A switch joins devices inside one network and forwards frames by MAC address. A router joins different networks and forwards packets by IP address, using a routing table. Every router port is in a different network; all switch ports are in the same one. A router rebuilds the frame at every hop and blocks broadcasts; a switch passes frames on unchanged and floods broadcasts. In the lab, S1-Central is the switch inside 172.16.0.0/16 and R2-Central is the router that leads out of it.
+
 A switch connects devices inside one network. It forwards frames by MAC address, using a table it builds by watching which address appears on which port. All its ports are in the same network; in the lab, S1-Central's ports are all in VLAN 1 (172.16.0.0/16), and the switch only has an IP address so you can manage it (172.16.254.1). A switch passes frames on unchanged and sends broadcasts out of every port.
 
 A router connects different networks. Every port of a router is in a different network, and the router forwards packets by IP address using its routing table. R2-Central joins the LAN 172.16.0.0/16 (port Fa0/0, 172.16.255.254) to the serial link 10.10.10.4/30 (port S0/0/0, 10.10.10.5); R1-ISP joins that link to the server network 192.168.254.0/24. When a router forwards a packet it throws away the old frame, lowers the TTL by one, and builds a new frame for the next hop, so the MAC addresses change at every router while the IP addresses stay the same. A router does not pass broadcasts on. In Packet Tracer you can see the difference when you hover: a router shows an IP address per port, a switch shows VLAN membership and no port addresses.
@@ -94,6 +96,8 @@ Questions hidden in the activity and short answers:
 
 **Report question: why does the first one-shot ping fail (ARP)?**
 
+*In brief:* A ping must be put into an Ethernet frame, and a frame needs the MAC address of the next device. PC 1B does not yet know the MAC address of its gateway, so it first broadcasts an ARP request. While waiting for the ARP reply, the ping that triggered it is dropped, which shows as Failed. R1-ISP does the same lookup for the server's MAC. The second ping works because the ARP tables are now filled.
+
 A ping is an ICMP echo request. It travels inside an IP packet, and the IP packet travels inside an Ethernet frame. To build the frame, PC 1B needs the MAC address of the next device. Eagle Server is in another network, so the frame has to go to the default gateway 172.16.255.254, and the PC does not yet know that router's MAC address. So it first sends an ARP request as a broadcast ("who has 172.16.255.254?"), and R2-Central answers with its MAC. While the PC waits for that answer, the ping that caused the lookup is thrown away, which is what many real operating systems do too. That is the Failed. The same lookup also happens at R1-ISP, which must ask for Eagle Server's MAC before it can deliver. The second ping succeeds because every ARP table along the path is now filled. In Simulation mode you can see it: the first run shows ARP frames (destination FFFF.FFFF.FFFF) before any ICMP, the second run shows only ICMP. ARP entries are forgotten after a few minutes, so a ping can fail again later for the same reason.
 
 Screenshot for the report: the Event List of the first ping with ARP lines above the ICMP line.
@@ -121,6 +125,8 @@ Questions hidden in the activity:
 - The reflection is the report question below.
 
 **Report question: what happens when you type a URL into a browser and a page comes back? Which client-server interactions are involved?**
+
+*In brief:* First the PC asks the DNS server for the address behind the name (one UDP question, one UDP answer). Then the browser opens a TCP connection to that address on port 80 with a three-way handshake. It sends HTTP GET and the server answers HTTP 200 OK with the page. The connection is then closed. Two client-server pairs are involved: DNS client to DNS server, and HTTP client to HTTP server, both started by the client.
 
 Two separate conversations, both started by the PC.
 
@@ -153,6 +159,8 @@ Questions hidden in the activity: the three reflection questions are the report 
 
 **Report question 1: a diagram of the sequence of protocol events for a web page.**
 
+*In brief:* DNS query and reply over UDP come first. Then TCP SYN, SYN-ACK and ACK open the connection. HTTP GET goes out and HTTP 200 OK with the page comes back, acknowledged by TCP. Finally FIN and ACK close the connection. The filtered Event List in Simulation mode shows exactly this order.
+
 Same ladder as in PTSkills 3, now with the transport layer written on each arrow:
 
 1. DNS query, UDP, port 53 (1A to server)
@@ -169,6 +177,8 @@ A screenshot of the filtered Event List shows this order and can be used as the 
 
 **Report question 2: where might things go wrong? Does a packet get stuck at a router or disappear?**
 
+*In brief:* A wrong DNS setting stops everything before any web traffic. A wrong gateway or mask keeps the packet inside the LAN. A router with a port down, or without a matching route, throws the packet away at once; it is not held or queued. A real router also sends back an ICMP destination unreachable; Packet Tracer shows the packet vanishing at the router and the sender times out. A powered-off or service-less server receives the packets but never answers.
+
 - Wrong or missing DNS server on the PC: the name is never resolved; no HTTP is sent at all; the browser shows "name cannot be resolved".
 - Wrong gateway or mask on the PC: the packet is sent to the wrong neighbour or never leaves the LAN; nobody answers; the ping times out.
 - Router port turned off or without an address (the PTSkills 5 situation): the frame reaches the router and is dropped there. In Simulation mode the envelope gets a red cross at R2-Central.
@@ -177,6 +187,8 @@ A screenshot of the filtered Event List shows this order and can be used as the 
 - Wrong cable type between server and router: the link light stays red and nothing passes at all.
 
 **Report question 3: compare DNS with HTTP, and UDP with TCP.**
+
+*In brief:* DNS turns a name into an address with one short question and answer over UDP port 53. HTTP fetches the page itself over TCP port 80, with methods and status codes and large answers. UDP sends single datagrams with no handshake, no acknowledgements and no retransmission, so it is fast but unreliable. TCP opens a connection, numbers and acknowledges every byte, resends what is lost, and closes cleanly. That costs extra packets but guarantees the whole page arrives intact and in order.
 
 DNS and HTTP are both application protocols where a client asks and a server answers. DNS turns a name into an address, one short question and one short answer, carried by UDP on port 53, and it must happen first. HTTP fetches the content itself, carried by TCP on port 80, with methods such as GET and status codes such as 200, and its answers can be large and split over many segments.
 
@@ -211,11 +223,15 @@ Questions hidden in the activity and short answers:
 
 **Report question 1: what data can an IP packet contain, and how do you see it in the tool?**
 
+*In brief:* An IP packet is a header plus a payload. The header carries version, lengths, identification and fragment fields, TTL, the protocol number of the payload, a checksum, and the source and destination IP addresses. The payload is the transport unit: ICMP for a ping, UDP for DNS, TCP for HTTP. In Simulation mode, click the envelope or the Info square in the Event List; the PDU Information window's Inbound and Outbound PDU Details tabs list every header field. Taken at R2-Central it shows the IP addresses unchanged while the MAC addresses and TTL differ.
+
 An IP packet is a header followed by a payload. The header holds: version (4), header length, type of service, total length, identification, flags and fragment offset (for splitting big packets), time to live (TTL, lowered by one at every router, the packet is dropped at zero), the protocol number of what is inside (1 for ICMP, 6 for TCP, 17 for UDP), a header checksum, and the source and destination IP addresses. The payload is whatever the transport layer hands down: an ICMP echo request for a ping, a UDP datagram with a DNS message, or a TCP segment with part of an HTTP page.
 
 To see it in Packet Tracer: Simulation mode, send the test ping from 1A to Eagle Server, press Capture / Forward once or twice, then click the envelope on the workspace or the coloured square in the Info column of the Event List. The PDU Information window opens. The OSI Model tab shows the packet layer by layer. The Inbound PDU Details and Outbound PDU Details tabs show the actual fields: the Ethernet frame on top, then the IP header with every field named (VER, IHL, TL, ID, FLAGS, TTL, PRO, CHKSUM, SRC IP, DST IP) and then the ICMP message. Take this screenshot while the packet is at R2-Central: source 172.16.1.1 and destination 192.168.254.254 are the same on both tabs, the MAC addresses and the TTL are not.
 
 **Report question 2: what is a route, and what does "a packet is routed" mean?**
+
+*In brief:* A route is one line in a router's table: to reach network X with mask Y, send to next hop Z. The default route 0.0.0.0/0 means "everything else goes to Z", here R1-ISP at 10.10.10.6. A packet is routed when each router matches its destination address against the table, picks the most specific line, lowers the TTL, and re-wraps the packet in a new frame for the next hop. This repeats until a router has the destination network directly connected and delivers it. Without a matching line the packet is dropped, which is why the ping failed before the fix.
 
 A route is one line in a router's routing table: "to reach destination network X with mask Y, send to next hop Z (or out of port W)". R2-Central's table has its two directly connected networks and, after this activity, the default route 0.0.0.0/0 with next hop 10.10.10.6, meaning "anything I have no better line for goes to R1-ISP".
 
