@@ -1,6 +1,6 @@
 # Fixed activities (recommended download)
 
-One file per Canvas original, same name plus `_fixed`. These are the files to hand out and to open, whatever Packet Tracer version you use.
+One file per Canvas original, same name plus `_fixed`. These are the files to hand out and to open, whatever Packet Tracer version you use. **Download all 14 as one zip:** release v1.0, https://github.com/laszloprekop/pt-activity-tools/releases/tag/v1.0
 
 Produced by `pka-fix/pka_fix.py` from the originals in `samples/originals/canvas/`. The script fills in the expected answers the 2007 files leave empty (cable type, cable port, a PC's DNS server), rewrites old value formats, and gives the OSPF network checks of PTSkills 13 and 14 the ID modern Packet Tracer expects. The file stays in the original 4.1 format, so every version from 7.2 up can open it. Instructions, devices, addresses, cabling and points are unchanged. PTSkills5 needs no fix; its file is the original under the `_fixed` name, so the set is complete.
 
