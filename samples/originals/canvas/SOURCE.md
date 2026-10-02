@@ -1,7 +1,6 @@
 # Canvas originals
 
-Downloaded 2026-10-01 from Canvas course 614 (Z0025E Computer Networks, ltuedu.instructure.com),
-module "Module 9: Labs", assignment descriptions. Never modify these files.
+Downloaded 2026-10-01 from Canvas course 614 (Z0025E Computer Networks, ltuedu.instructure.com), module "Module 9: Labs", assignment descriptions. Never modify these files.
 
 | File | Canvas file id | Lab | Assignment |
 |---|---|---|---|
@@ -20,5 +19,4 @@ module "Module 9: Labs", assignment descriptions. Never modify these files.
 | 0_683853438_LSG01_PTSkills13.pka | 38255 | Lab 6 | 3040 |
 | 0_683853438_LSG01_PTSkills14.pka | 38257 | Lab 6 | 3040 |
 
-Note: the file `../1.7.1_PTSkills1_8.0_template_with_saved_progress.pka` is not a Canvas original.
-It is PTSkills1 after being opened and saved in Packet Tracer 8.0.0.0212 with the student's progress.
+Note: the file `../1.7.1_PTSkills1_8.0_template_with_saved_progress.pka` is not a Canvas original. It is PTSkills1 after being opened and saved in Packet Tracer 8.0.0.0212 with the student's progress.

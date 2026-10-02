@@ -1,10 +1,8 @@
 # pt-activity-tools
 
-Tools to decode, inspect, convert and test Cisco Packet Tracer `.pka` activity files, so that the
-course's old (PT 4.1) activities open and grade correctly in Packet Tracer 8.x and 9.x.
+Tools to decode, inspect, convert and test Cisco Packet Tracer `.pka` activity files, so that the course's old (PT 4.1) activities open and grade correctly in Packet Tracer 8.x and 9.x.
 
-**Read `HANDOFF.md` first.** It documents the file formats, the grading tree, what each PT version
-does with the old files, the conversion pipeline and the test harness.
+**Read `HANDOFF.md` first.** It documents the file formats, the grading tree, what each PT version does with the old files, the conversion pipeline and the test harness.
 
 ## Commands
 
@@ -26,12 +24,9 @@ Use `.venv/bin/python`; the pyenv Python on this machine is broken (missing zlib
 ## Rules
 
 - Never modify `samples/originals/`.
-- After any change to the codec or converter, re-run the conversion and the pttest checks for at
-  least one file per PT version before claiming anything works.
+- After any change to the codec or converter, re-run the conversion and the pttest checks for at least one file per PT version before claiming anything works.
 - Edit XML through `tools/lib.py` (`load`/`dump`) so router banner control characters survive.
-- GUI tests: one Packet Tracer version at a time, addressed by pid through `tools/ptgui.py`.
-  Never script Packet Tracer through AppleScript/System Events by process name.
+- GUI tests: one Packet Tracer version at a time, addressed by pid through `tools/ptgui.py`. Never script Packet Tracer through AppleScript/System Events by process name.
 - Don't claim a file works in a PT version until a pttest run (or the user) has confirmed it.
 - Keep instruction text exactly as in the original; no added notes.
-- Writing style for docs, comments and messages: never use the em dash character. Use a comma,
-  colon, parentheses or a separate sentence instead.
+- Writing style for docs, comments and messages: never use the em dash character. Use a comma, colon, parentheses or a separate sentence instead.
