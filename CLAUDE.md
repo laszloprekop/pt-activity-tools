@@ -15,7 +15,8 @@ node tools/pkacli.js encode <in.xml> <out.pka>                 # modern format, 
 .venv/bin/python tools/inspect_pka.py <file.pka|xml> [--no-text]
 .venv/bin/python tools/variants.py solved|fresh <in.pka> <out.pka>
 .venv/bin/python tools/pttest.py <8.0.0|8.2.2|9.0.1> <file.pka> <out.json> [--saveas <name.pka>]
-.venv/bin/python tools/convert.py <original.pka> <pt800-saved.pka> <out.pka>
+python3 pka-fix/pka_fix.py <file.pka|folder>                 # recommended: writes <name>_fixed.pka, no PT needed
+.venv/bin/python tools/convert.py <original.pka> <pt800-saved.pka> <out.pka>   # alternative route via a PT 8.0.0 re-save
 .venv/bin/python tools/ptreport.py <runs-dir> [expected.json]
 ```
 
@@ -24,6 +25,7 @@ Use `.venv/bin/python`; the pyenv Python on this machine is broken (missing zlib
 ## Rules
 
 - Never modify `samples/originals/`.
+- `fixed/` is the recommended deliverable set; regenerate it with pka-fix and re-test after any change to `pka_fix.py`.
 - After any change to the codec or converter, re-run the conversion and the pttest checks for at least one file per PT version before claiming anything works.
 - Edit XML through `tools/lib.py` (`load`/`dump`) so router banner control characters survive.
 - GUI tests: one Packet Tracer version at a time, addressed by pid through `tools/ptgui.py`. Never script Packet Tracer through AppleScript/System Events by process name.

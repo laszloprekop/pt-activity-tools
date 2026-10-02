@@ -1,0 +1,321 @@
+<title>PTSkills Compatibility Audit</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: one calm reading column, a quiet sidebar-free page; colour only where it carries meaning. */
+:root {
+  --bg: #f6f7f5;
+  --surface: #ffffff;
+  --surface-2: #eceff0;
+  --fg: #2a3138;
+  --muted: #5f6b76;
+  --line: #d6dbdf;
+  --accent: #3f6b85;
+  --accent-soft: #e4edf3;
+  --ok: #3f7a55;
+  --ok-soft: #e3efe6;
+  --warn: #9a6a1f;
+  --warn-soft: #f4ecda;
+  --bad: #9c4d44;
+  --bad-soft: #f5e4e1;
+  --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --body: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1b1f23; --surface: #22272c; --surface-2: #2a3037; --fg: #e3e7ea; --muted: #a3adb6;
+    --line: #3a424a; --accent: #8fb6cc; --accent-soft: #263641; --ok: #8fc9a3; --ok-soft: #233529;
+    --warn: #dcb46a; --warn-soft: #3a3121; --bad: #e09a92; --bad-soft: #3d2826; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1b1f23; --surface: #22272c; --surface-2: #2a3037; --fg: #e3e7ea; --muted: #a3adb6;
+  --line: #3a424a; --accent: #8fb6cc; --accent-soft: #263641; --ok: #8fc9a3; --ok-soft: #233529;
+  --warn: #dcb46a; --warn-soft: #3a3121; --bad: #e09a92; --bad-soft: #3d2826; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.55; }
+.wrap { max-width: 46rem; margin: 0 auto; padding-block: 2.5rem 4rem; padding-inline: 16px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.2; text-wrap: balance; margin: 0; }
+h1 { font-size: 2.1rem; }
+h2 { font-size: 1.45rem; margin-top: 2.8rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
+h3 { font-size: 1.1rem; margin-top: 1.6rem; }
+p { margin: 0.8rem 0 0; max-width: 65ch; }
+.lede { font-size: 1.15rem; color: var(--muted); margin-top: 0.8rem; max-width: 60ch; }
+.meta { font-size: 0.85rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-top: 0.6rem; }
+ul, ol { margin: 0.7rem 0 0; padding-left: 1.3rem; max-width: 65ch; }
+li { margin-top: 0.4rem; }
+li::marker { color: var(--accent); }
+b { font-weight: 600; }
+code { font-family: var(--mono); font-size: 0.9em; background: var(--surface-2); padding: 0.05em 0.35em; border-radius: 3px; }
+.note { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 0.9rem 1.1rem; margin-top: 1.2rem; border-radius: 0 4px 4px 0; max-width: 65ch; }
+.note p { margin-top: 0.4rem; }
+.note p:first-child { margin-top: 0; }
+.glossary { display: grid; gap: 0.6rem 1rem; grid-template-columns: max-content 1fr; margin-top: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.1rem; }
+.glossary dt { font-weight: 600; color: var(--accent); }
+.glossary dd { margin: 0; min-width: 0; }
+@media (max-width: 520px) { .glossary { grid-template-columns: 1fr; gap: 0.2rem; } .glossary dd { margin-bottom: 0.5rem; } }
+.tbl { overflow-x: auto; margin-top: 1rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+th, td { text-align: left; padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 600; color: var(--muted); font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; background: var(--surface-2); }
+tr:last-child td { border-bottom: 0; }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pill { display: inline-block; font-size: 0.78rem; font-weight: 600; padding: 0.1em 0.55em; border-radius: 999px; white-space: nowrap; }
+.pill.ok { background: var(--ok-soft); color: var(--ok); }
+.pill.warn { background: var(--warn-soft); color: var(--warn); }
+.pill.bad { background: var(--bad-soft); color: var(--bad); }
+.pill.accent { background: var(--accent-soft); color: var(--accent); }
+.cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin-top: 1rem; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.1rem; min-width: 0; }
+.card h3 { margin-top: 0; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.card.pick { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.card ul { margin-top: 0.5rem; padding-left: 1.1rem; font-size: 0.95rem; }
+.card .lbl { font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); margin-top: 0.8rem; }
+.path { font-family: var(--mono); font-size: 0.88rem; background: var(--surface-2); padding: 0.6rem 0.8rem; border-radius: 4px; margin-top: 0.6rem; overflow-x: auto; white-space: nowrap; }
+.path span { color: var(--muted); }
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<div class="wrap">
+  <h1>PTSkills Compatibility Audit</h1>
+  <p class="lede">Why the 14 Packet Tracer lab files of the course do not grade correctly in newer Packet Tracer versions, what was fixed, and which version and which files to use.</p>
+  <p class="meta">Course Z0025E Computer Networks, Labs 2 to 6 &middot; checked on 1 and 2 October 2026 &middot; Packet Tracer 7.2.2, 8.0.0, 8.2.2 and 9.0.1</p>
+
+  <h2 id="words">Words used on this page</h2>
+  <dl class="glossary">
+    <dt>Activity</dt><dd>One <code>.pka</code> file. It holds a network to work on, the lab instructions, and a hidden list of checks.</dd>
+    <dt>Check</dt><dd>One thing Packet Tracer looks at when you press <b>Check Results</b>, for example "PC 1B has IP address 172.16.1.2". Packet Tracer calls these <i>assessment items</i>.</dd>
+    <dt>Expected value</dt><dd>The answer stored inside the file for a check. Your work is compared with it.</dd>
+    <dt>Original file</dt><dd>The file as shared on Canvas. All 14 were saved by Packet Tracer 4.1 in 2007.</dd>
+    <dt>Fixed file</dt><dd>The same activity with its broken checks repaired, still in the original file format. Its name ends in <code>_fixed</code>. This is the file to use.</dd>
+    <dt>Converted file</dt><dd>An alternative repaired copy, re-saved in the Packet Tracer 8.0 format. Its name ends in <code>_v8</code>. It does not open in Packet Tracer 7.x.</dd>
+    <dt>Solved copy</dt><dd>A test copy in which the network is already finished. Every check should pass; if one does not, the file is broken, not the student.</dd>
+  </dl>
+
+  <h2 id="summary">In short</h2>
+  <ul>
+    <li>All 14 lab files on Canvas are from Packet Tracer 4.1. Every newer Packet Tracer has to translate them when it opens them, and the translation loses information.</li>
+    <li>In Packet Tracer 9.0.1, the version students download today, and equally in 8.2.2, 12 of the 14 files can never be completed. Two of them (PTSkills 1 and 8) stay at 0 % no matter what you do.</li>
+    <li>In Packet Tracer 7.2.2 and 8.0.0 the files grade, but two routing activities (PTSkills 13 and 14) silently lose nine checks each, and the 8.0.0 guest mode limits saving.</li>
+    <li>The 14 fixed files (<code>_fixed</code>) repair this. In 7.2.2, 8.2.2 and 9.0.1 they start at 0 % and reach 100 % when the work is correct, and they keep all their checks. The instructions inside are unchanged.</li>
+    <li>Recommendation: use the newest Packet Tracer (9.x) together with the fixed files. The fixed files also work if you have an older version.</li>
+  </ul>
+
+  <h2 id="version">Which Packet Tracer version to use</h2>
+  <p>Four versions were available for testing: 7.2.2, 8.0.0, 8.2.2 and 9.0.1. All four were run by script.</p>
+  <p>What each version brings, from Cisco's release notes and from the test runs on this Mac. "Observed" means it was seen in the runs; the rest is from the notes.</p>
+  <div class="cards">
+    <div class="card pick">
+      <h3>9.x (9.0.1 tested) <span class="pill accent">Recommended</span></h3>
+      <div class="lbl">Benefits</div>
+      <ul>
+        <li>The current version, the one Cisco ships and supports today.</li>
+        <li>Guest login works again (observed), so no Cisco account is needed to start.</li>
+        <li>Accessibility work: screen-reader support, keyboard focus and navigation. 9.0.1 adds security and stability fixes on top of 9.0.0.</li>
+        <li>Big feature release for industrial networking: new industrial routers and switches, an industrial firewall, a C8200 router, PLCs and 11 industrial protocols. Not needed for these labs, but it is where new course material goes.</li>
+        <li>With the fixed files every activity grades correctly (observed).</li>
+      </ul>
+      <div class="lbl">Drawbacks</div>
+      <ul>
+        <li>With the original files 12 of 14 activities cannot be completed (observed).</li>
+        <li>Counts the activity's built-in ping tests as extra items, so the counter can show 57/55. Harmless.</li>
+        <li>Larger download and slower start than 8.0.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>8.2.2 <span class="pill ok">Verified</span></h3>
+      <div class="lbl">Benefits</div>
+      <ul>
+        <li>The bug-fix end of the 8.x line. 8.2.2 (June 2024) fixed crashes caused by conflicting Windows libraries and a set of accessibility, usability and security bugs; message boxes were reworded.</li>
+        <li>8.2 added an ASA 5506-X firewall, IoT boards with wired and wireless connectivity, an IoT home gateway, the <code>show ip ospf interface brief</code> commands, proxy settings in the login window and auto-focus on the CLI tab.</li>
+        <li>8.1 added Tutored Activities (<code>.pksz</code> files with hints) and Windows 11 support.</li>
+      </ul>
+      <div class="lbl">Drawbacks</div>
+      <ul>
+        <li>No guest mode: the guest login was removed in 8.0.1, so a Cisco Networking Academy or Skills For All account is required, otherwise the program quits (observed).</li>
+        <li>Grades exactly like 9.0.1 (observed): the original files fail the same checks, and all fixed files pass.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>8.0.0 <span class="pill warn">Usable</span></h3>
+      <div class="lbl">Benefits</div>
+      <ul>
+        <li>Translates the original files well: 12 of 14 grade fully even without conversion (observed).</li>
+        <li>Small and fast.</li>
+        <li>Has a guest login (observed).</li>
+      </ul>
+      <div class="lbl">Drawbacks</div>
+      <ul>
+        <li>Guest mode has a session timer and allows only three saves per session, so you can lose work (observed).</li>
+        <li>Drops nine checks in PTSkills 13 and nine in PTSkills 14 with the original files (observed).</li>
+        <li>Mac users reported bugs that later versions fixed: modules that cannot be dragged into device slots, keyboard input problems in the CLI, a library error when run as a standard user.</li>
+        <li>Old version, no longer offered for download.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>7.2.2 <span class="pill warn">Usable</span></h3>
+      <div class="lbl">Benefits</div>
+      <ul>
+        <li>Grades the original files like 8.0.0: 12 of 14 grade fully even without a fix (observed).</li>
+        <li>Has a guest login (observed).</li>
+        <li>Opens the fixed files and grades all 14 fully (observed).</li>
+      </ul>
+      <div class="lbl">Drawbacks</div>
+      <ul>
+        <li>Cannot open the <code>_v8</code> files at all: they are saved by 8.0.0, and older Packet Tracer cannot read newer files. It shows an empty workspace without an error (observed).</li>
+        <li>Drops the nine OSPF checks in PTSkills 13 and 14 with the original files (observed).</li>
+        <li>Old (2019), Intel-only on Mac (runs through Rosetta), asks on every start whether to enable the "PT INTERNAL" script module.</li>
+      </ul>
+    </div>
+  </div>
+  <p>For these labs none of the newer devices or protocols matter: the activities use 1841 routers, 2960 switches, PCs and one server, which every version has. The practical differences are the login, the stability fixes, and the grading engine, and the fixed files make the grading engine behave the same in every version.</p>
+  <div class="note">
+    <p><b>Bottom line:</b> whichever version you install, use the fixed <code>_fixed</code> files. They are the only files that were shown to grade correctly in every tested version, from 7.2.2 to 9.0.1. The original files are only safe in 7.2.2 and 8.0.0, and even there two activities lose checks.</p>
+  </div>
+
+  <h2 id="where">Where the files are</h2>
+  <h3>Original files (as shared by the teacher)</h3>
+  <p>Canvas course Z0025E, module <b>Module 9: Labs</b>. Each lab page lists its activities as download links. The file names look like this:</p>
+  <div class="path"><span>Canvas &rsaquo; Modules &rsaquo; Module 9: Labs &rsaquo; 9.5 Lab 2 (Submit your report) &rsaquo;</span> 1_482161921_LSG01_PTSkills3.pka</div>
+  <ul>
+    <li>Lab 2: PTSkills 1 to 5 &middot; Lab 3: PTSkills 6 and 7 &middot; Lab 4: PTSkills 8 to 10 &middot; Lab 5: PTSkills 11 and 12 &middot; Lab 6: PTSkills 13 and 14.</li>
+    <li>The Lab 3 page has two links each for PTSkills 6 and 7; the second ones point to locked files. Use the first.</li>
+  </ul>
+  <h3>Fixed files (recommended)</h3>
+  <p>They live in the project folder <code>fixed/</code> of the <code>pt-activity-tools</code> repository (private on GitHub under laszloprekop). Each has the same name as the original plus <code>_fixed</code>:</p>
+  <div class="path"><span>pt-activity-tools &rsaquo; fixed &rsaquo;</span> 1_482161921_LSG01_PTSkills3_fixed.pka</div>
+  <p>An alternative set in the 8.0 format, <code>_v8</code>, sits in <code>converted/</code>. It grades in 8.0.0 and later but does not open in 7.x; use it only if you have a reason to.</p>
+  <h3>Which file to open, by the version you chose</h3>
+  <div class="tbl"><table>
+    <tr><th>Your Packet Tracer</th><th>Original file from Canvas</th><th>Fixed <code>_fixed</code> file</th></tr>
+    <tr><td>9.x</td><td><span class="pill bad">Avoid</span> 12 of 14 cannot reach 100 %</td><td><span class="pill ok">Use this</span> all 14 verified</td></tr>
+    <tr><td>8.2.x</td><td><span class="pill bad">Avoid</span> same 12 of 14 as 9.x (8.2.2 verified)</td><td><span class="pill ok">Use this</span> all 14 verified</td></tr>
+    <tr><td>8.0.0</td><td><span class="pill warn">Works</span> except PTSkills 13 and 14 lose checks</td><td><span class="pill ok">Use this</span> spot-checked (9, 13, 14)</td></tr>
+    <tr><td>7.2.x</td><td><span class="pill warn">Works</span> except PTSkills 13 and 14 lose checks</td><td><span class="pill ok">Use this</span> all 14 verified</td></tr>
+  </table></div>
+
+  <h2 id="converted">What a fixed file is</h2>
+  <p>A fixed file is the original activity with a small set of corrections written straight into it by a script (<code>pka-fix</code>), saved under a new name. No Packet Tracer is involved, and the file stays in the original 2007 format.</p>
+  <ol>
+    <li><b>Missing expected values are filled in.</b> For the cable checks (which port, which cable type) and the PC's DNS server, the script reads the right answer from the activity's own answer network and stores it, the same value Packet Tracer 8.0.0 would compute.</li>
+    <li><b>Old value formats are rewritten.</b> A few checks (FastEthernet duplex and bandwidth, OSPF passive interfaces) stored their answer in a 2007 format; the script writes the modern one.</li>
+    <li><b>The OSPF checks get the ID modern Packet Tracer expects.</b> The 2007 files name OSPF networks with a subnet mask, current versions with a wildcard mask. With the corrected ID every version keeps the nine OSPF checks of PTSkills 13 and 14.</li>
+  </ol>
+  <p>What stays exactly the same:</p>
+  <ul>
+    <li>The instructions and the lab sheet shown in the activity window.</li>
+    <li>The starting network, the answer network, device names, addresses and cables.</li>
+    <li>The number of checks and their point values.</li>
+    <li>The file format, so every version from 7.2 up opens it.</li>
+  </ul>
+  <p>What is different:</p>
+  <ul>
+    <li>Every check has a usable expected value, which is what 8.2 and 9.x need.</li>
+    <li>The file name ends in <code>_fixed</code> so it cannot be confused with the original.</li>
+    <li>PTSkills5 needed no fix; its fixed file is the original under the new name, so the set is complete.</li>
+  </ul>
+  <p>The fixing script was contributed to the repository by a fellow student (pull request 1) for people who cannot run Packet Tracer 8.0.0. An earlier route, letting Packet Tracer 8.0.0 re-save each file and then repairing what it drops, produced the <code>_v8</code> set; it gives the same grading in 8.x and 9.x but a file 7.x cannot open.</p>
+
+  <h2 id="errors">What is wrong with the original files</h2>
+  <h3>Error 1: missing expected values (breaks 9.x)</h3>
+  <p>In the 2007 files, some checks have no expected value stored. These are the checks for cables ("which port is this cable connected to" and "is it a straight-through or crossover cable"), the DNS server address on a PC, and port duplex settings. Packet Tracer 8.0.0 works out the missing values from the answer network when it opens the file. Packet Tracer 9.0.1 does not; it compares your work with the empty value, and empty never matches. The result is a check that is always "Incorrect".</p>
+  <div class="tbl"><table>
+    <tr><th>Activity</th><th>Checks</th><th>Checks that can never pass in 9.0.1</th><th>Best possible score in 9.0.1</th></tr>
+    <tr><td>PTSkills1</td><td class="num">2</td><td class="num">2</td><td class="num"><span class="pill bad">0 %</span></td></tr>
+    <tr><td>PTSkills2</td><td class="num">6</td><td class="num">3</td><td class="num"><span class="pill bad">50 %</span></td></tr>
+    <tr><td>PTSkills3</td><td class="num">11</td><td class="num">5</td><td class="num"><span class="pill bad">55 %</span></td></tr>
+    <tr><td>PTSkills4</td><td class="num">15</td><td class="num">5</td><td class="num"><span class="pill bad">67 %</span></td></tr>
+    <tr><td>PTSkills5</td><td class="num">4</td><td class="num">0</td><td class="num"><span class="pill ok">100 %</span></td></tr>
+    <tr><td>PTSkills6</td><td class="num">49</td><td class="num">16</td><td class="num"><span class="pill bad">67 %</span></td></tr>
+    <tr><td>PTSkills7</td><td class="num">33</td><td class="num">6</td><td class="num"><span class="pill bad">82 %</span></td></tr>
+    <tr><td>PTSkills8</td><td class="num">20</td><td class="num">20</td><td class="num"><span class="pill bad">0 %</span></td></tr>
+    <tr><td>PTSkills9</td><td class="num">40</td><td class="num">24</td><td class="num"><span class="pill bad">40 %</span></td></tr>
+    <tr><td>PTSkills10</td><td class="num">89</td><td class="num">44</td><td class="num"><span class="pill bad">51 %</span></td></tr>
+    <tr><td>PTSkills11</td><td class="num">57</td><td class="num">7</td><td class="num"><span class="pill bad">88 %</span></td></tr>
+    <tr><td>PTSkills12</td><td class="num">22</td><td class="num">16</td><td class="num"><span class="pill bad">27 %</span></td></tr>
+    <tr><td>PTSkills13</td><td class="num">89</td><td class="num">0 of the 80 that remain</td><td class="num"><span class="pill warn">100 % of 80</span></td></tr>
+    <tr><td>PTSkills14</td><td class="num">55</td><td class="num">1 of the 46 that remain</td><td class="num"><span class="pill warn">98 % of 46</span></td></tr>
+  </table></div>
+  <p>The numbers are Packet Tracer 9.0.1's own "Item Count" after Check Results on a solved copy of each original.</p>
+  <h3>Since which version?</h3>
+  <ul>
+    <li><b>Known good:</b> 7.2.2 (2019) and 8.0.0 (January 2021). Both recompute the missing expected values when they open an old file (measured on all 14 files).</li>
+    <li><b>Known broken:</b> 8.2.2 (June 2024) and 9.0.1 (2025). Both compare against the stored, empty value. 8.2.2 fails exactly the same items as 9.0.1 (verified on all 14 files).</li>
+    <li><b>Not testable here:</b> 8.0.1, 8.1.0, 8.2.0 and 8.2.1. The change happened in one of these. The most likely candidate is 8.1.0 (November 2021), which introduced a new activity engine for Tutored Activities and reworked the assessment feedback; that is an educated guess, not a measurement.</li>
+    <li><b>Versions 5.x to 7.1</b> were not run here. By reasoning: empty expected values were normal in 4.1 files, because 4.1 compared the student's network with the answer network directly, and 7.2.2 and 8.0.0 still work that way. So Error 1 most likely appeared only after 8.0, and the files graded correctly from 5.x through 8.0.</li>
+    <li><b>Error 2 is much older, and now dated from files.</b> Activity files that other people published on GitHub carry the version that saved them and their own grading tree, so they show how each generation named route checks:
+      <ul>
+        <li><b>6.0.1 (2013):</b> static routes are already named "Route0, Route1" with the modern value format, exactly as today. The 2007 naming ("0.0.0.0/0: 10.10.10.6(0)") was therefore dropped between 4.1 and 6.0.1, that is in 5.x or 6.0. OSPF networks very likely changed in the same rework; no 5.x or 6.x file with OSPF checks was found to prove it directly.</li>
+        <li><b>7.1.1 (2017):</b> EIGRP networks are "Route0" with a wildcard mask, no spare copies yet.</li>
+        <li><b>7.2.0 (2018):</b> a Cisco Community bug report says static-route checks stopped matching after a file was saved and reopened. <b>7.2.2</b> files are the first with the "(deprecated) Route0" spare copies next to every route check, which is the compatibility fix. 8.0.0 still builds those spare copies for static routes, RIP and OSPF networks, and that is where 8.0.0 attaches the 2007 static-route and RIP checks. The OSPF checks match neither copy, because their 2007 names carry a subnet mask and an "area0" suffix.</li>
+      </ul>
+      So PTSkills 13 and 14 have most likely lacked their nine OSPF checks since Packet Tracer 5.x or 6.0, more than a decade before 8.0. Measured: 7.2.2 already loses them (80 of 89 and 46 of 55 kept).</li>
+    <li><b>Side note for teachers:</b> in 7.3.1 and later, OSPF (and other technologies) are hidden from the Activity Wizard's answer tree by default and must be enabled under Options, Preferences, Answer Tree. This affects authoring new activities, not these files.</li>
+  </ul>
+
+  <h3>Error 2: routing checks are lost in translation (all versions)</h3>
+  <p>Newer Packet Tracer names route-like checks differently. A static route that was called "0.0.0.0/0: 10.10.10.6(0)" is now "Route0", and OSPF networks changed from a subnet mask to a wildcard mask. When a version opens an old file it tries to match the checks by name:</p>
+  <ul>
+    <li>Static routes and RIP networks are kept, but attached to a spare "deprecated" copy of the check.</li>
+    <li>OSPF networks are not matched at all. PTSkills 13 and 14 each lose nine checks, in 7.2.2, 8.0.0, 8.2.2 and 9.0.1.</li>
+  </ul>
+
+  <h3>Error 3: the file format itself</h3>
+  <p>Every file is still in the 2007 format. Each time it is opened, Packet Tracer translates it again, and that translation is where errors 1 and 2 happen. The fixed files stay in this format on purpose, so that 7.x can still open them; the corrections inside make the translation come out right in every version.</p>
+
+  <h3>Not an error</h3>
+  <p>The PC network port was renamed from "FastEthernet" to "FastEthernet0" over the years. Both 8.0.0 and 9.0.1 handle that rename correctly. An earlier guess that this caused the stuck scores was wrong.</p>
+
+  <h2 id="students">What this means for a student</h2>
+  <p>The lab reports require a screenshot of Check Results, so every check that cannot pass costs the student directly.</p>
+  <ul>
+    <li><b>Stuck scores with no useful feedback.</b> The student re-checks cables, port names and addresses that are already right. The teacher's advice ("redo the cabling") cannot help, because the comparison is against an empty value.</li>
+    <li><b>Impossible deliverables.</b> On 9.0.1 a 100 % screenshot cannot exist for PTSkills 1, 2, 3, 4, 6, 7, 8, 9, 10, 11 and 12.</li>
+    <li><b>Wrong lessons.</b> PTSkills8 teaches straight-through versus crossover cables. On 9.0.1 the correct crossover cable between server and router is marked Incorrect, which teaches the opposite of the lesson.</li>
+    <li><b>Lost work on 8.0.0.</b> Students who switch to 8.0.0 to escape the problem meet the guest timer and the three-save limit.</li>
+    <li><b>Fewer checks than the lab sheet lists.</b> In PTSkills 13 and 14 the OSPF checks are missing, so the file no longer matches the teacher's rubric.</li>
+  </ul>
+
+  <h2 id="fixes">What was fixed</h2>
+  <ol>
+    <li><b>Expected values filled in</b> from each activity's answer network: 2 checks in PTSkills1, 3 in 2, 5 in 3, 5 in 4, 16 in 6, 6 in 7, 20 in 8, 14 in 9, 44 in 10, 7 in 11, 16 in 12. These are exactly the checks that could never pass in 9.0.1.</li>
+    <li><b>Old formats rewritten:</b> 10 checks in PTSkills9 (duplex and bandwidth), 9 OSPF networks in PTSkills13, 9 OSPF networks and 3 passive interfaces in PTSkills14.</li>
+    <li><b>Nothing else touched:</b> the script reports 0 unknown checks and 0 warnings on all 14 files.</li>
+  </ol>
+  <p>Deliberately left unchanged: the instruction text, the device names, addresses and cabling, the point values, the file format, and the file names apart from the <code>_fixed</code> ending.</p>
+
+  <h2 id="results">Test results for the fixed files</h2>
+  <p>Each fixed file was opened by script with the answer network as the starting state (must reach the full count) and, in 8.2.2, also as delivered (must start at 0). The numbers are Packet Tracer's own item counter. The 9.0.1 and 8.0.0 results were reported by the author of the fixing script from their own runs.</p>
+  <div class="tbl"><table>
+    <tr><th>File</th><th>7.2.2 solved</th><th>8.2.2 fresh</th><th>8.2.2 solved</th><th>9.0.1 solved</th><th>Original in 9.0.1, solved</th></tr>
+    <tr><td>PTSkills1_fixed</td><td class="num">2/2</td><td class="num">0/2</td><td class="num">2/2</td><td class="num">pass</td><td class="num">0/2</td></tr>
+    <tr><td>PTSkills2_fixed</td><td class="num">6/6</td><td class="num">0/6</td><td class="num">6/6</td><td class="num">pass</td><td class="num">3/6</td></tr>
+    <tr><td>PTSkills3_fixed</td><td class="num">11/11</td><td class="num">0/11</td><td class="num">11/11</td><td class="num">pass</td><td class="num">6/11</td></tr>
+    <tr><td>PTSkills4_fixed</td><td class="num">15/15</td><td class="num">0/15</td><td class="num">15/15</td><td class="num">pass</td><td class="num">10/15</td></tr>
+    <tr><td>PTSkills5_fixed (original)</td><td class="num">4/4</td><td class="num">0/4</td><td class="num">4/4</td><td class="num">4/4</td><td class="num">4/4</td></tr>
+    <tr><td>PTSkills6_fixed</td><td class="num">49/49</td><td class="num">0/49</td><td class="num">49/49</td><td class="num">pass</td><td class="num">33/49</td></tr>
+    <tr><td>PTSkills7_fixed</td><td class="num">33/33</td><td class="num">0/33</td><td class="num">33/33</td><td class="num">pass</td><td class="num">27/33</td></tr>
+    <tr><td>PTSkills8_fixed</td><td class="num">20/20</td><td class="num">0/20</td><td class="num">20/20</td><td class="num">pass</td><td class="num">0/20</td></tr>
+    <tr><td>PTSkills9_fixed</td><td class="num">40/40</td><td class="num">0/40</td><td class="num">40/40</td><td class="num">pass</td><td class="num">16/40</td></tr>
+    <tr><td>PTSkills10_fixed</td><td class="num">89/89</td><td class="num">0/89</td><td class="num">89/89</td><td class="num">pass</td><td class="num">45/89</td></tr>
+    <tr><td>PTSkills11_fixed</td><td class="num">57/57</td><td class="num">0/57</td><td class="num">57/57</td><td class="num">pass</td><td class="num">50/57</td></tr>
+    <tr><td>PTSkills12_fixed</td><td class="num">22/22</td><td class="num">0/22</td><td class="num">22/22</td><td class="num">pass</td><td class="num">6/22</td></tr>
+    <tr><td>PTSkills13_fixed</td><td class="num">89/89</td><td class="num">9/89</td><td class="num">89/89</td><td class="num">pass</td><td class="num">80/80 (9 missing)</td></tr>
+    <tr><td>PTSkills14_fixed</td><td class="num">55/55</td><td class="num">2/55</td><td class="num">55/55</td><td class="num">pass</td><td class="num">45/46 (9 missing)</td></tr>
+  </table></div>
+  <ul>
+    <li>"pass" in the 9.0.1 column: 0 Incorrect on the solved copy, as reported by the script's author.</li>
+    <li>PTSkills13 and 14 start with some checks already satisfied (9 and 2) because the original starting network already meets them. That is how the activities were written.</li>
+    <li>8.2.2 and 9.0.1 add an activity's ping tests to the counter, so PTSkills14 shows 57/55 on screen.</li>
+    <li>8.0.0 was spot-checked on PTSkills 9, 13 and 14 by the script's author; all green, and 13 and 14 keep their OSPF checks (89 and 55).</li>
+  </ul>
+  <h3>Not verified</h3>
+  <ul>
+    <li>A full walkthrough of one activity by hand in each version. The grading was verified, the device behaviour was not re-tested beyond that.</li>
+  </ul>
+
+  <footer>Sources: the run records in <code>tests/runs/</code>, <code>tests/runs_722/</code> and <code>tests/runs_pkafix/</code>, pull request 1 (pka-fix) and the table in <code>tests/results.md</code> of the pt-activity-tools repository; Cisco's <a href="https://tutorials.ptnetacad.net/help/default/whatsNew.htm">What's New</a> page for Packet Tracer 9.0; Packet Tracer Network's notes on <a href="https://www.packettracernetwork.com/features/packet-tracer-9-new-features.html">9.0</a>, <a href="https://www.packettracernetwork.com/features/packettracer-82-newfeatures.html">8.2</a>, <a href="https://www.packettracernetwork.com/features/packettracer-81-newfeatures.html">8.1</a> and <a href="https://packettracernetwork.com/features/packettracer-801-newfeatures.html">8.0.1</a>; Cisco Community threads on <a href="https://community.cisco.com/t5/cisco-bug-discussions/cisco-packet-tracer-7-2-activity-wizard-not-recognizing-static/td-p/3712416">the 7.2 static-route assessment bug</a> and <a href="https://community.cisco.com/t5/routing/packet-tracer-activity-wizard-ospf-missing/td-p/4266467">OSPF missing from the 7.3.1 answer tree</a>; public activity files on GitHub saved by 6.0.1, 7.1.1, 7.2.2, 8.0.0, 8.2.0 and 8.2.1 (repositories afsanhq99/CSE-labs-Github, gulo-martin/Digital-commons-academic-hub, qddung/backup); 8.0 Mac bugs (<a href="https://community.cisco.com/t5/cisco-software-discussions/can-t-add-modules-on-cisco-packet-tracer-8-0-on-macbook/td-p/4301822/page/2">modules</a>, <a href="https://community.cisco.com/t5/cisco-software-discussions/command-prompt-issue-with-pt-on-mac/m-p/4872934/highlight/true?attachment-id=206329">CLI input</a>). Course material of Cisco NetAcad and LTU; for course use only.</footer>
+</div>

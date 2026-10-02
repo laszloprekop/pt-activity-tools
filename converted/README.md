@@ -1,4 +1,6 @@
-# Converted activities (Packet Tracer 8.0 format)
+# Converted activities (Packet Tracer 8.0 format, alternative)
+
+**The recommended files are in `../fixed/`.** The files here also grade correctly in 8.0.0, 8.2.2 and 9.0.1, but they are in the 8.0 file format and do not open in Packet Tracer 7.x (tested in 7.2.2: empty workspace, no error). Keep them as a second, independently produced set.
 
 One file per Canvas original, same name plus `_v8`. Produced by letting Packet Tracer 8.0.0 open and re-save the PT 4.1 original (device and grading-tree conversion), then `tools/convert.py` (restores graded items the conversion dropped, resets the timer, re-encodes). Instruction text is exactly what Packet Tracer carried over from the original. Tested in 8.0.0, 8.2.2 and 9.0.1: see `tests/results.md`.
 

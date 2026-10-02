@@ -1,6 +1,6 @@
 # Lab 2: PTSkills 1 to 5, newcomer guide and draft answers
 
-Written 2 October 2026 from the Canvas page "9.5 Lab 2 (Submit your report)" (course 614, assignment 3042) and from the instruction text inside the five activity files. Report: one PDF per group, due 2 October 2026, 5 points (1 per activity). For each activity the report needs a screenshot of Check Results with the Assessment Items tab, plus the answers to the questions. Use the repaired `_v8` files from `converted/` in Packet Tracer 8.2.x or 9.x; the Canvas originals cannot reach 100 % there.
+Written 2 October 2026 from the Canvas page "9.5 Lab 2 (Submit your report)" (course 614, assignment 3042) and from the instruction text inside the five activity files. Report: one PDF per group, due 2 October 2026, 5 points (1 per activity). For each activity the report needs a screenshot of Check Results with the Assessment Items tab, plus the answers to the questions. Use the fixed files from `fixed/` (Canvas name plus `_fixed`); they grade correctly in every Packet Tracer version from 7.2 to 9.x, while the Canvas originals cannot reach 100 % in 8.2.x and 9.x.
 
 The answers are drafts. Rewrite them in the group's own words.
 

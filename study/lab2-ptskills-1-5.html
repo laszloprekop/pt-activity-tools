@@ -185,7 +185,7 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line);
 <p class="meta">Z0025E Computer Networks &middot; written 2 October 2026 &middot; answers are drafts, rewrite them in your own words</p>
 
 <div class="callout warn">
-  <p style="margin:0"><b>Which files to open.</b> In Packet Tracer 8.2.x or 9.x use the repaired <code>_v8</code> files from the <code>converted/</code> folder of the pt-activity-tools repository. The Canvas originals cannot reach 100 % there because some of their checks are broken. In 8.0.0 both work.</p>
+  <p style="margin:0"><b>Which files to open.</b> Use the fixed files from the <code>fixed/</code> folder of the pt-activity-tools repository, named like the Canvas files plus <code>_fixed</code>. They grade correctly in every Packet Tracer version from 7.2 to 9.x. The Canvas originals cannot reach 100 % in 8.2.x and 9.x because some of their checks are broken.</p>
 </div>
 
 <!-- ============================================================ ASSIGNMENT -->
@@ -294,7 +294,7 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line);
 <!-- ============================================================ PT1 -->
 <h2 id="pt1">PTSkills 1: Introduction to Packet Tracer</h2>
 <div class="act-head">
-  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills1_v8.pka</code></div>
+  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills1_fixed.pka</code></div>
   <div class="row"><span class="k">Start</span><span class="state"><span class="from">2 cables missing</span> &rarr; <span class="to">network fully cabled</span></span></div>
   <div class="row"><span class="k">Checked items</span><div class="meter" aria-label="2 checked items"><span style="--i:0" title="PC 1A cable to S1-Central Fa0/1"></span><span style="--i:1" title="Eagle Server cable to R1-ISP Fa0/0"></span></div></div>
 </div>
@@ -364,7 +364,7 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line);
 <!-- ============================================================ PT2 -->
 <h2 id="pt2">PTSkills 2: Examining Packets</h2>
 <div class="act-head">
-  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills2_v8.pka</code></div>
+  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills2_fixed.pka</code></div>
   <div class="row"><span class="k">Start</span><span class="state"><span class="from">PC 1B does not exist</span> &rarr; <span class="to">1B built, cabled, pinging</span></span></div>
   <div class="row"><span class="k">Checked items</span><div class="meter" aria-label="6 checked items"><span style="--i:0" title="1B cable type"></span><span style="--i:1" title="1B on S1-Central Fa0/2"></span><span style="--i:2" title="1B IP address"></span><span style="--i:3" title="1B subnet mask"></span><span style="--i:4" title="1B default gateway"></span><span style="--i:5" title="1B DNS server"></span></div></div>
 </div>
@@ -454,7 +454,7 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line);
 <!-- ============================================================ PT3 -->
 <h2 id="pt3">PTSkills 3: Configuring Hosts and Services</h2>
 <div class="act-head">
-  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills3_v8.pka</code></div>
+  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills3_fixed.pka</code></div>
   <div class="row"><span class="k">Start</span><span class="state"><span class="from">1B missing, server not cabled, DNS and HTTP off</span> &rarr; <span class="to">web page loads by name</span></span></div>
   <div class="row"><span class="k">Checked items</span><div class="meter" aria-label="11 checked items"><span style="--i:0" title="1B cable type"></span><span style="--i:1" title="1B on S1-Central Fa0/2"></span><span style="--i:2" title="1B IP"></span><span style="--i:3" title="1B mask"></span><span style="--i:4" title="1B gateway"></span><span style="--i:5" title="1B DNS server"></span><span style="--i:6" title="Server cable type (crossover)"></span><span style="--i:7" title="Server on R1-ISP Fa0/0"></span><span style="--i:8" title="DNS service on"></span><span style="--i:9" title="DNS record eagle-server.example.com"></span><span style="--i:10" title="HTTP service on"></span></div></div>
 </div>
@@ -516,7 +516,7 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line);
 <!-- ============================================================ PT4 -->
 <h2 id="pt4">PTSkills 4: Analyzing the Application and Transport Layers</h2>
 <div class="act-head">
-  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills4_v8.pka</code></div>
+  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills4_fixed.pka</code></div>
   <div class="row"><span class="k">Start</span><span class="state"><span class="from">blank server, powered off; PC 1A without addresses</span> &rarr; <span class="to">web page loads on 1A</span></span></div>
   <div class="row"><span class="k">Checked items</span><div class="meter" aria-label="15 checked items"><span style="--i:0" title="1A cable type"></span><span style="--i:1" title="1A on S1-Central Fa0/1"></span><span style="--i:2" title="1A IP"></span><span style="--i:3" title="1A mask"></span><span style="--i:4" title="1A gateway"></span><span style="--i:5" title="1A DNS server"></span><span style="--i:6" title="Server power"></span><span style="--i:7" title="Server cable type"></span><span style="--i:8" title="Server on R1-ISP Fa0/0"></span><span style="--i:9" title="Server IP"></span><span style="--i:10" title="Server mask"></span><span style="--i:11" title="Server gateway"></span><span style="--i:12" title="DNS on"></span><span style="--i:13" title="DNS record"></span><span style="--i:14" title="HTTP on"></span></div></div>
 </div>
@@ -659,7 +659,7 @@ footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line);
 <!-- ============================================================ PT5 -->
 <h2 id="pt5">PTSkills 5: Routing IP Packets</h2>
 <div class="act-head">
-  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills5_v8.pka</code></div>
+  <div class="row"><span class="k">File</span><code>1_482161921_LSG01_PTSkills5_fixed.pka</code></div>
   <div class="row"><span class="k">Start</span><span class="state"><span class="from">R2-Central Fa0/0 off, no address, no route out</span> &rarr; <span class="to">PCs reach the server</span></span></div>
   <div class="row"><span class="k">Checked items</span><div class="meter" aria-label="4 checked items"><span style="--i:0" title="Fa0/0 port status on"></span><span style="--i:1" title="Fa0/0 IP address"></span><span style="--i:2" title="Fa0/0 subnet mask"></span><span style="--i:3" title="Default static route"></span></div></div>
 </div>
